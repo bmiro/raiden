@@ -1,0 +1,200 @@
+´´´´´´´´´´´´´´´´´´´´´´´´Capçalera requerida a l´enunciat´´´´´´´´´´´´´´´´´´´´´´´
+def INTE N ´veure variable pcsPila de la seccio de declaracions propies
+N = 2
+dim tipusP!(4) ´veure la variable TP de la seccio de declaracions propies
+tipusP(1) = 2
+tipusP(2) = 3
+tipusP(3) = 4
+tipusP(4) = 1
+
+´coordenades x i y del punt P respecte la camera
+def DOUBLE oPx, oPy
+´angle de rotació del palé respecte la camera
+def DOUBLE angle
+´coordenades x i y de l’origen del sistema de la camera
+def DOUBLE cPx, cPy
+
+´´´´´´´´´´´´´´´´´´´´´´´´     Macros pròpies     ´´´´´´´´´´´´´´´´´´´´´´´´
+def INTE PINCA
+PINCA = 1
+
+def FLOAT Z0
+Z0 = -6.50
+
+def INTE TP ´tipus de pença diferents
+TP = 4
+
+def INTE PILES ´Numero de pilaes inicials on hi ha les peces
+PILES = 2
+
+def INTE PALS ´Numero de pals
+PALS = 3
+
+def FLOAT DT ´Diferencial de temps per la pinça
+DT = 0.5
+
+def FLOAT HDISC ´Altura dels discs
+HDISC = 8.5
+
+´TODO documentar cap on intrementen les x i tot l´entorn, premises de colocacio etc.
+def FLOAT DXPILES ´Distancia X entre les pilaes
+DXPILES = 95.0
+def FLOAT DYPILES ´Distancia Y entre les pilaes
+DYPILES = 0.0
+def FLOAT DXPALE  ´Distancia X entre els punts del pale
+DXPALE  = 110.0
+def FLOAT DYPALE  ´Distancia Y entre els punts del pale
+DYPALE = 110.0
+def FLOAT DXPALS  ´Dinstancia X entre els pals
+DXPALS  = 70.0
+def FLOAT DYPALS  ´Dinstancia Y entre els pals
+DYPALS  = 0.0
+def FLOAT DZPAL   ´Dinstancia Z per entrar dins el pal
+DZPAL  = 35.0
+
+´´´´´´´´´´´´´´´´´´´´´´´´     Declaracions pròpies     ´´´´´´´´´´´´´´´´´´´´´´´´
+def POS Paralisi ´Posició home
+
+dim npcsPila!(2) ´2 = PILES
+
+dim alloc!(4) ´4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
+
+def POS Prvsnl ´Punt Provisional per calculs
+
+dim Pale(4) ´4 = TP, posicio segura sobra la columna d´on s´ha de posar la peça
+dim PaleBase(4) ´4 = TP, posició amb z = terra d´alla on s´ha de deixar la peça
+dim PilaS(2) ´2 = PILES posicio segura sobre la pila
+dim PilaBase(2) ´2 = PILES
+dim PalI(3) ´ 3 = PALS
+dim PalF(3) ´ 3 = PALS
+
+def inte pila, munt, peca, tipus ´iteradors
+
+´´´´´´´´´´´´´´´´´´´´´´´´     Inicialitzacions pròpies     ´´´´´´´´´´´´´´´´´´´´´´´´
+
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´   MAIN   ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+gosub *INIT
+gosub *CALCPTS
+gosub *MNTPALE
+gosub *DESPALE
+gosub *ACABA
+end
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´    RUTINES   ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+*INIT
+    servo ON
+    ovrd 10
+    mov Paralisi
+    hopen PINCA
+    return
+
+*CALCPTS
+    pila = 1
+    PilaS(1) = Pila00
+    while (pila <= PILES)
+        PilaS(pila).x = PilaS(1).x + DXPILES * (pila-1)
+        PilaS(pila).y = PilaS(1).y + DYPILES * (pila-1) 'es 0
+        PilaBase(pila) = PilaS(pila)
+        PilaBase(pila).z = Z0
+        pila = pila + 1
+    wend
+
+    Pcam = 'punt que ens dona la camera
+    gosub CAM2ROB
+    Prob = 'punt de la camera transformat al braç
+    while (tipus < TP)
+        Pale(tipus) = Prob + 
+        PaleBase(tipus) =
+        PaleOut(tipus) = 
+        tipus = tipus + 1
+    wend
+      
+    pal = 1
+    PalI(1) = Pal00
+    while (pal <= PALS)
+        PalI(pal).x = PalI(1).x + DXPALS * (pal-1)
+        PalI(pal).y = PalI(1).y + DYPALS * (pal-1)
+        PalF(pal) = PalI(pal)
+        PalF(pal).z = PalF(pal).z - DZPAL
+        pal = pal + 1
+    wend
+    return
+
+*ACABA
+    mov Paralisi
+    hopen PINCA
+    servo OFF
+    return
+
+*MNTPALE
+    pila = 1
+    peca = 1
+    while (pila <= PILES)
+        pecapila = 1
+        while (pecapila <= PCS_PILA)
+            gosub *AGAFPILA
+            gosub *POSAPALE
+            pecapila = pecapila + 1
+            peca = peca + 1
+        wend
+        pila = pila + 1
+    wend
+    return
+    
+*DESPALE
+    tipus = 1
+    while (tipus <= TP)
+        peca = 1
+        while (peca <= alloc!(tipus))
+            gosub *AGAFPALE
+            gosub *POSADEST
+            peca = peca + 1
+        wend
+        tipus = tipus + 1
+    wend
+    return
+
+*AGAFPILA
+    mov PilaS(pila)
+    Prvsnl = PilaBase(pila)
+    Prvsnl.z = Prvsnl.z + (npcspila!(pila) - pecapila) * HDISC
+    mvs Prvsnl
+    hclose PINCA
+    dly DT
+    mvs PilaS(pila)
+    return
+
+*POSAPALE
+    mov Pale(tipusP(peca))
+    Prvsnl = PaleBase(tipusP(peca))
+    Prvsnl = Prvsnl.z + alloc!(tipusP(peca)) * HDISC
+    mvs Prvsnl
+    hopen PINCA
+    dly DT
+    mvs Pale(tipusP(peca))
+    alloc!(tipusP(peca)) = alloc!(tipusP(peca)) + 1
+    return
+
+*AGAFPALE
+    mov PaleOut(tipusP(peca))
+    Prvsnl = PaleBase(tipusP(peca))
+    Prvsnl.z = Prvsnl.z + alloc!(tipusP(peca)) * HDISC
+    mvs Prvsnl
+    hclose PINCA
+    dly DT
+    mvs PaleBase(tipusP(peca))
+    mvs PaleOut(tipusP(peca))
+    return
+
+*POSADEST
+    if (tipus < TP) then
+       mov PalI(tipus)
+       mvs PalF(tipus)
+       hopen PINCA
+       dly DT
+       mvs PalI(tipus)
+    else
+       mov Paralisi
+    endif
+    return
