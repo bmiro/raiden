@@ -63,8 +63,6 @@ dim RELPALE (4)(1) =  5.5 'Quart quadrant
 dim RELPALE (4)(2) = -5.5 
 
 ''''''''''''''''''''''''     Declaracions pròpies     ''''''''''''''''''''''''
-def POS Paralisi 'Posició home
-
 dim npcsPila!(2) '2 = PILES
 
 dim alloc!(4) '4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
@@ -81,9 +79,6 @@ def INTE pil, munt, peca, tipus 'iteradors
 
 def FLOAT ppx, ppy 'punt pale  ' emprats com a paramentres per el pals de 
 def FLOAT prx, pry 'punt robot ' coorenades del pale al robot
-
-''''''''''''''''''''''''     Inicialitzacions pròpies     ''''''''''''''''''''''''
-
 
 ''''''''''''''''''''''''''''''''''   MAIN   '''''''''''''''''''''''''''''''''''
 gosub *INIT
