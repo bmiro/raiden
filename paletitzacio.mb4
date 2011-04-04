@@ -1,79 +1,91 @@
-´´´´´´´´´´´´´´´´´´´´´´´´Capçalera requerida a l´enunciat´´´´´´´´´´´´´´´´´´´´´´´
-def INTE N ´veure variable pcsPila de la seccio de declaracions propies
+''''''''''''''''''''''''Capçalera requerida a l'enunciat'''''''''''''''''''''''
+def INTE N 'veure variable pcsPila de la seccio de declaracions propies
 N = 2
-dim tipusP!(4) ´veure la variable TP de la seccio de declaracions propies
+dim tipusP!(4) 'veure la variable TP de la seccio de declaracions propies
 tipusP(1) = 2
 tipusP(2) = 3
 tipusP(3) = 4
 tipusP(4) = 1
 
-´coordenades x i y del punt P respecte la camera
+'coordenades x i y del punt P respecte la camera
 def DOUBLE oPx, oPy
-´angle de rotació del palé respecte la camera
+'angle de rotació del palé respecte la camera
 def DOUBLE angle
-´coordenades x i y de l’origen del sistema de la camera
+'coordenades x i y de l’origen del sistema de la camera
 def DOUBLE cPx, cPy
 
-´´´´´´´´´´´´´´´´´´´´´´´´     Macros pròpies     ´´´´´´´´´´´´´´´´´´´´´´´´
+''''''''''''''''''''''''     Macros pròpies     ''''''''''''''''''''''''
 def INTE PINCA
 PINCA = 1
 
-def FLOAT Z0
-Z0 = -6.50
+def FLOAT ZS 'Pla Z on es desplaça el robot per sobre de la terra _real_
+ZS = 280 + 6.5
 
-def INTE TP ´tipus de pença diferents
+def INTE TP 'tipus de pença diferents
 TP = 4
 
-def INTE PILES ´Numero de pilaes inicials on hi ha les peces
+def INTE PILES 'Numero de pilaes inicials on hi ha les peces
 PILES = 2
 
-def INTE PALS ´Numero de pals
+def INTE PALS 'Numero de pals
 PALS = 3
 
-def FLOAT DT ´Diferencial de temps per la pinça
+def FLOAT DT 'Diferencial de temps per la pinça
 DT = 0.5
 
-def FLOAT HDISC ´Altura dels discs
+def FLOAT HDISC 'Altura dels discs
 HDISC = 8.5
 
-´TODO documentar cap on intrementen les x i tot l´entorn, premises de colocacio etc.
-def FLOAT DXPILES ´Distancia X entre les pilaes
+'TODO documentar cap on intrementen les x i tot l'entorn, premises de colocacio etc.
+def FLOAT DXPILES 'Distancia X entre les pilaes
 DXPILES = 95.0
-def FLOAT DYPILES ´Distancia Y entre les pilaes
+def FLOAT DYPILES 'Distancia Y entre les pilaes
 DYPILES = 0.0
-def FLOAT DXPALE  ´Distancia X entre els punts del pale
+def FLOAT DXPALE  'Distancia X entre els punts del pale
 DXPALE  = 110.0
-def FLOAT DYPALE  ´Distancia Y entre els punts del pale
+def FLOAT DYPALE  'Distancia Y entre els punts del pale
 DYPALE = 110.0
-def FLOAT DXPALS  ´Dinstancia X entre els pals
+def FLOAT DXPALS  'Dinstancia X entre els pals
 DXPALS  = 70.0
-def FLOAT DYPALS  ´Dinstancia Y entre els pals
+def FLOAT DYPALS  'Dinstancia Y entre els pals
 DYPALS  = 0.0
-def FLOAT DZPAL   ´Dinstancia Z per entrar dins el pal
+def FLOAT DZPAL   'Dinstancia Z per entrar dins el pal
 DZPAL  = 35.0
 
-´´´´´´´´´´´´´´´´´´´´´´´´     Declaracions pròpies     ´´´´´´´´´´´´´´´´´´´´´´´´
-def POS Paralisi ´Posició home
+dim RELPALE (4)(2) '4 = TP, posicions relatives al centre per fer el palé (x, y)
+dim RELPALE (1)(1) =  5.5 'Primer quadrant
+dim RELPALE (1)(2) =  5.5
+dim RELPALE (2)(1) = -5.5 'Segon quadrant
+dim RELPALE (2)(2) =  5.5
+dim RELPALE (3)(1) = -5.5 'Tercer quadrant
+dim RELPALE (3)(2) = -5.5
+dim RELPALE (4)(1) =  5.5 'Quart quadrant
+dim RELPALE (4)(2) = -5.5 
 
-dim npcsPila!(2) ´2 = PILES
+''''''''''''''''''''''''     Declaracions pròpies     ''''''''''''''''''''''''
+def POS Paralisi 'Posició home
 
-dim alloc!(4) ´4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
+dim npcsPila!(2) '2 = PILES
 
-def POS Prvsnl ´Punt Provisional per calculs
+dim alloc!(4) '4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
 
-dim Pale(4) ´4 = TP, posicio segura sobra la columna d´on s´ha de posar la peça
-dim PaleBase(4) ´4 = TP, posició amb z = terra d´alla on s´ha de deixar la peça
-dim PilaS(2) ´2 = PILES posicio segura sobre la pila
-dim PilaBase(2) ´2 = PILES
-dim PalI(3) ´ 3 = PALS
-dim PalF(3) ´ 3 = PALS
+def POS Prvsnl 'Punt Provisional per calculs
 
-def inte pila, munt, peca, tipus ´iteradors
+dim Pale(4) '4 = TP, posicio segura sobra la columna d'on s'ha de posar la peça
+dim PaleOut(4)
+dim Pila(2) '2 = PILES posicio segura sobre la pila
+dim PalI(3) ' 3 = PALS
+dim PalF(3) ' 3 = PALS
 
-´´´´´´´´´´´´´´´´´´´´´´´´     Inicialitzacions pròpies     ´´´´´´´´´´´´´´´´´´´´´´´´
+def INTE pil, munt, peca, tipus 'iteradors
+
+def FLOAT ppx, ppy 'punt pale  ' emprats com a paramentres per el pals de 
+def FLOAT prx, pry 'punt robot ' coorenades del pale al robot
+
+''''''''''''''''''''''''     Inicialitzacions pròpies     ''''''''''''''''''''''''
 
 
-´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´   MAIN   ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+''''''''''''''''''''''''''''''''''   MAIN   '''''''''''''''''''''''''''''''''''
 gosub *INIT
 gosub *CALCPTS
 gosub *MNTPALE
@@ -81,7 +93,7 @@ gosub *DESPALE
 gosub *ACABA
 end
 
-´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´    RUTINES   ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+''''''''''''''''''''''''''''''''    RUTINES   '''''''''''''''''''''''''''''''''
 *INIT
     servo ON
     ovrd 10
@@ -90,23 +102,28 @@ end
     return
 
 *CALCPTS
-    pila = 1
-    PilaS(1) = Pila00
+    pil = 1
+    Pila(1) = Pila00
     while (pila <= PILES)
-        PilaS(pila).x = PilaS(1).x + DXPILES * (pila-1)
-        PilaS(pila).y = PilaS(1).y + DYPILES * (pila-1) 'es 0
-        PilaBase(pila) = PilaS(pila)
-        PilaBase(pila).z = Z0
-        pila = pila + 1
+        Pila(pil).x = Pila(1).x + DXPILES * (pil-1)
+        Pila(pil).y = Pila(1).y + DYPILES * (pil-1) 'es 0
+        pil = pil + 1
     wend
-
-    Pcam = 'punt que ens dona la camera
-    gosub CAM2ROB
-    Prob = 'punt de la camera transformat al braç
-    while (tipus < TP)
-        Pale(tipus) = Prob + 
-        PaleBase(tipus) =
-        PaleOut(tipus) = 
+    
+    while (tipus <= TP)
+        ppx = RELPALE(tipus)(1) 'paramentres de entrada de CAM2ROB
+        ppy = RELPALE(tipus)(2)
+        gosub CAM2ROB           'prx i pry son parametres de sortida
+        Pale(tipus) = Pale00    'Escriu altres components i orientacions
+        Pale(tipus).x = prx
+        Pale(tipus).y = pry
+        if (tipus <= TP/2) then 'Sols dos pals accesibles agafant des de damunt
+            PaleOut(tipus) = Pale00
+        else
+            PaleOut(tipus) = PalePT 'Pinça tombada
+        endif
+        PaleOut(tipus).x = prx
+        PaleOut(tipus).y = pry
         tipus = tipus + 1
     wend
       
@@ -127,10 +144,13 @@ end
     servo OFF
     return
 
+*CAM2ROB
+    return
+
 *MNTPALE
-    pila = 1
+    pil = 1
     peca = 1
-    while (pila <= PILES)
+    while (pil <= PILES)
         pecapila = 1
         while (pecapila <= PCS_PILA)
             gosub *AGAFPILA
@@ -138,7 +158,7 @@ end
             pecapila = pecapila + 1
             peca = peca + 1
         wend
-        pila = pila + 1
+        pil = pil + 1
     wend
     return
     
@@ -156,19 +176,19 @@ end
     return
 
 *AGAFPILA
-    mov PilaS(pila)
-    Prvsnl = PilaBase(pila)
-    Prvsnl.z = Prvsnl.z + (npcspila!(pila) - pecapila) * HDISC
+    mov Pila(pil)
+    Prvsnl = Pila(pil)
+    Prvsnl.z = Prvsnl.z - ZS + (npcspila!(pil) - pecapila) * HDISC
     mvs Prvsnl
     hclose PINCA
     dly DT
-    mvs PilaS(pila)
+    mvs Pila(pil)
     return
 
 *POSAPALE
     mov Pale(tipusP(peca))
-    Prvsnl = PaleBase(tipusP(peca))
-    Prvsnl = Prvsnl.z + alloc!(tipusP(peca)) * HDISC
+    Prvsnl = Pale(tipusP(peca))
+    Prvsnl = Prvsnl.z - ZS + alloc!(tipusP(peca)) * HDISC
     mvs Prvsnl
     hopen PINCA
     dly DT
@@ -178,13 +198,13 @@ end
 
 *AGAFPALE
     mov PaleOut(tipusP(peca))
-    Prvsnl = PaleBase(tipusP(peca))
-    Prvsnl.z = Prvsnl.z + alloc!(tipusP(peca)) * HDISC
+    Prvsnl = PaleOut(tipusP(peca))
+    Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP(peca)) * HDISC
     mvs Prvsnl
     hclose PINCA
     dly DT
-    mvs PaleBase(tipusP(peca))
     mvs PaleOut(tipusP(peca))
+    alloc!(tipusP(peca)) = alloc!(tipusP(peca)) - 1
     return
 
 *POSADEST

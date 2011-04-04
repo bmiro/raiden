@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="MELFA Basic IV" version="0.01" kateversion="2.3" section="Sources" extensions="*.mb4;*.MB4;" mimetype="text/x-freebasic" author="Bartomeu Miró Mateu (bartomeumiro@gmail.com)" license="GPL">
+  <highlighting>
+    <list name="preproc">
+    
+      <item> #DEFINE </item>
+      <item> #ELSE </item>
+      <item> #ELSEIF </item>
+      <item> #ENDIF </item>
+      <item> #IF </item>
+      <item> #IFDEF </item>
+      <item> #IFNDEF </item>
+      <item> #UNDEF </item>
+      <item> $DYNAMIC </item>
+      <item> $INCLIB </item>
+      <item> $INCLUDE </item>
+      <item> $STATIC </item>
+    
+    </list>
+    
+    <list name="keywords">
+      <item> Declare </item>
+      
+      <item> Open </item>
+      
+      <item> For </item>
+      
+      <item> For Input </item>
+      <item> For Output </item>
+      <item> For Binary </item>
+      <item> For Random </item>
+      <item> Close </item>
+      
+      <item> To </item>
+      <item> Step </item>
+      <item> Next </item>
+      <item> As </item>
+      <item> Break </item>
+      <item> Exit </item>
+      <item> If </item>
+      <item> Then </item>
+      <item> Else </item>
+      <item> Endif </item>
+      <item> Until </item>
+      <item> Select </item>
+      <item> System </item>
+      <item> Case </item>
+      <item> Default </item>
+      <item> EndSelect </item>
+      <item> Do </item>
+      <item> Loop </item>
+      <item> While </item>
+      <item> Wend </item>
+      <item> End </item>
+      <item> Type </item>
+      <item> DefType </item>
+      <item> Def </item>
+      <item> Dim </item>
+      <item> Global </item>
+      <item> Function </item>
+      <item> Sub </item>
+      <item> Shared </item>
+      <item> Protected </item>
+      <item> Static </item>
+      <item> Declare </item>
+
+      <item> Unsigned </item>
+      
+      <item> Data </item>
+      <item> Restore </item>
+      <item> Read </item>
+
+
+      <item> Goto </item>
+      <item> Gosub </item>
+      <item> Return </item>
+      
+      <item> DEFBYTE </item>
+      <item> DEFDBL </item>
+      <item> DEFINT </item>
+      <item> DEFLNG </item>
+      <item> DEFSHORT </item>
+      <item> DEFSNG </item>
+      <item> DEFSTR </item>
+      <item> DEFUBYTE </item>
+      <item> DEFUINT </item>
+      <item> DEFUSHORT </item>
+      
+      
+      
+      
+    </list>
+    
+    <list name="Assembly Operators">
+      <item> AH </item>
+      <item> AL </item>
+      <item> AX </item>
+      <item> BH </item>
+      <item> BL </item>
+      <item> BP </item>
+      <item> BX </item>
+      <item> CH </item>
+      <item> CL </item>
+      <item> CS </item>
+      <item> CX </item>
+      <item> DH </item>
+      <item> DI </item>
+      <item> DL </item>
+      <item> DS </item>
+      <item> DX </item>
+      <item> EAX </item>
+      <item> EBP </item>
+      <item> EBX </item>
+      <item> ECX </item>
+      <item> EDI </item>
+      <item> EDX </item>
+      <item> ES </item>
+      <item> ESI </item>
+      <item> ESP </item>
+      <item> FS </item>
+      <item> GS </item>
+      <item> SI </item>
+      <item> SP </item>
+      <item> SS </item>
+    </list>
+    
+    <list name="Data Types">  
+      <item> Inte </item>
+      <item> Long </item>
+      <item> Float </item>
+      <item> Double </item>
+      <item> String </item>
+      <item> Byte PTR </item>
+      <item> Dword PTR </item>
+      <item> Qword PTR </item>
+      <item> Word PTR </item>
+    </list>
+        
+    <list name="functions">
+      <item> mov </item>
+      <item> mvs </item>
+    </list>
+
+    <contexts>
+      <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(exit (function|sub|for|do|while|type|select))([\s]|$)" insensitive="true" />
+        <RegExpr attribute="Keyword" context="#stay" String="\b(declare (function|sub))([\s]|$)" insensitive="true" />
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(while)([\s]|$)" insensitive="true" beginRegion="WhileRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(wend)([\s]|$)" insensitive="true" endRegion="WhileRegion"/>
+        
+        <RegExpr attribute="Keyword" context="#stay" String="\b(do)([\s]|$)" insensitive="true" beginRegion="DoRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(loop)([\s]|$)" insensitive="true" endRegion="DoRegion"/>
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(select)([\s]|$)" insensitive="true" beginRegion="SelectRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(end select)([\s]|$)" insensitive="true" endRegion="SelectRegion"/>
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(for (input|output|binary|random))([\s]|$)" insensitive="true" />
+                
+        <RegExpr attribute="Keyword" context="#stay" String="\b(for)([\s]|$)" insensitive="true" beginRegion="ForRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(next)([\s]|$)" insensitive="true" endRegion="ForRegion"/>
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(function)([.\s]|$)" insensitive="true" beginRegion="fProcedureRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(end function)([\s]|$)" insensitive="true" endRegion="fProcedureRegion"/>
+        
+        <RegExpr attribute="Keyword" context="#stay" String="\b(sub)([.\s]|$)" insensitive="true" beginRegion="sProcedureRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(end sub)([\s]|$)" insensitive="true" endRegion="sProcedureRegion"/>
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(type)([\s]|$)" insensitive="true" beginRegion="StructureRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(end type)([\s]|$)" insensitive="true" endRegion="StructureRegion"/>
+
+        <RegExpr attribute="Keyword" context="#stay" String="\b(if)([\s]|$)" insensitive="true" beginRegion="IfRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(then )[a-zA-Z_\x7f-\xff]." insensitive="true" endRegion="IfRegion"/>
+        <RegExpr attribute="Keyword" context="#stay" String="\b(end if)([\s]|$)" insensitive="true" endRegion="IfRegion"/>
+
+
+        <keyword attribute="Keyword" context="#stay" String="keywords"/>
+        <keyword attribute="Data Types" context="#stay" String="Data Types"/>
+        <keyword attribute="preproc" context="#stay" lineEndContext="#pop" String="Preprocessor"/>
+         
+        <keyword attribute="Functions" context="#stay" String="functions"/>
+        <RegExpr attribute="Constant" context="#stay" String="\#+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*"/>
+        <Float attribute="Number" context="#stay"/>
+        <Int attribute="Number" context="#stay"/>
+        <DetectChar attribute="String" context="String" char="&quot;" />
+        <RegExpr attribute="Region Marker" context="#stay" String="^\s*;+\s*BEGIN.*$" beginRegion="marker"/>
+        <RegExpr attribute="Region Marker" context="#stay" String="^\s*;+\s*END.*$" endRegion="marker"/>
+        <DetectChar attribute="Comment" context="Comment1" char="'"/>
+      </context>
+      <context attribute="String" lineEndContext="#pop" name="String">
+        <DetectChar attribute="String" context="#pop" char="&quot;"/>
+      </context>
+      <context attribute="Comment" lineEndContext="#pop" name="Comment1">
+        <keyword attribute="Number" context="#stay" String="attention" />
+      </context>
+    </contexts>
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal"/>
+      <itemData name="Keyword" defStyleNum="dsKeyword"/>
+      <itemData name="Functions" defStyleNum="dsFunction"/>
+      <itemData name="Data Types" defStyleNum="dsDataType"/>
+      <itemData name="Constant" defStyleNum="dsConstant"/>
+      <itemData name="Number" defStyleNum="dsDecVal"/>
+      <itemData name="String" defStyleNum="dsString"/>
+      <itemData name="Comment" defStyleNum="dsComment"/>
+      <itemData name="Region Marker " defStyleNum="dsRegionMarker"/>
+      <itemData name="Preprocessor" defStyleNum="dsPreProc"/>
+    </itemDatas>
+  </highlighting>
+  <general>
+    <keywords casesensitive="0" />
+    <comments>
+      <comment name="singleLine" start="'" />
+      <comment name="remark" start="REM " />
+    </comments>
+  </general>
+</language>
+<!-- // kate: space-indent on; indent-width 2; replace-tabs on; -->
