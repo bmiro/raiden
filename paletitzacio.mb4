@@ -1,31 +1,43 @@
 ''''''''''''''''''''''''Capçalera requerida a l'enunciat'''''''''''''''''''''''
+def INTE GROC
+GROC = 1
+def INTE BLANC
+BLANC = 2
+def INTE BLAU
+BLAU = 3 
+def INTE VERMELL
+VERMELL = 4
+
 def INTE N 'veure variable pcsPila de la seccio de declaracions propies
 N = 2
 dim tipusP!(4) 'veure la variable TP de la seccio de declaracions propies
-tipusP(1) = 2
-tipusP(2) = 3
-tipusP(3) = 4
-tipusP(4) = 1
+tipusP!(1) = GLANC
+tipusP!(2) = BLAU
+tipusP!(3) = GROC
+tipusP!(4) = VERMELL
 
 'coordenades x i y del punt P respecte la camera
-def DOUBLE oPx, oPy
+def FLOAT oPx, oPy
 'angle de rotació del palé respecte la camera
-def DOUBLE angle
+def FLOAT angle
 'coordenades x i y de l’origen del sistema de la camera
-def DOUBLE cPx, cPy
+def FLOAT cPx, cPy
 
 ''''''''''''''''''''''''     Macros pròpies     ''''''''''''''''''''''''
 def INTE PINCA
 PINCA = 1
 
 def FLOAT ZS 'Pla Z on es desplaça el robot per sobre de la terra _real_
-ZS = 280 + 6.5
+ZS = 280.0 + 6.5
 
 def INTE TP 'tipus de pença diferents
 TP = 4
 
 def INTE PILES 'Numero de pilaes inicials on hi ha les peces
 PILES = 2
+
+def INTE PCSPILA 'numero de peces de cada pila
+PCSPILA = N
 
 def INTE PALS 'Numero de pals
 PALS = 3
@@ -52,18 +64,20 @@ DYPALS  = 0.0
 def FLOAT DZPAL   'Dinstancia Z per entrar dins el pal
 DZPAL  = 35.0
 
-dim RELPALE (4)(2) '4 = TP, posicions relatives al centre per fer el palé (x, y)
-dim RELPALE (1)(1) =  5.5 'Primer quadrant
-dim RELPALE (1)(2) =  5.5
-dim RELPALE (2)(1) = -5.5 'Segon quadrant
-dim RELPALE (2)(2) =  5.5
-dim RELPALE (3)(1) = -5.5 'Tercer quadrant
-dim RELPALE (3)(2) = -5.5
-dim RELPALE (4)(1) =  5.5 'Quart quadrant
-dim RELPALE (4)(2) = -5.5 
+dim RELPALE# (4,2) '4 = TP, posicions relatives al centre per fer el palé (x, y)
+RELPALE# (1,1) =  55.0 'Primer quadrant
+RELPALE# (1,2) =  55.0
+RELPALE# (2,1) = -55.0 'Segon quadrant
+RELPALE# (2,2) =  55.0
+RELPALE# (3,1) = -55.0 'Tercer quadrant
+RELPALE# (3,2) = -55.0
+RELPALE# (4,1) =  55.0 'Quart quadrant
+RELPALE# (4,2) = -55.0 
 
 ''''''''''''''''''''''''     Declaracions pròpies     ''''''''''''''''''''''''
 dim npcsPila!(2) '2 = PILES
+ncpcsPila(1) = N
+ncpcsPila(2) = N
 
 dim alloc!(4) '4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
 
@@ -75,7 +89,7 @@ dim Pila(2) '2 = PILES posicio segura sobre la pila
 dim PalI(3) ' 3 = PALS
 dim PalF(3) ' 3 = PALS
 
-def INTE pil, munt, peca, tipus 'iteradors
+def INTE i, pil, pal, munt, peca, pecapila, tipus 'iteradors
 
 def FLOAT ppx, ppy 'punt pale  ' emprats com a paramentres per el pals de 
 def FLOAT prx, pry 'punt robot ' coorenades del pale al robot
@@ -94,25 +108,33 @@ end
     ovrd 10
     mov Paralisi
     hopen PINCA
+    
+    i = 1
+    while (i < TP + 1)
+        alloc!(i) = 0
+        i = i + 1
+    wend
+       
     return
 
 *CALCPTS
-    pil = 1
     Pila(1) = Pila00
-    while (pila <= PILES)
-        Pila(pil).x = Pila(1).x + DXPILES * (pil-1)
-        Pila(pil).y = Pila(1).y + DYPILES * (pil-1) 'es 0
+    pil = 2
+    while (pil < PILES + 1)
+        Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
+        Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
         pil = pil + 1
     wend
     
-    while (tipus <= TP)
-        ppx = RELPALE(tipus)(1) 'paramentres de entrada de CAM2ROB
-        ppy = RELPALE(tipus)(2)
-        gosub CAM2ROB           'prx i pry son parametres de sortida
+    tipus = 1
+    while (tipus < TP + 1)
+        ppx = RELPALE#(tipus)(1) 'paramentres de entrada de CAM2ROB
+        ppy = RELPALE#(tipus)(2)
+        gosub *CAM2ROB           'prx i pry son parametres de sortida
         Pale(tipus) = Pale00    'Escriu altres components i orientacions
         Pale(tipus).x = prx
         Pale(tipus).y = pry
-        if (tipus <= TP/2) then 'Sols dos pals accesibles agafant des de damunt
+        if (tipus < TP/2 + 1) then 'Sols dos pals accesibles agafant des de damunt
             PaleOut(tipus) = Pale00
         else
             PaleOut(tipus) = PalePT 'Pinça tombada
@@ -124,7 +146,7 @@ end
       
     pal = 1
     PalI(1) = Pal00
-    while (pal <= PALS)
+    while (pal < PALS + 1)
         PalI(pal).x = PalI(1).x + DXPALS * (pal-1)
         PalI(pal).y = PalI(1).y + DYPALS * (pal-1)
         PalF(pal) = PalI(pal)
@@ -147,9 +169,9 @@ end
 *MNTPALE
     pil = 1
     peca = 1
-    while (pil <= PILES)
+    while (pil < PILES + 1)
         pecapila = 1
-        while (pecapila <= PCS_PILA)
+        while (pecapila < PCS_PILA + 1)
             gosub *AGAFPILA
             gosub *POSAPALE
             pecapila = pecapila + 1
@@ -161,9 +183,9 @@ end
     
 *DESPALE
     tipus = 1
-    while (tipus <= TP)
+    while (tipus < TP + 1)
         peca = 1
-        while (peca <= alloc!(tipus))
+        while (peca < alloc!(tipus) + 1)
             gosub *AGAFPALE
             gosub *POSADEST
             peca = peca + 1
@@ -183,25 +205,25 @@ end
     return
 
 *POSAPALE
-    mov Pale(tipusP(peca))
-    Prvsnl = Pale(tipusP(peca))
-    Prvsnl = Prvsnl.z - ZS + alloc!(tipusP(peca)) * HDISC
+    mov Pale(tipusP!(peca))
+    Prvsnl = Pale(tipusP!(peca))
+    Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP!(peca)) * HDISC
     mvs Prvsnl
     hopen PINCA
     dly DT
-    mvs Pale(tipusP(peca))
-    alloc!(tipusP(peca)) = alloc!(tipusP(peca)) + 1
+    mvs Pale(tipusP!(peca))
+    alloc!(tipusP!(peca)) = alloc!(tipusP!(peca)) + 1
     return
 
 *AGAFPALE
-    mov PaleOut(tipusP(peca))
-    Prvsnl = PaleOut(tipusP(peca))
-    Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP(peca)) * HDISC
+    mov PaleOut(tipusP!(peca))
+    Prvsnl = PaleOut(tipusP!(peca))
+    Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP!(peca)) * HDISC
     mvs Prvsnl
     hclose PINCA
     dly DT
-    mvs PaleOut(tipusP(peca))
-    alloc!(tipusP(peca)) = alloc!(tipusP(peca)) - 1
+    mvs PaleOut(tipusP!(peca))
+    alloc!(tipusP!(peca)) = alloc!(tipusP!(peca)) - 1
     return
 
 *POSADEST
@@ -213,5 +235,7 @@ end
        mvs PalI(tipus)
     else
        mov Paralisi
+       hopen PINCA
+       dly DT
     endif
     return

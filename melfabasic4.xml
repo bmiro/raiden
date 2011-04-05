@@ -98,8 +98,8 @@
       <item> Float </item>
       <item> Double </item>
       <item> Char </item>
-      <item> Jnt</item>
-      <item> Pos</item>
+      <item> Jnt </item>
+      <item> Pos </item>
     </list>
         
     <list name="functions">
