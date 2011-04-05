@@ -140,6 +140,8 @@ end
     return
 
 *CAM2ROB
+    prx = ppx*sin(angle) + ppy*cos(angle) + oPy + cPx
+    pry = ppx*cos(angle) + ppy*sin(angle) + oPx + cPy
     return
 
 *MNTPALE
