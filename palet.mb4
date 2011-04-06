@@ -109,7 +109,7 @@ end
     servo ON
     ovrd 10
     mov Paralisi
-    hopen PINCA
+    gosub *OPINCA
     i = 1
     while (i < TP + 1)
         alloc!(i) = 0
@@ -165,6 +165,18 @@ end
     prx = ppx*sin(angle) + ppy*cos(angle) + oPy + cPx
     pry = ppx*cos(angle) - ppy*sin(angle) + oPx + cPy
     return
+    
+*OPINCA
+    dly DOPINCAI
+    hopen PINCA
+    dly DOPINCAF
+    return
+
+*TPINCA
+    dly DTPINCAI
+    hclose PINCA
+    dly DTPINCAF
+    return
 
 *MNTPALE
     pil = 1
@@ -199,8 +211,7 @@ end
     Prvsnl = Pila(pil)
     Prvsnl.z = Prvsnl.z - ZS + (npcspila!(pil) - pecapila) * HDISC
     mvs Prvsnl
-    hclose PINCA
-    dly DT
+    gosub *TPINCA
     mvs Pila(pil)
     return
 
@@ -209,8 +220,7 @@ end
     Prvsnl = Pale(tipusP!(peca))
     Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP!(peca)) * HDISC
     mvs Prvsnl
-    hopen PINCA
-    dly DT
+    gosub *OPINCA
     mvs Pale(tipusP!(peca))
     alloc!(tipusP!(peca)) = alloc!(tipusP!(peca)) + 1
     return
@@ -220,8 +230,7 @@ end
     Prvsnl = PaleOut(munt)
     Prvsnl.z = Prvsnl.z - ZS + alloc!(munt) * HDISC
     mvs Prvsnl
-    hclose PINCA
-    dly DT
+    gosub *TPINCA
     mvs PaleOut(munt)
     alloc!(munt) = alloc!(munt) - 1
     return
@@ -230,12 +239,10 @@ end
     if (tipus < TP) then
        mov PalI(tipus)
        mvs PalF(tipus)
-       hopen PINCA
-       dly DT
+       gosub *OPINCA
        mvs PalI(tipus)
     else
        mov Paralisi
-       hopen PINCA
-       dly DT
+       gosub *OPINCA
     endif
     return
