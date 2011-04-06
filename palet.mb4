@@ -1,11 +1,8 @@
 ''''''''''''''''''''''''Capçalera requerida a l'enunciat'''''''''''''''''''''''
-def INTE GROC
+def INTE GROC, BLANC, BLAU, VERMELL 
 GROC = 1
-def INTE BLANC
 BLANC = 2
-def INTE BLAU
 BLAU = 3 
-def INTE VERMELL
 VERMELL = 4
 
 def INTE N 'veure variable pcsPila de la seccio de declaracions propies
@@ -18,10 +15,15 @@ tipusP!(4) = VERMELL
 
 'coordenades x i y del punt P respecte la camera
 def FLOAT oPx, oPy
+oPx = 100.0
+oPy = 530.0
 'angle de rotació del palé respecte la camera
 def FLOAT angle
+angle = 0.0
 'coordenades x i y de l’origen del sistema de la camera
 def FLOAT cPx, cPy
+cPx = 0.0
+cPy = 0.0
 
 ''''''''''''''''''''''''     Macros pròpies     ''''''''''''''''''''''''
 def INTE PINCA
@@ -108,18 +110,16 @@ end
     ovrd 10
     mov Paralisi
     hopen PINCA
-    
     i = 1
     while (i < TP + 1)
         alloc!(i) = 0
         i = i + 1
     wend
-       
     return
 
 *CALCPTS
     Pila(1) = Pila00
-    pil = 2
+    pil = 1
     while (pil < PILES + 1)
         Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
         Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
@@ -128,8 +128,8 @@ end
     
     tipus = 1
     while (tipus < TP + 1)
-        ppx = RELPALE#(tipus)(1) 'paramentres de entrada de CAM2ROB
-        ppy = RELPALE#(tipus)(2)
+        ppx = RELPALE#(tipus, 1) 'paramentres de entrada de CAM2ROB
+        ppy = RELPALE#(tipus, 2)
         gosub *CAM2ROB           'prx i pry son parametres de sortida
         Pale(tipus) = Pale00    'Escriu altres components i orientacions
         Pale(tipus).x = prx
@@ -163,7 +163,7 @@ end
 
 *CAM2ROB
     prx = ppx*sin(angle) + ppy*cos(angle) + oPy + cPx
-    pry = ppx*cos(angle) + ppy*sin(angle) + oPx + cPy
+    pry = ppx*cos(angle) - ppy*sin(angle) + oPx + cPy
     return
 
 *MNTPALE
@@ -171,7 +171,7 @@ end
     peca = 1
     while (pil < PILES + 1)
         pecapila = 1
-        while (pecapila < PCS_PILA + 1)
+        while (pecapila < PCSPILA + 1)
             gosub *AGAFPILA
             gosub *POSAPALE
             pecapila = pecapila + 1
