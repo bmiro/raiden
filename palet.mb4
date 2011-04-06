@@ -8,7 +8,7 @@ VERMELL = 4
 def INTE N 'veure variable pcsPila de la seccio de declaracions propies
 N = 2
 dim tipusP!(4) 'veure la variable TP de la seccio de declaracions propies
-tipusP!(1) = GLANC
+tipusP!(1) = BLANC
 tipusP!(2) = BLAU
 tipusP!(3) = GROC
 tipusP!(4) = VERMELL
@@ -78,8 +78,8 @@ RELPALE# (4,2) = -55.0
 
 ''''''''''''''''''''''''     Declaracions pròpies     ''''''''''''''''''''''''
 dim npcsPila!(2) '2 = PILES
-ncpcsPila(1) = N
-ncpcsPila(2) = N
+npcsPila!(1) = N
+npcsPila!(2) = N
 
 dim alloc!(4) '4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
 
@@ -182,10 +182,10 @@ end
     return
     
 *DESPALE
-    tipus = 1
-    while (tipus < TP + 1)
+    munt = 1
+    while (munt < TP + 1)
         peca = 1
-        while (peca < alloc!(tipus) + 1)
+        while (peca < alloc!(munt) + 1)
             gosub *AGAFPALE
             gosub *POSADEST
             peca = peca + 1
@@ -216,14 +216,14 @@ end
     return
 
 *AGAFPALE
-    mov PaleOut(tipusP!(peca))
-    Prvsnl = PaleOut(tipusP!(peca))
-    Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP!(peca)) * HDISC
+    mov PaleOut(munt)
+    Prvsnl = PaleOut(munt)
+    Prvsnl.z = Prvsnl.z - ZS + alloc!(munt) * HDISC
     mvs Prvsnl
     hclose PINCA
     dly DT
-    mvs PaleOut(tipusP!(peca))
-    alloc!(tipusP!(peca)) = alloc!(tipusP!(peca)) - 1
+    mvs PaleOut(munt)
+    alloc!(munt) = alloc!(munt) - 1
     return
 
 *POSADEST
