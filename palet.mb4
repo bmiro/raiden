@@ -29,6 +29,12 @@ cPy = 0.0
 def INTE PINCA
 PINCA = 1
 
+def FLOAT OPINCAI, OPINCAF, TPINCAI, TPINCAF 'emps abans i despres per obrir/tancar pinça
+OPINCAI = 1.0 'Es important estar ben estatic el deixar
+OPINCAF = 0.5
+TPINCAI = 0.5
+TPINCAF = 0.5
+
 def FLOAT ZS 'Pla Z on es desplaça el robot per sobre de la terra _real_
 ZS = 280.0 + 6.5
 
