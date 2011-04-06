@@ -8,10 +8,10 @@ VERMELL = 4
 def INTE N 'veure variable pcsPila de la seccio de declaracions propies
 N = 2
 dim tipusP!(4) 'veure la variable TP de la seccio de declaracions propies
-tipusP!(1) = BLANC
-tipusP!(2) = BLAU
-tipusP!(3) = GROC
-tipusP!(4) = VERMELL
+tipusP(1) = BLANC
+tipusP(2) = BLAU
+tipusP(3) = GROC
+tipusP(4) = VERMELL
 
 'coordenades x i y del punt P respecte la camera
 def FLOAT oPx, oPy
@@ -73,19 +73,19 @@ def FLOAT DZPAL   'Dinstancia Z per entrar dins el pal
 DZPAL  = 35.0
 
 dim RELPALE# (4,2) '4 = TP, posicions relatives al centre per fer el palé (x, y)
-RELPALE# (1,1) =  55.0 'Primer quadrant
-RELPALE# (1,2) =  55.0
-RELPALE# (2,1) = -55.0 'Segon quadrant
-RELPALE# (2,2) =  55.0
-RELPALE# (3,1) = -55.0 'Tercer quadrant
-RELPALE# (3,2) = -55.0
-RELPALE# (4,1) =  55.0 'Quart quadrant
-RELPALE# (4,2) = -55.0 
+RELPALE (1,1) =  55.0 'Primer quadrant
+RELPALE (1,2) =  55.0
+RELPALE (2,1) = -55.0 'Segon quadrant
+RELPALE (2,2) =  55.0
+RELPALE (3,1) = -55.0 'Tercer quadrant
+RELPALE (3,2) = -55.0
+RELPALE (4,1) =  55.0 'Quart quadrant
+RELPALE (4,2) = -55.0 
 
 ''''''''''''''''''''''''     Declaracions pròpies     ''''''''''''''''''''''''
 dim npcsPila!(2) '2 = PILES
-npcsPila!(1) = N
-npcsPila!(2) = N
+npcsPila(1) = N
+npcsPila(2) = N
 
 dim alloc!(4) '4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
 
@@ -118,15 +118,15 @@ end
     gosub *OPINCA
     i = 1
     while (i < TP + 1)
-        alloc!(i) = 0
+        alloc(i) = 0
         i = i + 1
     wend
     return
 
 *CALCPTS
-    Pila(1) = Pila00
     pil = 1
     while (pil < PILES + 1)
+        Pila(pil) = Pila00
         Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
         Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
         pil = pil + 1
@@ -134,8 +134,8 @@ end
     
     tipus = 1
     while (tipus < TP + 1)
-        ppx = RELPALE#(tipus, 1) 'paramentres de entrada de CAM2ROB
-        ppy = RELPALE#(tipus, 2)
+        ppx = RELPALE(tipus, 1) 'paramentres de entrada de CAM2ROB
+        ppy = RELPALE(tipus, 2)
         gosub *CAM2ROB           'prx i pry son parametres de sortida
         Pale(tipus) = Pale00    'Escriu altres components i orientacions
         Pale(tipus).x = prx
@@ -203,7 +203,7 @@ end
     munt = 1
     while (munt < TP + 1)
         peca = 1
-        while (peca < alloc!(munt) + 1)
+        while (peca < alloc(munt) + 1)
             gosub *AGAFPALE
             gosub *POSADEST
             peca = peca + 1
@@ -222,23 +222,23 @@ end
     return
 
 *POSAPALE
-    mov Pale(tipusP!(peca))
-    Prvsnl = Pale(tipusP!(peca))
-    Prvsnl.z = Prvsnl.z - ZS + alloc!(tipusP!(peca)) * HDISC
+    mov Pale(tipusP(peca))
+    Prvsnl = Pale(tipusP(peca))
+    Prvsnl.z = Prvsnl.z - ZS + alloc(tipusP(peca)) * HDISC
     mvs Prvsnl
     gosub *OPINCA
-    mvs Pale(tipusP!(peca))
-    alloc!(tipusP!(peca)) = alloc!(tipusP!(peca)) + 1
+    mvs Pale(tipusP(peca))
+    alloc(tipusP(peca)) = alloc(tipusP(peca)) + 1
     return
 
 *AGAFPALE
     mov PaleOut(munt)
     Prvsnl = PaleOut(munt)
-    Prvsnl.z = Prvsnl.z - ZS + alloc!(munt) * HDISC
+    Prvsnl.z = Prvsnl.z - ZS + alloc(munt) * HDISC
     mvs Prvsnl
     gosub *TPINCA
     mvs PaleOut(munt)
-    alloc!(munt) = alloc!(munt) - 1
+    alloc(munt) = alloc(munt) - 1
     return
 
 *POSADEST
