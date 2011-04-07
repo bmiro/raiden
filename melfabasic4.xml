@@ -87,9 +87,16 @@
       <item> DEFUINT </item>
       <item> DEFUSHORT </item>
       
-      
-      
-      
+      <item> and </item>
+      <item> or </item>
+      <item> not </item>
+
+      <item> Static </item>
+      <item> Declare </item>
+      <item> Static </item>
+      <item> Declare </item>
+      <item> Static </item>
+      <item> Declare </item>      
     </list>
     
     <list name="Data Types">  
