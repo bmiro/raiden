@@ -30,7 +30,7 @@ def INTE PINCA
 PINCA = 1
 
 def FLOAT DPALE 'Delay despres de haver munta tel pale
-DPALE 4.0
+DPALE = 4.0
 
 def FLOAT DOPINCAI, DOPINCAF, DTPINCAI, DTPINCAF 'emps abans i despres per obrir/tancar pinça
 DOPINCAI = 1.0 'Es important estar ben estatic el deixar
@@ -106,8 +106,8 @@ def POS Prvsnl 'Punt Provisional per calcul
 dim Pale(4) '4 = TP, posicio segura sobra la columna d'on s'ha de posar la peça
 dim PaleOut(4)
 dim Pila(2) '2 = PILES posicio segura sobre la pila
-dim PalI(4) ' 3 = PALS
-dim PalF(4) ' 3 = PALS
+dim PalI(4) ' 4 = PALS
+dim PalF(4) ' 4 = PALS
 
 def INTE i, pil, pal, munt, peca, pecapila, tipus 'iteradors
 

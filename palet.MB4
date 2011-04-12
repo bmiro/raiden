@@ -1,0 +1,304 @@
+10 ''''''''''''''''''''''''Capçalera requerida a l'enunciat'''''''''''''''''''''''
+20 def INTE GROC, BLANC, BLAU, VERMELL 
+30 VERMELL = 1
+40 BLANC = 2
+50 GROC = 3
+60 BLAU = 4
+
+70 def INTE N 'veure variable pcsPila de la seccio de declaracions propies
+80 N = 3
+90 dim tipusP!(6) 
+100 tipusP(1) = VERMELL
+110 tipusP(2) = BLANC
+120 tipusP(3) = GROC
+130 tipusP(4) = BLAU
+140 tipusP(5) = BLAU
+150 tipusP(6) = BLANC
+
+160 'coordenades x i y del punt P respecte la camera
+170 def FLOAT oPx, oPy
+180 oPx = 0.0
+190 oPy = 430.0
+200 'angle de rotació del palé respecte la camera
+210 def FLOAT angle
+220 angle = 0.0
+230 'coordenades x i y de l’origen del sistema de la camera
+240 def FLOAT cPx, cPy
+250 cPx = 0.0
+260 cPy = 0.0
+
+270 ''''''''''''''''''''''''     Macros pròpies     ''''''''''''''''''''''''
+280 def INTE PINCA
+290 PINCA = 1
+
+300 def FLOAT DPALE 'Delay despres de haver munta tel pale
+310 DPALE = 4.0
+
+320 def FLOAT DOPINCAI, DOPINCAF, DTPINCAI, DTPINCAF 'emps abans i despres per obrir/tancar pinça
+330 DOPINCAI = 1.0 'Es important estar ben estatic el deixar
+340 DOPINCAF = 0.5
+350 DTPINCAI = 0.5
+360 DTPINCAF = 0.5
+
+370 def INTE VLENT, VNORMAL
+380 VLENT = 10
+390 VNORMAL = 30
+
+400 def FLOAT ZS, ZTPT, ZTPR 'Pla Z on es desplaça el robot per sobre de la terra _real_
+410 ZS = 280.0
+420 ZTPT = ZS - 10.0 ' Pla de terra amb pinça tombada
+430 ZTPR = ZS + 6.5  ' Pla de terra amb pinça recta
+
+
+440 def INTE TP 'tipus de pença diferents
+450 TP = 4
+
+460 def INTE PILES 'Numero de pilaes inicials on hi ha les peces
+470 PILES = 2
+
+480 def INTE PCSPILA 'numero de peces de cada pila
+490 PCSPILA = N
+
+500 def INTE PALS 'Numero de pals
+510 PALS = 4
+
+520 def FLOAT DT 'Diferencial de temps per la pinça
+530 DT = 0.5
+
+540 def FLOAT HDISC 'Altura dels discs
+550 HDISC = 15.0
+
+560 'TODO documentar cap on intrementen les x i tot l'entorn, premises de colocacio etc.
+570 def FLOAT DXPILES 'Distancia X entre les pilaes
+580 DXPILES = 100.0
+590 def FLOAT DYPILES 'Distancia Y entre les pilaes
+600 DYPILES = 0.0
+610 def FLOAT DXPALE  'Distancia X entre els punts del pale
+620 DXPALE  = 110.0
+630 def FLOAT DYPALE  'Distancia Y entre els punts del pale
+640 DYPALE = 110.0
+650 def FLOAT DXPALS  'Distancia X entre els pals
+660 DXPALS  = 79.0
+670 def FLOAT DYPALS  'Distancia Y entre els pals
+680 DYPALS  = 0.0
+690 def FLOAT DZPAL   'Distancia Z per entrar dins el pal
+700 DZPAL  = 45.0
+
+710 dim RELPALE# (4,2) '4 = TP, posicions relatives al centre per fer el palé (x, y)
+720 RELPALE (1,1) = -55.0 
+730 RELPALE (1,2) =  55.0
+740 RELPALE (2,1) =  55.0 
+750 RELPALE (2,2) =  55.0
+760 RELPALE (3,1) =  55.0 
+770 RELPALE (3,2) = -55.0
+780 RELPALE (4,1) = -55.0 
+790 RELPALE (4,2) = -55.0 
+
+800 ''''''''''''''''''''''''     Declaracions pròpies     ''''''''''''''''''''''''
+810 dim npcsPila!(2) '2 = PILES
+820 npcsPila(1) = N
+830 npcsPila(2) = N
+
+840 dim ordre!(4) '4 = TP Ordre de recollida de les peces
+
+850 dim alloc!(4) '4 = TP Tantes posicions com tipus de peça, les peces que ja estan a lloc
+
+860 def POS Prvsnl 'Punt Provisional per calcul
+
+870 dim Pale(4) '4 = TP, posicio segura sobra la columna d'on s'ha de posar la peça
+880 dim PaleOut(4)
+890 dim Pila(2) '2 = PILES posicio segura sobre la pila
+900 dim PalI(4) ' 4 = PALS
+910 dim PalF(4) ' 4 = PALS
+
+920 def INTE i, pil, pal, munt, peca, pecapila, tipus 'iteradors
+
+930 def FLOAT ppx, ppy 'punt pale  ' emprats com a paramentres per el pals de 
+940 def FLOAT prx, pry 'punt robot ' coorenades del pale al robot
+
+950 ''''''''''''''''''''''''''''''''''   MAIN   '''''''''''''''''''''''''''''''''''
+960 gosub *INIT
+970 gosub *CALCPTS
+980 gosub *MNTPALE
+990 dly DPALE
+1000 gosub *DESPALE
+1010 gosub *ACABA
+1020 end
+
+1030 ''''''''''''''''''''''''''''''''    RUTINES   '''''''''''''''''''''''''''''''''
+1040 *INIT
+1050    servo ON
+1060    ovrd VNORMAL
+1070    mov Paralisi
+1080    gosub *OPINCA
+1090    for i = 1 to TP
+1100        alloc(i) = 0
+1110    next
+1120    return
+
+1130 *CALCPTS
+1140    for pil = 1 to PILES
+1150        Pila(pil) = Pila0
+1160        Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
+1170        Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
+1180    next
+    
+1200    for tipus = 1 to TP
+1210        ppx = RELPALE(tipus, 1) 'paramentres de entrada de CAM2ROB
+1220        ppy = RELPALE(tipus, 2)
+1230        gosub *CAM2ROB           'prx i pry son parametres de sortida
+1240        Pale(tipus) = Pale0    'Escriu altres components i orientacions
+1250        Pale(tipus).x = prx
+1260        Pale(tipus).y = pry
+1270        PaleOut(tipus) = PaleOut0
+1280        PaleOut(tipus).x = prx + 5.0
+1290        PaleOut(tipus).y = pry -20.0
+1300    next
+ 
+1320 	angle = angle mod 360.0    
+1330    select angle
+1340    case 0.0 to 45.0 
+1350        ordre(1) = 2
+1360        ordre(2) = 1
+1370        ordre(3) = 3
+1380        ordre(4) = 4
+1390    case 45.0 to 90.0 
+1400        ordre(1) = 2
+1410        ordre(2) = 3
+1420        ordre(3) = 1
+1430        ordre(4) = 4
+1440    case 90.0 to 135.0
+1450        ordre(1) = 3
+1460        ordre(2) = 2
+1470        ordre(3) = 4
+1480        ordre(4) = 1
+1490    case 135.0 to 180.0
+1500        ordre(1) = 3
+1510        ordre(2) = 4
+1520        ordre(3) = 2
+1530        ordre(4) = 1
+1540    case 180.0 to 225.0 
+1550        ordre(1) = 4
+1560        ordre(2) = 3
+1570        ordre(3) = 1
+1580        ordre(4) = 2
+1590    case 225.0 to 270.0 
+1600        ordre(1) = 4
+1610        ordre(2) = 1
+1620        ordre(3) = 3
+1630        ordre(4) = 2
+1640    case 270.0 to 315.0 
+1650        ordre(1) = 1
+1660        ordre(2) = 4
+1670        ordre(3) = 2
+1680        ordre(4) = 3
+1690    default ' 315.0 > angle < 360.0
+1700        ordre(1) = 1
+1710        ordre(2) = 2
+1720        ordre(3) = 4
+1730        ordre(4) = 3
+1740    end select
+    
+1760    for pal = 1 to PALS
+1770        PalI(pal) = Pal0
+1780        PalI(pal).x = PalI(pal).x + DXPALS * (pal - 1)
+1790        PalI(pal).y = PalI(pal).y + DYPALS * (pal - 1)
+1800        PalF(pal) = PalI(pal)
+1810        PalF(pal).z = PalF(pal).z - DZPAL
+1820    next
+1830    return
+
+1840 *ACABA
+1850    mov Paralisi
+1860    hopen PINCA
+1870    servo OFF
+1880    return
+
+1890 *CAM2ROB
+1900    prx = ppx*sin(angle) + ppy*cos(angle) + oPy + cPx
+1910    pry = ppx*cos(angle) - ppy*sin(angle) + oPx + cPy
+1920    return
+    
+1940 *OPINCA
+1950    dly DOPINCAI
+1960    hopen PINCA
+1970    dly DOPINCAF
+1980    return
+
+1990 *TPINCA
+2000    dly DTPINCAI
+2010    hclose PINCA
+2020    dly DTPINCAF
+2030    return
+
+2040 *MNTPALE
+2050    peca = 1
+2060    for pil = 1 to PILES 
+2070        for pecapila = 1 to PCSPILA
+2080            gosub *AGAFPILA
+2090            gosub *POSAPALE
+2100            peca = peca + 1
+2110        next
+2120    next
+2130    return
+    
+2150 *DESPALE
+2160    for tipus = 1 to TP
+2170        munt = ordre(tipus)
+2180        peca = 1
+2190        while peca <= alloc(munt) + 1
+2200            gosub *AGAFPALE
+2210            gosub *POSADEST
+2220            peca = peca + 1
+2230        wend
+2240    next
+2250    return
+
+2260 *AGAFPILA
+2270    mov Pila(pil)
+2280    Prvsnl = Pila(pil)
+2290    Prvsnl.z = Prvsnl.z - ZTPR + (npcspila!(pil) - pecapila) * HDISC
+2300    ovrd VLENT
+2310    mvs Prvsnl
+2320    gosub *TPINCA
+2330    mvs Pila(pil)
+2340    ovrd VNORMAL
+2350    return
+
+2360 *POSAPALE
+2370    mov Pale(tipusP(peca))
+2380    Prvsnl = Pale(tipusP(peca))
+2390    Prvsnl.z = Prvsnl.z - ZTPR + alloc(tipusP(peca)) * HDISC
+2400    ovrd VLENT
+2410    mvs Prvsnl
+2420    gosub *OPINCA
+2430    mvs Pale(tipusP(peca))
+2440    ovrd VNORMAL
+2450    alloc(tipusP(peca)) = alloc(tipusP(peca)) + 1
+2460    return
+
+2470 *AGAFPALE
+2480    mov PaleOut(munt)
+2490    Prvsnl = PaleOut(munt)
+2500    Prvsnl.z = Prvsnl.z - ZTPT + (alloc(munt) - 1) * HDISC
+2510    ovrd VLENT
+2520    mvs Prvsnl
+2530    gosub *TPINCA
+2540    mvs PaleOut(munt)
+2550    ovrd VNORMAL
+2560    alloc(munt) = alloc(munt) - 1
+2570    return
+
+2580 *POSADEST
+2590    if (tipus <= TP) then 'Agafam les 3 primeres
+2600       mov PalI(munt)
+2610       ovrd VLENT
+2620       mvs PalF(munt)
+2630       gosub *OPINCA
+2640       mvs PalI(munt)
+2650       ovrd VNORMAL
+2660    else
+2670       mov Paralisi
+2680       gosub *OPINCA
+2690    endif
+2700    return
