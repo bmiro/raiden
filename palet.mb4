@@ -58,7 +58,7 @@ def INTE PCSPILA 'numero de peces de cada pila
 PCSPILA = N
 
 def INTE PALS 'Numero de pals
-PALS = 3
+PALS = 4
 
 def FLOAT DT 'Diferencial de temps per la pinça
 DT = 0.5
@@ -129,19 +129,19 @@ end
     ovrd VNORMAL
     mov Paralisi
     gosub *OPINCA
-    for i = 1 to TP + 1
+    for i = 1 to TP
         alloc(i) = 0
     next
     return
 
 *CALCPTS
-    for pil = 1 to PILES + 1
+    for pil = 1 to PILES
         Pila(pil) = Pila0
         Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
         Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
     next
     
-    for tipus = 1 to TP + 1 
+    for tipus = 1 to TP
         ppx = RELPALE(tipus, 1) 'paramentres de entrada de CAM2ROB
         ppy = RELPALE(tipus, 2)
         gosub *CAM2ROB           'prx i pry son parametres de sortida
@@ -149,8 +149,8 @@ end
         Pale(tipus).x = prx
         Pale(tipus).y = pry
         PaleOut(tipus) = PaleOut0
-        PaleOut(tipus).x = prx
-        PaleOut(tipus).y = pry
+        PaleOut(tipus).x = prx + 5.0
+        PaleOut(tipus).y = pry -20.0
     next
     
     select angle
@@ -222,9 +222,11 @@ end
 *DESPALE
     for tipus = 1 to TP
         munt = ordre(tipus)
+        peca = 1
         while peca <= alloc(munt)
             gosub *AGAFPALE
             gosub *POSADEST
+            peca = peca + 1
         wend
     next
     return
@@ -265,7 +267,7 @@ end
     return
 
 *POSADEST
-    if (tipus < TP) then 'Agafam les 3 primeres
+    if (tipus <= TP) then 'Agafam les 3 primeres
        mov PalI(munt)
        ovrd VLENT
        mvs PalF(munt)
