@@ -153,609 +153,6 @@
 		(color_area : (rgb : 255, 255, 255))
 		(color_edge : (rgb : 128, 128, 128))
 	)
-	(object : "IOMonitor"
-		(object_type : "IOMonitorType")
-		(moveframe : 
-			    1.0000000000,     0.0000000000,     0.0000000000,     0.0000000000, 
-			    0.0000000000,     1.0000000000,     0.0000000000,     0.0000000000, 
-			    0.0000000000,     0.0000000000,     1.0000000000,  -500.0000000000, 
-			    0.0000000000,     0.0000000000,     0.0000000000,     1.0000000000
-		)
-		(section : "Basis"
-			(sectionframe : "identity")
-			(hull : face
-				(hullframe : identity)
-				(xlength :   1.000000)
-				(ylength :   1.000000)
-				(display_mode : INVISIBLE)
-				(color_area : BLACK)
-				(color_edge : BLACK)
-			)
-			(limits :   0.000000,   0.000000)
-			(vmax :   0.000000)
-			(amax :   0.000000)
-		)
-		(vmax_path :   0.000000)
-		(amax_path :   0.000000)
-		(io_configuration : 
-			(io_id : d_i_s_0
-				(io_name : "CtrlCardIn0")
-			)
-			(io_id : d_i_s_1
-				(io_name : "CtrlCardIn1")
-			)
-			(io_id : d_i_s_2
-				(io_name : "CtrlCardIn2")
-			)
-			(io_id : d_i_s_3
-				(io_name : "CtrlCardIn3")
-			)
-			(io_id : d_i_s_4
-				(io_name : "CtrlCardIn4")
-			)
-			(io_id : d_i_s_5
-				(io_name : "CtrlCardIn5")
-			)
-			(io_id : d_i_s_6
-				(io_name : "CtrlCardIn6")
-			)
-			(io_id : d_i_s_7
-				(io_name : "CtrlCardIn7")
-			)
-			(io_id : d_i_s_8
-				(io_name : "CtrlCardIn8")
-			)
-			(io_id : d_i_s_9
-				(io_name : "CtrlCardIn9")
-			)
-			(io_id : d_i_s_10
-				(io_name : "CtrlCardIn10")
-			)
-			(io_id : d_i_s_11
-				(io_name : "CtrlCardIn11")
-			)
-			(io_id : d_i_s_12
-				(io_name : "CtrlCardIn12")
-			)
-			(io_id : d_i_s_13
-				(io_name : "CtrlCardIn13")
-			)
-			(io_id : d_i_s_14
-				(io_name : "CtrlCardIn14")
-			)
-			(io_id : d_i_s_15
-				(io_name : "CtrlCardIn15")
-			)
-			(io_id : d_i_s_16
-				(io_name : "CtrlCardIn16")
-			)
-			(io_id : d_i_s_17
-				(io_name : "CtrlCardIn17")
-			)
-			(io_id : d_i_s_18
-				(io_name : "CtrlCardIn18")
-			)
-			(io_id : d_i_s_19
-				(io_name : "CtrlCardIn19")
-			)
-			(io_id : d_i_s_20
-				(io_name : "CtrlCardOut0")
-			)
-			(io_id : d_i_s_21
-				(io_name : "CtrlCardOut1")
-			)
-			(io_id : d_i_s_22
-				(io_name : "CtrlCardOut2")
-			)
-			(io_id : d_i_s_23
-				(io_name : "CtrlCardOut3")
-			)
-			(io_id : d_i_s_24
-				(io_name : "CtrlCardOut4")
-			)
-			(io_id : d_i_s_25
-				(io_name : "CtrlCardOut5")
-			)
-			(io_id : d_i_s_26
-				(io_name : "CtrlCardOut6")
-			)
-			(io_id : d_i_s_27
-				(io_name : "CtrlCardOut7")
-			)
-			(io_id : d_i_s_28
-				(io_name : "CtrlCardOut8")
-			)
-			(io_id : d_i_s_29
-				(io_name : "CtrlCardOut9")
-			)
-			(io_id : d_i_s_30
-				(io_name : "CtrlCardOut10")
-			)
-			(io_id : d_i_s_31
-				(io_name : "CtrlCardOut11")
-			)
-			(io_id : d_i_s_32
-				(io_name : "CtrlCardOut12")
-			)
-			(io_id : d_i_s_33
-				(io_name : "CtrlCardOut13")
-			)
-			(io_id : d_i_s_34
-				(io_name : "CtrlCardOut14")
-			)
-			(io_id : d_i_s_35
-				(io_name : "CtrlCardOut15")
-			)
-			(io_id : d_i_s_36
-				(io_name : "CtrlCard1Exists")
-			)
-			(io_id : d_i_s_37
-				(io_name : "CtrlCard2Exists")
-			)
-			(io_id : d_i_s_38
-				(io_name : "CtrlCard3Exists")
-			)
-			(io_id : d_i_s_39
-				(io_name : "CtrlCard4Exists")
-			)
-			(io_id : d_i_s_40
-				(io_name : "CtrlCard5Exists")
-			)
-			(io_id : d_i_s_41
-				(io_name : "CtrlCard6Exists")
-			)
-			(io_id : d_i_s_42
-				(io_name : "CtrlCard7Exists")
-			)
-			(io_id : d_i_s_43
-				(io_name : "CtrlCard8Exists")
-			)
-			(io_id : d_i_s_44
-				(io_name : "IOMonitorIsActive")
-			)
-			(io_id : d_i_s_45
-				(io_name : "CtrlCardSetOut0")
-			)
-			(io_id : d_i_s_46
-				(io_name : "CtrlCardSetOut1")
-			)
-			(io_id : d_i_s_47
-				(io_name : "CtrlCardSetOut2")
-			)
-			(io_id : d_i_s_48
-				(io_name : "CtrlCardSetOut3")
-			)
-			(io_id : d_i_s_49
-				(io_name : "CtrlCardSetOut4")
-			)
-			(io_id : d_i_s_50
-				(io_name : "CtrlCardSetOut5")
-			)
-			(io_id : d_i_s_51
-				(io_name : "CtrlCardSetOut6")
-			)
-			(io_id : d_i_s_52
-				(io_name : "CtrlCardSetOut7")
-			)
-			(io_id : d_i_s_53
-				(io_name : "CtrlCardSetOut8")
-			)
-			(io_id : d_i_s_54
-				(io_name : "CtrlCardSetOut9")
-			)
-			(io_id : d_i_s_55
-				(io_name : "CtrlCardSetOut10")
-			)
-			(io_id : d_i_s_56
-				(io_name : "CtrlCardSetOut11")
-			)
-			(io_id : d_i_s_57
-				(io_name : "CtrlCardSetOut12")
-			)
-			(io_id : d_i_s_58
-				(io_name : "CtrlCardSetOut13")
-			)
-			(io_id : d_i_s_59
-				(io_name : "CtrlCardSetOut14")
-			)
-			(io_id : d_i_s_60
-				(io_name : "CtrlCardSetOut15")
-			)
-			(io_id : d_i_s_61
-				(io_name : "PollingIsActive")
-			)
-			(io_id : d_i_s_62
-				(io_name : "CtrlCardOutIsDed0")
-			)
-			(io_id : d_i_s_63
-				(io_name : "CtrlCardOutIsDed1")
-			)
-			(io_id : d_i_s_64
-				(io_name : "CtrlCardOutIsDed2")
-			)
-			(io_id : d_i_s_65
-				(io_name : "CtrlCardOutIsDed3")
-			)
-			(io_id : d_i_s_66
-				(io_name : "CtrlCardOutIsDed4")
-			)
-			(io_id : d_i_s_67
-				(io_name : "CtrlCardOutIsDed5")
-			)
-			(io_id : d_i_s_68
-				(io_name : "CtrlCardOutIsDed6")
-			)
-			(io_id : d_i_s_69
-				(io_name : "CtrlCardOutIsDed7")
-			)
-			(io_id : d_i_s_70
-				(io_name : "CtrlCardOutIsDed8")
-			)
-			(io_id : d_i_s_71
-				(io_name : "CtrlCardOutIsDed9")
-			)
-			(io_id : d_i_s_72
-				(io_name : "CtrlCardOutIsDed10")
-			)
-			(io_id : d_i_s_73
-				(io_name : "CtrlCardOutIsDed11")
-			)
-			(io_id : d_i_s_74
-				(io_name : "CtrlCardOutIsDed12")
-			)
-			(io_id : d_i_s_75
-				(io_name : "CtrlCardOutIsDed13")
-			)
-			(io_id : d_i_s_76
-				(io_name : "CtrlCardOutIsDed14")
-			)
-			(io_id : d_i_s_77
-				(io_name : "CtrlCardOutIsDed15")
-			)
-			(io_id : d_i_s_78
-				(io_name : "CtrlCardIs16To31")
-			)
-			(io_id : a_i_s_0
-				(io_name : "CtrlCardIsActive")
-			)
-			(io_id : a_i_s_1
-				(io_name : "IOMonitorState")
-			)
-			(io_id : d_o_s_0
-				(io_name : "CtrlCardOut0")
-			)
-			(io_id : d_o_s_1
-				(io_name : "CtrlCardOut1")
-			)
-			(io_id : d_o_s_2
-				(io_name : "CtrlCardOut2")
-			)
-			(io_id : d_o_s_3
-				(io_name : "CtrlCardOut3")
-			)
-			(io_id : d_o_s_4
-				(io_name : "CtrlCardOut4")
-			)
-			(io_id : d_o_s_5
-				(io_name : "CtrlCardOut5")
-			)
-			(io_id : d_o_s_6
-				(io_name : "CtrlCardOut6")
-			)
-			(io_id : d_o_s_7
-				(io_name : "CtrlCardOut7")
-			)
-			(io_id : d_o_s_8
-				(io_name : "CtrlCardOut8")
-			)
-			(io_id : d_o_s_9
-				(io_name : "CtrlCardOut9")
-			)
-			(io_id : d_o_s_10
-				(io_name : "CtrlCardOut10")
-			)
-			(io_id : d_o_s_11
-				(io_name : "CtrlCardOut11")
-			)
-			(io_id : d_o_s_12
-				(io_name : "CtrlCardOut12")
-			)
-			(io_id : d_o_s_13
-				(io_name : "CtrlCardOut13")
-			)
-			(io_id : d_o_s_14
-				(io_name : "CtrlCardOut14")
-			)
-			(io_id : d_o_s_15
-				(io_name : "CtrlCardOut15")
-			)
-			(io_id : d_o_s_16
-				(io_name : "IOMonitorIsActive")
-			)
-			(io_id : d_o_s_17
-				(io_name : "CtrlCardSet16To31")
-			)
-			(io_id : a_o_s_0
-				(io_name : "CtrlCardSetActive")
-			)
-		)
-	)
-	(object : "IFObject"
-		(object_type : "IFObjectType")
-		(moveframe : 
-			    1.0000000000,     0.0000000000,     0.0000000000,     0.0000000000, 
-			    0.0000000000,     1.0000000000,     0.0000000000,     0.0000000000, 
-			    0.0000000000,     0.0000000000,     1.0000000000,  -500.0000000000, 
-			    0.0000000000,     0.0000000000,     0.0000000000,     1.0000000000
-		)
-		(section : "Basis"
-			(sectionframe : "identity")
-			(hull : face
-				(hullframe : identity)
-				(xlength :   1.000000)
-				(ylength :   1.000000)
-				(display_mode : INVISIBLE)
-				(color_area : BLACK)
-				(color_edge : BLACK)
-			)
-			(limits :   0.000000,   0.000000)
-			(vmax :   0.000000)
-			(amax :   0.000000)
-		)
-		(vmax_path :   0.000000)
-		(amax_path :   0.000000)
-		(io_configuration : 
-			(io_id : d_i_s_0
-				(io_name : "CtrlCardOut0")
-			)
-			(io_id : d_i_s_1
-				(io_name : "CtrlCardOut1")
-			)
-			(io_id : d_i_s_2
-				(io_name : "CtrlCardOut2")
-			)
-			(io_id : d_i_s_3
-				(io_name : "CtrlCardOut3")
-			)
-			(io_id : d_i_s_4
-				(io_name : "CtrlCardOut4")
-			)
-			(io_id : d_i_s_5
-				(io_name : "CtrlCardOut5")
-			)
-			(io_id : d_i_s_6
-				(io_name : "CtrlCardOut6")
-			)
-			(io_id : d_i_s_7
-				(io_name : "CtrlCardOut7")
-			)
-			(io_id : d_i_s_8
-				(io_name : "CtrlCardOut8")
-			)
-			(io_id : d_i_s_9
-				(io_name : "CtrlCardOut9")
-			)
-			(io_id : d_i_s_10
-				(io_name : "CtrlCardOut10")
-			)
-			(io_id : d_i_s_11
-				(io_name : "CtrlCardOut11")
-			)
-			(io_id : d_i_s_12
-				(io_name : "CtrlCardOut12")
-			)
-			(io_id : d_i_s_13
-				(io_name : "CtrlCardOut13")
-			)
-			(io_id : d_i_s_14
-				(io_name : "CtrlCardOut14")
-			)
-			(io_id : d_i_s_15
-				(io_name : "CtrlCardOut15")
-			)
-			(io_id : d_i_s_16
-				(io_name : "IOMonitorIsActive")
-			)
-			(io_id : d_i_s_17
-				(io_name : "CtrlCardSet16To31")
-			)
-			(io_id : a_i_s_0
-				(io_name : "CtrlCardSetActive")
-			)
-			(io_id : d_o_s_0
-				(io_name : "CtrlCardIn0")
-			)
-			(io_id : d_o_s_1
-				(io_name : "CtrlCardIn1")
-			)
-			(io_id : d_o_s_2
-				(io_name : "CtrlCardIn2")
-			)
-			(io_id : d_o_s_3
-				(io_name : "CtrlCardIn3")
-			)
-			(io_id : d_o_s_4
-				(io_name : "CtrlCardIn4")
-			)
-			(io_id : d_o_s_5
-				(io_name : "CtrlCardIn5")
-			)
-			(io_id : d_o_s_6
-				(io_name : "CtrlCardIn6")
-			)
-			(io_id : d_o_s_7
-				(io_name : "CtrlCardIn7")
-			)
-			(io_id : d_o_s_8
-				(io_name : "CtrlCardIn8")
-			)
-			(io_id : d_o_s_9
-				(io_name : "CtrlCardIn9")
-			)
-			(io_id : d_o_s_10
-				(io_name : "CtrlCardIn10")
-			)
-			(io_id : d_o_s_11
-				(io_name : "CtrlCardIn11")
-			)
-			(io_id : d_o_s_12
-				(io_name : "CtrlCardIn12")
-			)
-			(io_id : d_o_s_13
-				(io_name : "CtrlCardIn13")
-			)
-			(io_id : d_o_s_14
-				(io_name : "CtrlCardIn14")
-			)
-			(io_id : d_o_s_15
-				(io_name : "CtrlCardIn15")
-			)
-			(io_id : d_o_s_16
-				(io_name : "CtrlCardIn16")
-			)
-			(io_id : d_o_s_17
-				(io_name : "CtrlCardIn17")
-			)
-			(io_id : d_o_s_18
-				(io_name : "CtrlCardIn18")
-			)
-			(io_id : d_o_s_19
-				(io_name : "CtrlCardIn19")
-			)
-			(io_id : d_o_s_20
-				(io_name : "CtrlCardOut0")
-			)
-			(io_id : d_o_s_21
-				(io_name : "CtrlCardOut1")
-			)
-			(io_id : d_o_s_22
-				(io_name : "CtrlCardOut2")
-			)
-			(io_id : d_o_s_23
-				(io_name : "CtrlCardOut3")
-			)
-			(io_id : d_o_s_24
-				(io_name : "CtrlCardOut4")
-			)
-			(io_id : d_o_s_25
-				(io_name : "CtrlCardOut5")
-			)
-			(io_id : d_o_s_26
-				(io_name : "CtrlCardOut6")
-			)
-			(io_id : d_o_s_27
-				(io_name : "CtrlCardOut7")
-			)
-			(io_id : d_o_s_28
-				(io_name : "CtrlCardOut8")
-			)
-			(io_id : d_o_s_29
-				(io_name : "CtrlCardOut9")
-			)
-			(io_id : d_o_s_30
-				(io_name : "CtrlCardOut10")
-			)
-			(io_id : d_o_s_31
-				(io_name : "CtrlCardOut11")
-			)
-			(io_id : d_o_s_32
-				(io_name : "CtrlCardOut12")
-			)
-			(io_id : d_o_s_33
-				(io_name : "CtrlCardOut13")
-			)
-			(io_id : d_o_s_34
-				(io_name : "CtrlCardOut14")
-			)
-			(io_id : d_o_s_35
-				(io_name : "CtrlCardOut15")
-			)
-			(io_id : d_o_s_36
-				(io_name : "CtrlCard1Exists")
-			)
-			(io_id : d_o_s_37
-				(io_name : "CtrlCard2Exists")
-			)
-			(io_id : d_o_s_38
-				(io_name : "CtrlCard3Exists")
-			)
-			(io_id : d_o_s_39
-				(io_name : "CtrlCard4Exists")
-			)
-			(io_id : d_o_s_40
-				(io_name : "CtrlCard5Exists")
-			)
-			(io_id : d_o_s_41
-				(io_name : "CtrlCard6Exists")
-			)
-			(io_id : d_o_s_42
-				(io_name : "CtrlCard7Exists")
-			)
-			(io_id : d_o_s_43
-				(io_name : "CtrlCard8Exists")
-			)
-			(io_id : d_o_s_44
-				(io_name : "PollingIsActive")
-			)
-			(io_id : d_o_s_45
-				(io_name : "CtrlCardOutIsDed0")
-			)
-			(io_id : d_o_s_46
-				(io_name : "CtrlCardOutIsDed1")
-			)
-			(io_id : d_o_s_47
-				(io_name : "CtrlCardOutIsDed2")
-			)
-			(io_id : d_o_s_48
-				(io_name : "CtrlCardOutIsDed3")
-			)
-			(io_id : d_o_s_49
-				(io_name : "CtrlCardOutIsDed4")
-			)
-			(io_id : d_o_s_50
-				(io_name : "CtrlCardOutIsDed5")
-			)
-			(io_id : d_o_s_51
-				(io_name : "CtrlCardOutIsDed6")
-			)
-			(io_id : d_o_s_52
-				(io_name : "CtrlCardOutIsDed7")
-			)
-			(io_id : d_o_s_53
-				(io_name : "CtrlCardOutIsDed8")
-			)
-			(io_id : d_o_s_54
-				(io_name : "CtrlCardOutIsDed9")
-			)
-			(io_id : d_o_s_55
-				(io_name : "CtrlCardOutIsDed10")
-			)
-			(io_id : d_o_s_56
-				(io_name : "CtrlCardOutIsDed11")
-			)
-			(io_id : d_o_s_57
-				(io_name : "CtrlCardOutIsDed12")
-			)
-			(io_id : d_o_s_58
-				(io_name : "CtrlCardOutIsDed13")
-			)
-			(io_id : d_o_s_59
-				(io_name : "CtrlCardOutIsDed14")
-			)
-			(io_id : d_o_s_60
-				(io_name : "CtrlCardOutIsDed15")
-			)
-			(io_id : d_o_s_61
-				(io_name : "CtrlCardIs16To31")
-			)
-			(io_id : a_o_s_0
-				(io_name : "CtrlCardIsActive")
-			)
-			(io_id : a_o_s_1
-				(io_name : "IOMonitorState")
-			)
-		)
-	)
 	(object : "RV-6S"
 		(object_type : "KIN_AUTO")
 		(moveframe : 
@@ -36201,6 +35598,609 @@
 			(limits :   0.000000,   0.000000)
 			(vmax :   0.000000)
 			(amax :   0.000000)
+		)
+	)
+	(object : "IOMonitor"
+		(object_type : "IOMonitorType")
+		(moveframe : 
+			    1.0000000000,     0.0000000000,     0.0000000000,     0.0000000000, 
+			    0.0000000000,     1.0000000000,     0.0000000000,     0.0000000000, 
+			    0.0000000000,     0.0000000000,     1.0000000000,  -500.0000000000, 
+			    0.0000000000,     0.0000000000,     0.0000000000,     1.0000000000
+		)
+		(section : "Basis"
+			(sectionframe : "identity")
+			(hull : face
+				(hullframe : identity)
+				(xlength :   1.000000)
+				(ylength :   1.000000)
+				(display_mode : INVISIBLE)
+				(color_area : BLACK)
+				(color_edge : BLACK)
+			)
+			(limits :   0.000000,   0.000000)
+			(vmax :   0.000000)
+			(amax :   0.000000)
+		)
+		(vmax_path :   0.000000)
+		(amax_path :   0.000000)
+		(io_configuration : 
+			(io_id : d_i_s_0
+				(io_name : "CtrlCardIn0")
+			)
+			(io_id : d_i_s_1
+				(io_name : "CtrlCardIn1")
+			)
+			(io_id : d_i_s_2
+				(io_name : "CtrlCardIn2")
+			)
+			(io_id : d_i_s_3
+				(io_name : "CtrlCardIn3")
+			)
+			(io_id : d_i_s_4
+				(io_name : "CtrlCardIn4")
+			)
+			(io_id : d_i_s_5
+				(io_name : "CtrlCardIn5")
+			)
+			(io_id : d_i_s_6
+				(io_name : "CtrlCardIn6")
+			)
+			(io_id : d_i_s_7
+				(io_name : "CtrlCardIn7")
+			)
+			(io_id : d_i_s_8
+				(io_name : "CtrlCardIn8")
+			)
+			(io_id : d_i_s_9
+				(io_name : "CtrlCardIn9")
+			)
+			(io_id : d_i_s_10
+				(io_name : "CtrlCardIn10")
+			)
+			(io_id : d_i_s_11
+				(io_name : "CtrlCardIn11")
+			)
+			(io_id : d_i_s_12
+				(io_name : "CtrlCardIn12")
+			)
+			(io_id : d_i_s_13
+				(io_name : "CtrlCardIn13")
+			)
+			(io_id : d_i_s_14
+				(io_name : "CtrlCardIn14")
+			)
+			(io_id : d_i_s_15
+				(io_name : "CtrlCardIn15")
+			)
+			(io_id : d_i_s_16
+				(io_name : "CtrlCardIn16")
+			)
+			(io_id : d_i_s_17
+				(io_name : "CtrlCardIn17")
+			)
+			(io_id : d_i_s_18
+				(io_name : "CtrlCardIn18")
+			)
+			(io_id : d_i_s_19
+				(io_name : "CtrlCardIn19")
+			)
+			(io_id : d_i_s_20
+				(io_name : "CtrlCardOut0")
+			)
+			(io_id : d_i_s_21
+				(io_name : "CtrlCardOut1")
+			)
+			(io_id : d_i_s_22
+				(io_name : "CtrlCardOut2")
+			)
+			(io_id : d_i_s_23
+				(io_name : "CtrlCardOut3")
+			)
+			(io_id : d_i_s_24
+				(io_name : "CtrlCardOut4")
+			)
+			(io_id : d_i_s_25
+				(io_name : "CtrlCardOut5")
+			)
+			(io_id : d_i_s_26
+				(io_name : "CtrlCardOut6")
+			)
+			(io_id : d_i_s_27
+				(io_name : "CtrlCardOut7")
+			)
+			(io_id : d_i_s_28
+				(io_name : "CtrlCardOut8")
+			)
+			(io_id : d_i_s_29
+				(io_name : "CtrlCardOut9")
+			)
+			(io_id : d_i_s_30
+				(io_name : "CtrlCardOut10")
+			)
+			(io_id : d_i_s_31
+				(io_name : "CtrlCardOut11")
+			)
+			(io_id : d_i_s_32
+				(io_name : "CtrlCardOut12")
+			)
+			(io_id : d_i_s_33
+				(io_name : "CtrlCardOut13")
+			)
+			(io_id : d_i_s_34
+				(io_name : "CtrlCardOut14")
+			)
+			(io_id : d_i_s_35
+				(io_name : "CtrlCardOut15")
+			)
+			(io_id : d_i_s_36
+				(io_name : "CtrlCard1Exists")
+			)
+			(io_id : d_i_s_37
+				(io_name : "CtrlCard2Exists")
+			)
+			(io_id : d_i_s_38
+				(io_name : "CtrlCard3Exists")
+			)
+			(io_id : d_i_s_39
+				(io_name : "CtrlCard4Exists")
+			)
+			(io_id : d_i_s_40
+				(io_name : "CtrlCard5Exists")
+			)
+			(io_id : d_i_s_41
+				(io_name : "CtrlCard6Exists")
+			)
+			(io_id : d_i_s_42
+				(io_name : "CtrlCard7Exists")
+			)
+			(io_id : d_i_s_43
+				(io_name : "CtrlCard8Exists")
+			)
+			(io_id : d_i_s_44
+				(io_name : "IOMonitorIsActive")
+			)
+			(io_id : d_i_s_45
+				(io_name : "CtrlCardSetOut0")
+			)
+			(io_id : d_i_s_46
+				(io_name : "CtrlCardSetOut1")
+			)
+			(io_id : d_i_s_47
+				(io_name : "CtrlCardSetOut2")
+			)
+			(io_id : d_i_s_48
+				(io_name : "CtrlCardSetOut3")
+			)
+			(io_id : d_i_s_49
+				(io_name : "CtrlCardSetOut4")
+			)
+			(io_id : d_i_s_50
+				(io_name : "CtrlCardSetOut5")
+			)
+			(io_id : d_i_s_51
+				(io_name : "CtrlCardSetOut6")
+			)
+			(io_id : d_i_s_52
+				(io_name : "CtrlCardSetOut7")
+			)
+			(io_id : d_i_s_53
+				(io_name : "CtrlCardSetOut8")
+			)
+			(io_id : d_i_s_54
+				(io_name : "CtrlCardSetOut9")
+			)
+			(io_id : d_i_s_55
+				(io_name : "CtrlCardSetOut10")
+			)
+			(io_id : d_i_s_56
+				(io_name : "CtrlCardSetOut11")
+			)
+			(io_id : d_i_s_57
+				(io_name : "CtrlCardSetOut12")
+			)
+			(io_id : d_i_s_58
+				(io_name : "CtrlCardSetOut13")
+			)
+			(io_id : d_i_s_59
+				(io_name : "CtrlCardSetOut14")
+			)
+			(io_id : d_i_s_60
+				(io_name : "CtrlCardSetOut15")
+			)
+			(io_id : d_i_s_61
+				(io_name : "PollingIsActive")
+			)
+			(io_id : d_i_s_62
+				(io_name : "CtrlCardOutIsDed0")
+			)
+			(io_id : d_i_s_63
+				(io_name : "CtrlCardOutIsDed1")
+			)
+			(io_id : d_i_s_64
+				(io_name : "CtrlCardOutIsDed2")
+			)
+			(io_id : d_i_s_65
+				(io_name : "CtrlCardOutIsDed3")
+			)
+			(io_id : d_i_s_66
+				(io_name : "CtrlCardOutIsDed4")
+			)
+			(io_id : d_i_s_67
+				(io_name : "CtrlCardOutIsDed5")
+			)
+			(io_id : d_i_s_68
+				(io_name : "CtrlCardOutIsDed6")
+			)
+			(io_id : d_i_s_69
+				(io_name : "CtrlCardOutIsDed7")
+			)
+			(io_id : d_i_s_70
+				(io_name : "CtrlCardOutIsDed8")
+			)
+			(io_id : d_i_s_71
+				(io_name : "CtrlCardOutIsDed9")
+			)
+			(io_id : d_i_s_72
+				(io_name : "CtrlCardOutIsDed10")
+			)
+			(io_id : d_i_s_73
+				(io_name : "CtrlCardOutIsDed11")
+			)
+			(io_id : d_i_s_74
+				(io_name : "CtrlCardOutIsDed12")
+			)
+			(io_id : d_i_s_75
+				(io_name : "CtrlCardOutIsDed13")
+			)
+			(io_id : d_i_s_76
+				(io_name : "CtrlCardOutIsDed14")
+			)
+			(io_id : d_i_s_77
+				(io_name : "CtrlCardOutIsDed15")
+			)
+			(io_id : d_i_s_78
+				(io_name : "CtrlCardIs16To31")
+			)
+			(io_id : a_i_s_0
+				(io_name : "CtrlCardIsActive")
+			)
+			(io_id : a_i_s_1
+				(io_name : "IOMonitorState")
+			)
+			(io_id : d_o_s_0
+				(io_name : "CtrlCardOut0")
+			)
+			(io_id : d_o_s_1
+				(io_name : "CtrlCardOut1")
+			)
+			(io_id : d_o_s_2
+				(io_name : "CtrlCardOut2")
+			)
+			(io_id : d_o_s_3
+				(io_name : "CtrlCardOut3")
+			)
+			(io_id : d_o_s_4
+				(io_name : "CtrlCardOut4")
+			)
+			(io_id : d_o_s_5
+				(io_name : "CtrlCardOut5")
+			)
+			(io_id : d_o_s_6
+				(io_name : "CtrlCardOut6")
+			)
+			(io_id : d_o_s_7
+				(io_name : "CtrlCardOut7")
+			)
+			(io_id : d_o_s_8
+				(io_name : "CtrlCardOut8")
+			)
+			(io_id : d_o_s_9
+				(io_name : "CtrlCardOut9")
+			)
+			(io_id : d_o_s_10
+				(io_name : "CtrlCardOut10")
+			)
+			(io_id : d_o_s_11
+				(io_name : "CtrlCardOut11")
+			)
+			(io_id : d_o_s_12
+				(io_name : "CtrlCardOut12")
+			)
+			(io_id : d_o_s_13
+				(io_name : "CtrlCardOut13")
+			)
+			(io_id : d_o_s_14
+				(io_name : "CtrlCardOut14")
+			)
+			(io_id : d_o_s_15
+				(io_name : "CtrlCardOut15")
+			)
+			(io_id : d_o_s_16
+				(io_name : "IOMonitorIsActive")
+			)
+			(io_id : d_o_s_17
+				(io_name : "CtrlCardSet16To31")
+			)
+			(io_id : a_o_s_0
+				(io_name : "CtrlCardSetActive")
+			)
+		)
+	)
+	(object : "IFObject"
+		(object_type : "IFObjectType")
+		(moveframe : 
+			    1.0000000000,     0.0000000000,     0.0000000000,     0.0000000000, 
+			    0.0000000000,     1.0000000000,     0.0000000000,     0.0000000000, 
+			    0.0000000000,     0.0000000000,     1.0000000000,  -500.0000000000, 
+			    0.0000000000,     0.0000000000,     0.0000000000,     1.0000000000
+		)
+		(section : "Basis"
+			(sectionframe : "identity")
+			(hull : face
+				(hullframe : identity)
+				(xlength :   1.000000)
+				(ylength :   1.000000)
+				(display_mode : INVISIBLE)
+				(color_area : BLACK)
+				(color_edge : BLACK)
+			)
+			(limits :   0.000000,   0.000000)
+			(vmax :   0.000000)
+			(amax :   0.000000)
+		)
+		(vmax_path :   0.000000)
+		(amax_path :   0.000000)
+		(io_configuration : 
+			(io_id : d_i_s_0
+				(io_name : "CtrlCardOut0")
+			)
+			(io_id : d_i_s_1
+				(io_name : "CtrlCardOut1")
+			)
+			(io_id : d_i_s_2
+				(io_name : "CtrlCardOut2")
+			)
+			(io_id : d_i_s_3
+				(io_name : "CtrlCardOut3")
+			)
+			(io_id : d_i_s_4
+				(io_name : "CtrlCardOut4")
+			)
+			(io_id : d_i_s_5
+				(io_name : "CtrlCardOut5")
+			)
+			(io_id : d_i_s_6
+				(io_name : "CtrlCardOut6")
+			)
+			(io_id : d_i_s_7
+				(io_name : "CtrlCardOut7")
+			)
+			(io_id : d_i_s_8
+				(io_name : "CtrlCardOut8")
+			)
+			(io_id : d_i_s_9
+				(io_name : "CtrlCardOut9")
+			)
+			(io_id : d_i_s_10
+				(io_name : "CtrlCardOut10")
+			)
+			(io_id : d_i_s_11
+				(io_name : "CtrlCardOut11")
+			)
+			(io_id : d_i_s_12
+				(io_name : "CtrlCardOut12")
+			)
+			(io_id : d_i_s_13
+				(io_name : "CtrlCardOut13")
+			)
+			(io_id : d_i_s_14
+				(io_name : "CtrlCardOut14")
+			)
+			(io_id : d_i_s_15
+				(io_name : "CtrlCardOut15")
+			)
+			(io_id : d_i_s_16
+				(io_name : "IOMonitorIsActive")
+			)
+			(io_id : d_i_s_17
+				(io_name : "CtrlCardSet16To31")
+			)
+			(io_id : a_i_s_0
+				(io_name : "CtrlCardSetActive")
+			)
+			(io_id : d_o_s_0
+				(io_name : "CtrlCardIn0")
+			)
+			(io_id : d_o_s_1
+				(io_name : "CtrlCardIn1")
+			)
+			(io_id : d_o_s_2
+				(io_name : "CtrlCardIn2")
+			)
+			(io_id : d_o_s_3
+				(io_name : "CtrlCardIn3")
+			)
+			(io_id : d_o_s_4
+				(io_name : "CtrlCardIn4")
+			)
+			(io_id : d_o_s_5
+				(io_name : "CtrlCardIn5")
+			)
+			(io_id : d_o_s_6
+				(io_name : "CtrlCardIn6")
+			)
+			(io_id : d_o_s_7
+				(io_name : "CtrlCardIn7")
+			)
+			(io_id : d_o_s_8
+				(io_name : "CtrlCardIn8")
+			)
+			(io_id : d_o_s_9
+				(io_name : "CtrlCardIn9")
+			)
+			(io_id : d_o_s_10
+				(io_name : "CtrlCardIn10")
+			)
+			(io_id : d_o_s_11
+				(io_name : "CtrlCardIn11")
+			)
+			(io_id : d_o_s_12
+				(io_name : "CtrlCardIn12")
+			)
+			(io_id : d_o_s_13
+				(io_name : "CtrlCardIn13")
+			)
+			(io_id : d_o_s_14
+				(io_name : "CtrlCardIn14")
+			)
+			(io_id : d_o_s_15
+				(io_name : "CtrlCardIn15")
+			)
+			(io_id : d_o_s_16
+				(io_name : "CtrlCardIn16")
+			)
+			(io_id : d_o_s_17
+				(io_name : "CtrlCardIn17")
+			)
+			(io_id : d_o_s_18
+				(io_name : "CtrlCardIn18")
+			)
+			(io_id : d_o_s_19
+				(io_name : "CtrlCardIn19")
+			)
+			(io_id : d_o_s_20
+				(io_name : "CtrlCardOut0")
+			)
+			(io_id : d_o_s_21
+				(io_name : "CtrlCardOut1")
+			)
+			(io_id : d_o_s_22
+				(io_name : "CtrlCardOut2")
+			)
+			(io_id : d_o_s_23
+				(io_name : "CtrlCardOut3")
+			)
+			(io_id : d_o_s_24
+				(io_name : "CtrlCardOut4")
+			)
+			(io_id : d_o_s_25
+				(io_name : "CtrlCardOut5")
+			)
+			(io_id : d_o_s_26
+				(io_name : "CtrlCardOut6")
+			)
+			(io_id : d_o_s_27
+				(io_name : "CtrlCardOut7")
+			)
+			(io_id : d_o_s_28
+				(io_name : "CtrlCardOut8")
+			)
+			(io_id : d_o_s_29
+				(io_name : "CtrlCardOut9")
+			)
+			(io_id : d_o_s_30
+				(io_name : "CtrlCardOut10")
+			)
+			(io_id : d_o_s_31
+				(io_name : "CtrlCardOut11")
+			)
+			(io_id : d_o_s_32
+				(io_name : "CtrlCardOut12")
+			)
+			(io_id : d_o_s_33
+				(io_name : "CtrlCardOut13")
+			)
+			(io_id : d_o_s_34
+				(io_name : "CtrlCardOut14")
+			)
+			(io_id : d_o_s_35
+				(io_name : "CtrlCardOut15")
+			)
+			(io_id : d_o_s_36
+				(io_name : "CtrlCard1Exists")
+			)
+			(io_id : d_o_s_37
+				(io_name : "CtrlCard2Exists")
+			)
+			(io_id : d_o_s_38
+				(io_name : "CtrlCard3Exists")
+			)
+			(io_id : d_o_s_39
+				(io_name : "CtrlCard4Exists")
+			)
+			(io_id : d_o_s_40
+				(io_name : "CtrlCard5Exists")
+			)
+			(io_id : d_o_s_41
+				(io_name : "CtrlCard6Exists")
+			)
+			(io_id : d_o_s_42
+				(io_name : "CtrlCard7Exists")
+			)
+			(io_id : d_o_s_43
+				(io_name : "CtrlCard8Exists")
+			)
+			(io_id : d_o_s_44
+				(io_name : "PollingIsActive")
+			)
+			(io_id : d_o_s_45
+				(io_name : "CtrlCardOutIsDed0")
+			)
+			(io_id : d_o_s_46
+				(io_name : "CtrlCardOutIsDed1")
+			)
+			(io_id : d_o_s_47
+				(io_name : "CtrlCardOutIsDed2")
+			)
+			(io_id : d_o_s_48
+				(io_name : "CtrlCardOutIsDed3")
+			)
+			(io_id : d_o_s_49
+				(io_name : "CtrlCardOutIsDed4")
+			)
+			(io_id : d_o_s_50
+				(io_name : "CtrlCardOutIsDed5")
+			)
+			(io_id : d_o_s_51
+				(io_name : "CtrlCardOutIsDed6")
+			)
+			(io_id : d_o_s_52
+				(io_name : "CtrlCardOutIsDed7")
+			)
+			(io_id : d_o_s_53
+				(io_name : "CtrlCardOutIsDed8")
+			)
+			(io_id : d_o_s_54
+				(io_name : "CtrlCardOutIsDed9")
+			)
+			(io_id : d_o_s_55
+				(io_name : "CtrlCardOutIsDed10")
+			)
+			(io_id : d_o_s_56
+				(io_name : "CtrlCardOutIsDed11")
+			)
+			(io_id : d_o_s_57
+				(io_name : "CtrlCardOutIsDed12")
+			)
+			(io_id : d_o_s_58
+				(io_name : "CtrlCardOutIsDed13")
+			)
+			(io_id : d_o_s_59
+				(io_name : "CtrlCardOutIsDed14")
+			)
+			(io_id : d_o_s_60
+				(io_name : "CtrlCardOutIsDed15")
+			)
+			(io_id : d_o_s_61
+				(io_name : "CtrlCardIs16To31")
+			)
+			(io_id : a_o_s_0
+				(io_name : "CtrlCardIsActive")
+			)
+			(io_id : a_o_s_1
+				(io_name : "IOMonitorState")
+			)
 		)
 	)
 )
