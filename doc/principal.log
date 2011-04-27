@@ -1,6 +1,5 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.2)  14 APR 2011 13:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.23)  27 APR 2011 11:16
 entering extended mode
- restricted \write18 enabled.
  %&-line parsing enabled.
 **principal.tex
 (./principal.tex
@@ -434,10 +433,10 @@ Class scrartcl Info: You've told me to use the font selection of the element
 
 [2] (./introduccio.tex) (./codifont.tex) [3] (./principal.aux) ) 
 Here is how much of TeX's memory you used:
- 7119 strings out of 495061
- 101934 string characters out of 1182622
- 198112 words of memory out of 3000000
- 10177 multiletter control sequences out of 15000+50000
+ 7118 strings out of 495061
+ 101926 string characters out of 1182621
+ 198121 words of memory out of 3000000
+ 10176 multiletter control sequences out of 15000+50000
  9598 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  43i,14n,43p,336b,615s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -447,7 +446,7 @@ onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on principal.pdf (3 pages, 64182 bytes).
+Output written on principal.pdf (3 pages, 64476 bytes).
 PDF statistics:
  54 PDF objects out of 1000 (max. 8388607)
  6 named destinations out of 1000 (max. 500000)
