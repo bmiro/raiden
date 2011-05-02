@@ -1,5 +1,6 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.23)  27 APR 2011 11:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.29)  2 MAY 2011 14:07
 entering extended mode
+ \write18 enabled.
  %&-line parsing enabled.
 **principal.tex
 (./principal.tex
@@ -153,6 +154,9 @@ Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \titlewidthlast=\dimen110
 \titlewidthfirst=\dimen111
 )
+(/usr/share/texmf-texlive/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip49
@@ -240,8 +244,48 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
 )
-(/usr/share/texmf-texlive/tex/latex/tools/indentfirst.sty
-Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen123
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen124
+\subfiglabelskip=\skip55
+\c@subfigure=\count104
+\c@lofdepth=\count105
+\c@subtable=\count106
+\c@lotdepth=\count107
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip56
+\subfig@bottom=\skip57
+)
+(/usr/share/texmf-texlive/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen125
+\lightrulewidth=\dimen126
+\cmidrulewidth=\dimen127
+\belowrulesep=\dimen128
+\belowbottomsep=\dimen129
+\aboverulesep=\dimen130
+\abovetopsep=\dimen131
+\cmidrulesep=\dimen132
+\cmidrulekern=\dimen133
+\defaultaddspace=\dimen134
+\@cmidla=\count108
+\@cmidlb=\count109
+\@aboverulesep=\dimen135
+\@belowrulesep=\dimen136
+\@thisruleclass=\count110
+\@lastruleclass=\count111
+\@thisrulewidth=\dimen137
+)
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen138
 )
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
@@ -264,9 +308,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen123
-\Hy@linkcounter=\count104
-\Hy@pagecounter=\count105
+\@linkdim=\dimen139
+\Hy@linkcounter=\count112
+\Hy@pagecounter=\count113
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -331,9 +375,9 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count106
-\Field@Width=\dimen124
-\Fld@charsize=\dimen125
+\Fld@menulength=\count114
+\Field@Width=\dimen140
+\Fld@charsize=\dimen141
 \Field@toks=\toks28
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
@@ -346,109 +390,311 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count107
-\c@Item=\count108
-\c@Hfootnote=\count109
+\Hy@abspage=\count115
+\c@Item=\count116
+\c@Hfootnote=\count117
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count110
+\Fld@listcount=\count118
+) (./minted.sty
+Package: minted 2010/03/16 v1.7 Yet another Pygments shim for LaTeX
+
+(/usr/share/texmf-texlive/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count119
+\FV@InFile=\read1
+\FV@TabBox=\box32
+\c@FancyVerbLine=\count120
+\FV@StepNumber=\count121
+\FV@OutFile=\write3
+) (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-\@indexfile=\write3
-\openout3 = `principal.idx'.
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count122
+\calc@Bcount=\count123
+\calc@Adimen=\dimen142
+\calc@Bdimen=\dimen143
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count124
+\calc@Cskip=\skip60
+)
+(/usr/share/texmf-texlive/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2009/09/10 v0.3a Testing for the operating system
 
+(/usr/share/texmf-texlive/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2007/11/11 v1.2 Catches the contents of a file (HO)
+)
+runsystem(uname -s > "principal.w18")...executed.
 
-Writing index file principal.idx
-(./principal.aux)
+ (./principal.w18)
+runsystem(rm -- "principal.w18")...executed.
+
+)
+\minted@bgbox=\box33
+\minted@code=\write4
+\@float@every@listing=\toks29
+\c@listing=\count125
+)
+runsystem(which pygmentize && touch principal.aex)...executed.
+
+runsystem(rm principal.aex)...executed.
+
+ (./principal.aux)
 \openout1 = `principal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
  (/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \l on input line 25.
-LaTeX Info: Redefining \L on input line 25.
+LaTeX Info: Redefining \l on input line 36.
+LaTeX Info: Redefining \L on input line 36.
 
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
-\scratchdimen=\dimen126
-\scratchbox=\box32
-\nofMPsegments=\count112
-\nofMParguments=\count113
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count114
-\MPscratchDim=\dimen127
-\MPnumerator=\count115
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count126
+\scratchdimen=\dimen144
+\scratchbox=\box34
+\nofMPsegments=\count127
+\nofMParguments=\count128
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count129
+\MPscratchDim=\dimen145
+\MPnumerator=\count130
+\everyMPtoPDFconversion=\toks31
 )
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 36.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count116
+\c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
  (./principal.out)
 (./principal.out)
-\@outlinefile=\write4
-\openout4 = `principal.out'.
+\@outlinefile=\write5
+\openout5 = `principal.out'.
 
-\AtBeginShipoutBox=\box33
- (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
+\AtBeginShipoutBox=\box35
+runsystem(pygmentize -S default -f latex > principal.pyg)...executed.
+
+ (./principal.pyg)
+(/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./principal.toc)
+\tf@toc=\write6
+\openout6 = `principal.toc'.
+
+ [2]
+(./interpretacioEnunciat.tex) (./calculs.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-[1
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+ [3])
+(./estructuraPrograma.tex [4]
+\openout3 = `principal.pyg'.
 
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./principal.toc
-Class scrartcl Info: You've told me to use the font selection of the element
-(scrartcl)           `sectioning' that is an alias of element `disposition'
-(scrartcl)            on input line 2.
-Class scrartcl Info: You've told me to use the font selection of the element
-(scrartcl)           `sectioning' that is an alias of element `disposition'
-(scrartcl)            on input line 3.
+ (./principal.out.pyg
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 )
-\tf@toc=\write5
-\openout5 = `principal.toc'.
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg
+[5])
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+ [6]
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
 
 
-[2] (./introduccio.tex) (./codifont.tex) [3] (./principal.aux) ) 
+(./principal.out.pyg [7])
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg [8])
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+
+(./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg [9])
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+
+(./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+) (./incidents.tex) (./jocProves.tex) [10]
+(./principal.aux) ) 
 Here is how much of TeX's memory you used:
- 7118 strings out of 495061
- 101926 string characters out of 1182621
- 198121 words of memory out of 3000000
- 10176 multiletter control sequences out of 15000+50000
- 9598 words of font info for 35 fonts, out of 3000000 for 9000
+ 8316 strings out of 495061
+ 120084 string characters out of 1182621
+ 226352 words of memory out of 3000000
+ 11257 multiletter control sequences out of 15000+50000
+ 12731 words of font info for 47 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 43i,14n,43p,336b,615s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on principal.pdf (3 pages, 64476 bytes).
+ 43i,14n,43p,336b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmi
+tt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+sy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on principal.pdf (10 pages, 153307 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

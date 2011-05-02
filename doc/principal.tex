@@ -2,11 +2,23 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[catalan]{babel}
 \usepackage{titlesec}
+% A ses llengües llatines, el primer paràgraf ha d'anar tabulat
+\usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage{indentfirst}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{hyperref}
+\usepackage{url}
+\usepackage{minted} %wget http://minted.googlecode.com/hg/minted.sty
+
+% Estil de seccions
+\titleformat{\section}{\large\sectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\sectfont}{\thesubsection}{1em}{}
+% Estil numeracio subseccions http://help-csli.stanford.edu/tex/latex-sections.shtml#number
+%\def\thesubsection{\alph{subsection})}
 
 \graphicspath{{diagrames/}}
 
@@ -14,30 +26,32 @@
 \titleformat{\section}{\large\sectfont}{\thesection}{1em}{}
 \titleformat{\subsection}{\bfseries\sectfont}{\thesubsection}{1em}{}
 % Estil numeracio subseccions http://help-csli.stanford.edu/tex/latex-sections.shtml#number
-\def\thesubsection{\alph{subsection})}
+% \def\thesubsection{\alph{subsection})}
 
 \title{Robòtica: \\ Raiden Project}
 \author{ Bartomeu Miró Mateu \thanks{bmiro a members punt fsf punt org} \\
 	 Lluis Cortès Rullan \thanks{lluisbinet a gmail punt com} }
 
-\makeindex
-
-\begin{abstract}
-Primera pràctica de Robòtica de l'apartat de robòtica industrial.
-Control d'un braç robot Mitsubishi R6-VS programat en MELFA Basic IV
-destinant a la paletització de peces circualrs.
-\end{abstract}
 
 \begin{document}
 
-\maketitle
-\newpage
-\setcounter{page}{2}
-\tableofcontents
-\newpage
+  \maketitle
 
-\input{introduccio}
-\input{codifont}
-%TODO Definir les seccions que posarem
+  \begin{abstract}
+    Primera pràctica de Robòtica de l'apartat de robòtica industrial.
+    Control d'un braç robot Mitsubishi R6-VS programat en MELFA Basic IV
+    destinant a la paletització de peces colorides circulars.
+  \end{abstract}
+
+  \newpage
+  \setcounter{page}{2}
+  \tableofcontents
+  \newpage
+
+  \input{interpretacioEnunciat}
+  \input{calculs}
+  \input{estructuraPrograma}
+  \input{incidents}
+  \input{jocProves}
 
 \end{document}
