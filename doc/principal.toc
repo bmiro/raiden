@@ -1,23 +1,23 @@
 \select@language {catalan}
 \contentsline {section}{\numberline {1}Interpretaci\IeC {\'o} de l'enunciat i modelat de l'escenari}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Moviment del robot}{4}{subsection.1.1}
-\contentsline {section}{\numberline {2}C\IeC {\`a}lculs}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Transformaci\IeC {\'o} de sistemes de coordenades}{5}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Calcul de piles, pals (X,Y) i altura de peces (Z)}{7}{subsection.2.2}
-\contentsline {section}{\numberline {3}Estructura del programa}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Macros, par\IeC {\`a}metres}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Estructura del codi}{8}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Auxiliars}{9}{subsubsection.3.2.1}
+\contentsline {section}{\numberline {2}Moviment del robot}{4}{section.2}
+\contentsline {section}{\numberline {3}C\IeC {\`a}lculs}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Transformaci\IeC {\'o} de sistemes de coordenades}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Calcul de piles, pals (X,Y) i altura de peces (Z)}{7}{subsection.3.2}
+\contentsline {section}{\numberline {4}Estructura del programa}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Macros, par\IeC {\`a}metres}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Estructura del codi}{9}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Auxiliars}{9}{subsubsection.4.2.1}
 \contentsline {paragraph}{Canvi sistemes de coordenades}{9}{paragraph*.1}
-\contentsline {paragraph}{Obertura-Tancament de pin\IeC {\c c}a}{9}{paragraph*.2}
-\contentsline {subsubsection}{\numberline {3.2.2}Inicialitzacions}{10}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}C\IeC {\`a}lcul de punts}{10}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Munta pal\IeC {\'e}}{12}{subsubsection.3.2.4}
-\contentsline {paragraph}{Agafa de la pila}{12}{paragraph*.3}
+\contentsline {paragraph}{Obertura-Tancament de pin\IeC {\c c}a}{10}{paragraph*.2}
+\contentsline {subsubsection}{\numberline {4.2.2}Inicialitzacions}{10}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}C\IeC {\`a}lcul de punts}{10}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Munta pal\IeC {\'e}}{13}{subsubsection.4.2.4}
+\contentsline {paragraph}{Agafa de la pila}{13}{paragraph*.3}
 \contentsline {paragraph}{Posa al Pal\IeC {\'e}}{13}{paragraph*.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Desmunta pal\IeC {\'e}}{13}{subsubsection.3.2.5}
-\contentsline {paragraph}{Agafa del pal\IeC {\'e}}{13}{paragraph*.5}
+\contentsline {subsubsection}{\numberline {4.2.5}Desmunta pal\IeC {\'e}}{14}{subsubsection.4.2.5}
+\contentsline {paragraph}{Agafa del pal\IeC {\'e}}{14}{paragraph*.5}
 \contentsline {paragraph}{Posa pal}{14}{paragraph*.6}
-\contentsline {subsubsection}{\numberline {3.2.6}Acaba}{14}{subsubsection.3.2.6}
-\contentsline {section}{\numberline {4}Incidents i problem\IeC {\`a}tica al desenvolupament}{14}{section.4}
-\contentsline {section}{\numberline {5}Joc de proves}{14}{section.5}
+\contentsline {subsubsection}{\numberline {4.2.6}Acaba}{14}{subsubsection.4.2.6}
+\contentsline {section}{\numberline {5}Incidents i problem\IeC {\`a}tica al desenvolupament}{15}{section.5}
+\contentsline {section}{\numberline {6}Joc de proves}{15}{section.6}

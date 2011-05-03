@@ -138,7 +138,7 @@ els retards per la obertuda i tancament de pinça s'han definit les funcions
 \end{minted}
 
 \subsubsection{Inicialitzacions}
-En aquesta rutina es du a terme l'operació de \emph{homing} i demés
+En aquesta rutina es duu a terme l'operació de \emph{homing} i demés
 inicialitzacions físiques del braç robot com l'obertuda de la pinça
 o de les variables que controlen l'entorn del robot, com el 
 contador de peces que s'han posat a cada palé.
@@ -155,18 +155,18 @@ contador de peces que s'han posat a cada palé.
 1120    return
 \end{minted}
 
-\subsubsection{Càlcul de punts}
-Com s'ha comentat en la pràctica s'ha fet el màxim esforç per posar tots els
-punts en funció d'uns pocs, per això en la funció de calcul de punts s'omplen
+\subsubsection{Càlcul de punts}\label{codcalcpts}
+Com ja s'ha comentat en la pràctica s'ha fet el màxim esforç per posar tots els
+punts en funció d'uns pocs, per això en la funció de càlcul de punts s'omplen
 els vectors que contenen els punts homòlegs calculats a partir de les
 \emph{macros} que descriuen l'entorn físic. En aquest punt també es calcula
-l'ordre de recollida de les peces en funció de l'angle. Per limitacions del
+l'ordre de recollida de les peces en funció de l'angle\ref{figrecpec}. Per limitacions del
 llenguatge comentades a l'apartat de incidents TODO LABEL el codi no has
 sortir gaire elegant.
 
-Un cop acabada la funció calcul de punts tots els vectors de punts estan apunt
-per ser recorreguts per part del braç robot en els eixos (X,Y), el Z es
-calculat en temps d'execució ja que depen de quina peça s'estigui tractant,
+Un cop acabada la funció càlcul de punts tots els vectors de punts estan apunt
+per ser recorreguts per part del braç robot en els eixos (X,Y), el Z és
+calculat en temps d'execució ja que depèn de quina peça s'estigui tractant,
 ja que son apliades a l'eix Z.
 Aquests vectors emprats de interfície són:
 
@@ -270,9 +270,9 @@ peça ja hi ha entrat i pot ser amollada.
 \end{minted}
 
 \subsubsection{Munta palé}
-Tal i com indicia el títol en aquesta funció es munta el palé, aquesta tasca
+Tal i com indica el títol en aquesta funció es munta el palé, aquesta tasca
 consisteix en iterar per cada una de les peces existents en cada una de les
-piles per agafar-les i depositar-les al seu lloc del palé virtual.
+piles per agafar-les i depositar-les al lloc corresponent del palé.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2170 *MNTPALE
@@ -317,10 +317,10 @@ piles per agafar-les i depositar-les al seu lloc del palé virtual.
 \end{minted}
 
 \subsubsection{Desmunta palé}
-En aquest punt del programa el braç va punt a munt del palé agafant les peces
-i deixant-les als pals, no passa al seguent munt mentre a l'actual quedin peces.
-L'ordre d'agafada dels munts ha estat calculat en calcul de punts com ja s'ha
-esmentat TODO LABEL.
+En aquest punt del programa el braç va munt a munt del palé agafant les peces
+i deixant-les als pals, no passa al següent munt mentre a l'actual quedin peces.
+L'ordre d'agafada dels munts ha estat calculat en \emph{calcul de punts} com ja s'ha
+esmentat\ref{codcalcpts}.
 
 \paragraph{Agafa del palé}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
