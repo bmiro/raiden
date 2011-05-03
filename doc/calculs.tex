@@ -15,14 +15,108 @@ de terra, l'altura de les peces i la quantitat de les mateixes.
 \subsection{Transformació de sistemes de coordenades}
 Amb l'enunciat tenim la posició de la càmera \{C\} respecte el robot \{R\} i
 la posició del punt P, que es el centre de sistema de coordenades del palé \{P\},
-respecte la càmera. El que volem es posar el punt P en el sistemes de cooerdenades del robot.
+respecte la càmera. El que volem es posar el punt P en el sistemes de coordenades del robot.
 
-Així doncs tenim:
+Així doncs definim:
 
-% \begin{description}[align=left]
-% %  \item []
-% \end{description}
+\begin{description}
+\item[$^RT_C$] La matriu de transformació de un punt del robot a la camera
+\item[$^CT_P$] La matriu de transformació de un punt de la camera al palé
+\item[$^PP$] Punt en el sistema de coordenades del palé
+\item[$^RP$] Punt en el sistema de coordenades del robot
+\end{description}
 
+Combinant aquestes matrius obtenim que:
 
+$$ ^RT_C \times \,^CT_P \times \,^PP = \,^RP $$
+
+Per tant hem de cercar $^RT_P$:
+
+$$ ^RT_P = \,^RT_C \times \,^CT_P $$
+
+$$ ^RT_P = 
+\left( \begin{array}{ccc|c}
+0 & 1 &  0 & cPx\\
+1 & 0 &  0 & cPy\\
+0 & 0 & -1 &   0\\
+\hline
+0 & 0 &  0 & 1
+\end{array} \right) \times
+\left( \begin{array}{ccc|c}
+cos \phi & -sin \phi &  0 & oPx\\
+sin \phi &  cos \phi &  0 & oPy\\
+0        &         0 &  1 &   0\\
+\hline
+0 & 0 &  0 & 1
+\end{array} \right) $$
+
+$$ ^RT_P = 
+\left( \begin{array}{ccc|c}
+sin \phi &  cos \phi &  0 & oPy + cPx\\
+cos \phi & -sin \phi &  0 & oPx + cPy\\
+0        &         0 & -1 &   0\\
+\hline
+0 & 0 &  0 & 1
+\end{array} \right)$$
+
+Així doncs per passar d'un punt del sistema de coordenades $^PP$ a $^RP$ ho feim així:
+
+$$^RT \times \,^PP = \,^RP$$
+
+En el cas generic agafam $^PP = 
+\left( \begin{array}{c}
+x \\
+y \\
+z \\
+\hline
+1
+\end{array} \right)$
+
+$$
+\left( \begin{array}{ccc|c}
+sin \phi &  cos \phi &  0 & oPy + cPx\\
+cos \phi & -sin \phi &  0 & oPx + cPy\\
+0        &         0 & -1 &   0\\
+\hline
+0 & 0 &  0 & 1
+\end{array} \right)
+\times
+\left( \begin{array}{c}
+x \\
+y \\
+z \\
+\hline
+1
+\end{array} \right)
+=
+\left( \begin{array}{c}
+x\times sin \phi + y \times cos \phi + cPy + cPx \\
+x\times cos \phi - y \times sin \phi + oPx + cPy \\
+-z \\
+\hline
+1
+\end{array} \right)
+$$
+
+De on extreim les següents equacions que seran implementades dins del
+nostre programa. TODO LABEL
+
+$$^RP_X = x\times sin \phi + y \times cos \phi + cPy + cPx$$
+$$^RP_Y = x\times cos \phi - y \times sin \phi + oPx + cPy$$
+$$^RP_Z = -z$$
 
 \subsection{Calcul de piles, pals (X,Y) i altura de peces (Z)}
+A banda de la transformació de punts entre sistemes de coordenades hi ha altres punts a calcular.
+El primer son les piles d'on s'agafen les peces. Dins del llistat de punts tenim el punt de la primera
+pila, les següents es troben situades a un desplaçament en Y. Així doncs en el nostre escenari
+senzillametn s'ha de incrementar en Y el valor de la distancia entre piles. Succeeix exactament
+el mateix amb els pals on es deixen les peces.
+
+Els detalls de implementació i valors de les constants de separació es poden veure en l'apartat
+especifíc TODO LABEL on s'explica el codi font. Cal remarcar que al codi tambe figura un
+desplaçament en X, per si es volguessin posar les piles o pals fent una diagonal, però la \emph{macro}
+esta inicialitzada a 0.
+
+
+
+

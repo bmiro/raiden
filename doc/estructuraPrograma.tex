@@ -20,7 +20,7 @@ altres \emph{macros} introduïdes per les \emph{features} propies, corresponents
 Cal mencionar aquests valors no són realment macros sinó variables, una macro es resol en temps de preprocessador
 no en temps de compilació o execució, aquest fet prota alguns problemes mencionats a l'apartat de incidents TODOLABEL.
 
-\begin{description}
+\begin{description}\label{macprop}
 \item [PINCA] Valor de la pinça emprada, en el nostre cas el robot només en té una i es la 1.
 \item [DPALE] Retard de 4 segons requerit a l'enunciat un cop s'ha muntat el palé.
 \item [D\#PINCA\%] Retards aplicats despres de O\#brir o T\#ancar la pinça en funció de si es I\%nicial o F\%inal,
@@ -48,6 +48,18 @@ En el codi s'ha fet una funció per cada acció i alguna d'auxiliar transversal.
 La intenció es dedicar tota la feina a les rutines i que la lectura del programa
 es pugui llegir de manera natural en els nivells més alts entrant en detalls
 a mesura que es va aprofundint en les funcions.
+
+Cal fer especial menció a dos vectors de control de l'estat del programa,
+aquests son \texttt{npcspila} i \texttt{alloc}.
+
+\texttt{npcspila(p)} conté el nombre de peces que resten a la pila inicial de on s'agafen
+les peces.
+
+\texttt{alloc(m)} indica quantes peces ja estan a lloc, situades al munt \texttt{p} del palé, recordem 
+que cada munt correspon a un tipus de peça.
+
+Ambdues variables serveixen per controlar l'altura en Z d'on agafar les peces, i per sabre quan
+ja no en queden més.
 
 Amb aquest principi ens queda un cos principal tan lleguer com aquest.
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
@@ -123,7 +135,22 @@ a partir de les \emph{macros} que descriuen l'entorn físic. En aquest punt tamb
 de recollida de les peces en funció de l'angle. Per limitacions del llenguatge comentades a l'apartat
 de incidents TODO LABEL el codi no has sortir gaire elegant.
 
-\begin{minted}[frame=lines, fontsize=\small]{vbnet}
+Un cop acabada la funció calcul de punts tots els vectors de punts estan apunt per ser recorreguts
+per part del braç robot en els eixos (X,Y), el Z es calculat en temps d'execució
+ja que depen de quina peça s'estigui tractant, ja que son apliades a l'eix Z.
+Aquests vectors emprats de interfície són:
+
+\begin{description}
+ \item [\texttt{Pila}] Cada component indica la posició (X,Y) de cada una de les piles d'on s'agafen
+inicialment les peces, en l'execució per defecte seran dues.
+ \item [\texttt{Pale}] Cada component correspon a la posició on anirà co\lgem ocat cada tipus de
+peça al palé.
+ \item [\texttt{PalI}] Posició inicial on es co\lgem coca el braç per iniciar el descens sobre el pal.
+ \item [\texttt{PalF}] Punt final de descens del braç, on es considera que la peça ja hi ha entrat
+i pot ser amollada.
+\end{description}
+
+\begin{minted}[frame=lines, fontsize=\small]{vbnet}\label{casosrot}
 1130 *CALCPTS
 1140    for pil = 1 to PILES
 1150        Pila(pil) = Pila0
@@ -211,7 +238,8 @@ de incidents TODO LABEL el codi no has sortir gaire elegant.
 
 \subsubsection{Munta palé}
 Tal i com indicia el títol en aquesta funció es munta el palé, aquesta tasca consisteix en iterar
-per cada una de les peces existents en cada una de les piles per agafar-les i depositar-les al seu lloc.
+per cada una de les peces existents en cada una de les piles per agafar-les i depositar-les al seu lloc
+del palé virtual.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2170 *MNTPALE
@@ -240,7 +268,6 @@ per cada una de les peces existents en cada una de les piles per agafar-les i de
 2460    return
 \end{minted}
 
-
 \paragraph{Posa al Palé}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2470 *POSAPALE
@@ -257,6 +284,11 @@ per cada una de les peces existents en cada una de les piles per agafar-les i de
 \end{minted}
 
 \subsubsection{Desmunta palé}
+En aquest punt del programa el braç va punt a munt del palé agafant les peces
+i deixant-les als pals, no passa al seguent munt mentre a l'actual quedin peces.
+L'ordre d'agafada dels munts ha estat calculat en calcul de punts com ja s'ha
+esmentat TODO LABEL.
+
 \paragraph{Agafa del palé}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2580 *AGAFPALE
@@ -286,7 +318,7 @@ per cada una de les peces existents en cada una de les piles per agafar-les i de
 \end{minted}
 
 \subsubsection{Acaba}
-De manera similar a l'inicialitza acaba s'encarrega del posicionament
+De manera similar a l'inicialitza, acaba s'encarrega del posicionament
 físic del robot en una posició de repòs i la desconnexió dels servomotors.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}

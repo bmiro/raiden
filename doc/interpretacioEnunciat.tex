@@ -1,32 +1,44 @@
 \section{Interpretació de l'enunciat}
-En aquest apartat s'expliquen les extencions i suposicions de l'enunciat original.
-Tal i com es demana el programa esta parametrizat segons la posició de la camera,
-el punt P que aquesta detecte i l'angle $\alpha$. A més existeixen altres paràmetres
+En aquest apartat s'expliquen les extensions i suposicions de l'enunciat original.
+
+Tal i com es demana el programa està parametritzat segons la posició de la càmera,
+el punt P que aquesta detecta i l'angle $\alpha$. A més existeixen altres paràmetres
 com els punts on es troben les peces originalment i on es deixen al final, aquests
 s'explicaran a l'apartat de punts.
 
-Per altra banda s'ha introduït la possibilitat de fixar un nombre diferent de numero
-total de peces aixi com el seu repartiment en les piles, així doncs es poden tenir 
-piles amb diferent número de peces i la possibilitat de tenir més de una peça
-d'algun color o cap.
+Per altra banda s'ha introduït la possibilitat de fixar un nombre diferent de peces
+a cada pila, per tant es poden tenir piles amb diferent número de peces. També
+es te amb compte la possibilitat de tenir més d'una peça, o cap, d'algun tipus.
 
 Tots aquests paràmetres es tornen a veure detallats en l'apartat d'explicació del
-codi TODO LABEL.
+codi on s'expliquen les \emph{Macros pròpies}\ref{macprop}.
 
-Finalment l'enunciat deixava oberta la possibilitat de que fer amb les peces de
-tipus 4, on s'ha optat per posar-les al pal 4 per aprofitar el codi ja escrit i
-així seguir la coherencia i estructura dels tipus de peça anteriors. El fet de
+FIGURA AMB TOTS ELS PARÀMETRES
+
+Finalment l'enunciat deixa oberta la possibilitat de que fer amb les peces de
+tipus 4, en aquest punt s'ha optat per posar-les al pal 4 per aprofitar el codi ja escrit i
+així seguir la coherència i estructura dels tipus de peça anteriors. El fet de
 no optar per apilar-les en qualsevol punt de l'entorn es perquè en la paletització
-ja s'ha demostrat coneixement de com apliar peces i tractar el tipus 4 de manera
-diferent als anteriors minvava elagància al codi i l'execució.
+ja s'ha demostrat coneixement de com apilar peces i tractar el tipus 4 de manera
+diferent als anteriors minvava elegància al codi i l'execució.
 
 \subsection{Moviment del robot}
-Així doncs en primer lloc el robot agafa les peces dels munts inicials, munt a munt.
-Aquestes son co\lgem ocades a la zona de paletització, un cop acabat amb la pinça
-tombada agafa les peces començant per les que es troben mes a la seva esquerra
-per co\lgem ocarles als pals. Així doncs al diagrama seguent veim quins serien
-els ordres de recollida depenent dels diferents angles:
+En primer lloc el robot agafa les peces del les piles inicials.
+Aquestes són co\lgem ocades a la zona de paletització. Un cop acabat amb la pinça
+tombada agafa les peces començant per les que es troben més a l'esquerra
+del braç robot, per co\lgem ocarles als pals. Així doncs al diagrama\ref{recpec}
+veim quin seria l'ordre de recollida depenent dels diferents angles.
 
-FIGURA ORDRE RECOLLIDA
+\begin{fibure}[H]
+\begin{center}\label{fig:recpec}
+ \includegraphics[width=0.8\textwidth]{ordreRotacions.png}
+ % ordreRotacions.png: 1286x768 pixel, 150dpi, 21.77x13.00 cm, bb=0 0 617 369
+\end{center}
+  \caption{Ordre de recollida de les peces segons l'angle $\alpha$}
+\end{figure}
 
 Així doncs l'ordre de despaletització depen de l'angle i no del tipus de peça.
+Com és pot veure a la figura existeixen 8 possibles casos que es veuen
+reflectits en l'explicació del codi font corresponent \ref{casosrot}.
+
+TODO dir mesures de seguretat en el moviment del braç

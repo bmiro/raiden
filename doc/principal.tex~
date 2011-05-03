@@ -39,7 +39,7 @@
 
   \begin{abstract}
     Primera pràctica de Robòtica de l'apartat de robòtica industrial.
-    Control d'un braç robot Mitsubishi R6-VS programat en MELFA Basic IV
+    Control d'un braç robot Mitsubishi RV-6S programat en MELFA Basic IV
     destinant a la paletització de peces colorides circulars.
   \end{abstract}
 
@@ -53,6 +53,5 @@
   \input{estructuraPrograma}
   \input{incidents}
   \input{jocProves}
-  %TODO Definir les seccions que posarem
 
 \end{document}
