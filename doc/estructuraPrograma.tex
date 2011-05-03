@@ -2,37 +2,49 @@
 El programa es divideix en cinc seccions.
 
 \begin{description}
-\item [Capçalera de l'enunciat] Interficie de macros requerida per l'enunciat on hi ha parametres com l'angle $\alpha$.
-\item [Macros pròpies] Reassingació de valors per les \emph{features} extra que s'han implementat com ara emprar
-piles amb nombre de peces diferets, si es vol fer una execució amb l'enunciat original sols fa falta
+\item [Capçalera de l'enunciat] Interficie de macros requerida per l'enunciat
+on hi ha paràmetres com l'angle $\alpha$.
+\item [Macros pròpies] Reassingació de valors per les \emph{features} extra que
+s'han implementat com ara emprar
+piles amb nombre de peces diferets, si es vol fer una execució amb l'enunciat
+original sols fa falta
 assignar els valors de les variables de la secció anterior.
-\item [Declaracions pròpies] Aqui es declaren les variables globals propies del programa, en principi sols les 
+\item [Declaracions pròpies] Aqui es declaren les variables globals propies
+del programa, en principi sols les 
 ha de tocar el programador.
 \item [Rutines] Codi de les rutines on es desenvolupa tota la pràctica.
 \item [Main] Simple crida ordenada a les rutines per desencadenar l'execució.
 \end{description}
 
 \subsection{Macros, paràmetres}
-Les \emph{macros} de la \emph{capçalera de l'enunciat} ja estan explicades al propi enunciat, aquí s'expiquen les
-altres \emph{macros} introduïdes per les \emph{features} propies, corresponents a l'apartat de 
-\emph{Macros pròpies}.
+Les \emph{macros} de la \emph{capçalera de l'enunciat} ja estan explicades al
+propi enunciat, aquí s'expiquen les
+altres \emph{macros} introduïdes per les \emph{features} propies, corresponents
+a l'apartat de \emph{Macros pròpies}.
 
-Cal mencionar aquests valors no són realment macros sinó variables, una macro es resol en temps de preprocessador
-no en temps de compilació o execució, aquest fet prota alguns problemes mencionats a l'apartat de incidents TODOLABEL.
+Cal mencionar aquests valors no són realment macros sinó variables, una macro
+es resol en temps de preprocessador no en temps de compilació o execució,
+aquest fet prota alguns problemes mencionats a l'apartat de incidents TODOLABEL.
 
 \begin{description}\label{macprop}
-\item [PINCA] Valor de la pinça emprada, en el nostre cas el robot només en té una i es la 1.
-\item [DPALE] Retard de 4 segons requerit a l'enunciat un cop s'ha muntat el palé.
-\item [D\#PINCA\%] Retards aplicats despres de O\#brir o T\#ancar la pinça en funció de si es I\%nicial o F\%inal,
+\item [PINCA] Valor de la pinça emprada, en el nostre cas el robot només en té
+una i es la 1.
+\item [DPALE] Retard de 4 segons requerit a l'enunciat un cop s'ha muntat el
+palé.
+\item [D\#PINCA\%] Retards aplicats despres de O\#brir o T\#ancar la pinça en
+funció de si es I\%nicial o F\%inal,
 abans o despres d'agafar la peça.
-\item [VLENT] V\_elocitat a la qual es duen a terme les aproximacions delicades, com l'agafada de peces.
-\item [VNORMAL] V\_elocitat a la que es desplaça normalment el braç en els trajectes segurs.
-\item [ZS] Pla Z on es consideren segurs els moviments del braç robot i on es duen a terme els
-desplaçaments llargs.
-\item [ZTPT] Pla de T\_erra (Z = 0) amb la P\_inça T\_ombada (angle inferor a 45 amb el pla XY)
+\item [VLENT] V\_elocitat a la qual es duen a terme les aproximacions
+delicades, com l'agafada de peces.
+\item [VNORMAL] V\_elocitat a la que es desplaça normalment el braç en els
+trajectes segurs.
+\item [ZS] Pla Z on es consideren segurs els moviments del braç robot i on
+es duen a terme els desplaçaments llargs.
+\item [ZTPT] Pla de T\_erra (Z = 0) amb la P\_inça T\_ombada (angle inferor
+a 45 amb el pla XY)
 \item [ZTPR] Pla de terra amb la pinça perpendicular al pla XY                                                                                                           
-\item [TP] T\_ipus de P\_eça diferents que tenim, es igual el numero de munts del palé i de pals
-de destí.
+\item [TP] T\_ipus de P\_eça diferents que tenim, es igual el numero de munts
+del palé i de pals de destí.
 \item [PILES] Número de piles d'on es fa la recollida inicial de peces.
 \item [PALS] Número de pals de destí on es deixen les peces.
 \item [DT] Retard per l'obetura i tancament de la pinça.
@@ -40,26 +52,41 @@ de destí.
 \item [D\#PILES] Distància en X i Y entre les piles
 \item [D\#PALS] Distància en X i Y entre els pals
 \item [DZPAL] Distància Z a baixar per introduïr la peça dins el pal.
-\item [RELPALE(T,E)] Distància relativa de la peça tipus T al punt P, en funció de l'eix E (1 per X, 2 per Y)
+\item [RELPALE(T,E)] Distància relativa de la peça tipus T al punt P, en funció
+de l'eix E (1 per X, 2 per Y)
 \end{description}
 
 \subsection{Estructura del codi}
 En el codi s'ha fet una funció per cada acció i alguna d'auxiliar transversal.
-La intenció es dedicar tota la feina a les rutines i que la lectura del programa
-es pugui llegir de manera natural en els nivells més alts entrant en detalls
-a mesura que es va aprofundint en les funcions.
+La intenció es dedicar tota la feina a les rutines i que la lectura del
+programa es pugui llegir de manera natural en els nivells més alts entrant en
+detalls a mesura que es va aprofundint en les funcions.
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{2}{|c|}{Munta palé} & \multicolumn{2}{|c|}{Desmunta palé}\\
+\hline
+Agafa pila & Posa palé & Agafa Palé & Posa pal\\
+\hline
+\multicolumn{4}{|c|}{Obre/tanca pinça}\\
+\hline
+\end{tabular}
+\end{center}
+
 
 Cal fer especial menció a dos vectors de control de l'estat del programa,
 aquests son \texttt{npcspila} i \texttt{alloc}.
 
-\texttt{npcspila(p)} conté el nombre de peces que resten a la pila inicial de on s'agafen
-les peces.
+\texttt{npcspila(p)} conté el nombre de peces que resten a la pila inicial de
+on s'agafen les peces.
 
-\texttt{alloc(m)} indica quantes peces ja estan a lloc, situades al munt \texttt{p} del palé, recordem 
-que cada munt correspon a un tipus de peça.
+\texttt{alloc(m)} indica quantes peces ja estan a lloc, situades al munt
+\texttt{p} del palé, recordem que cada munt correspon a un tipus de peça.
 
-Ambdues variables serveixen per controlar l'altura en Z d'on agafar les peces, i per sabre quan
-ja no en queden més.
+Ambdues variables serveixen per controlar l'altura en Z d'on agafar les
+peces, i per sabre quan ja no en queden més.
 
 Amb aquest principi ens queda un cos principal tan lleguer com aquest.
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
@@ -129,28 +156,34 @@ contador de peces que s'han posat a cada palé.
 \end{minted}
 
 \subsubsection{Càlcul de punts}
-Com s'ha comentat en la pràctica s'ha fet el màxim esforç per posar tots els punts en funció d'uns pocs,
-per això en la funció de calcul de punts s'omplen els vectors que contenen els punts homòlegs calculats
-a partir de les \emph{macros} que descriuen l'entorn físic. En aquest punt també es calcula l'ordre
-de recollida de les peces en funció de l'angle. Per limitacions del llenguatge comentades a l'apartat
-de incidents TODO LABEL el codi no has sortir gaire elegant.
+Com s'ha comentat en la pràctica s'ha fet el màxim esforç per posar tots els
+punts en funció d'uns pocs, per això en la funció de calcul de punts s'omplen
+els vectors que contenen els punts homòlegs calculats a partir de les
+\emph{macros} que descriuen l'entorn físic. En aquest punt també es calcula
+l'ordre de recollida de les peces en funció de l'angle. Per limitacions del
+llenguatge comentades a l'apartat de incidents TODO LABEL el codi no has
+sortir gaire elegant.
 
-Un cop acabada la funció calcul de punts tots els vectors de punts estan apunt per ser recorreguts
-per part del braç robot en els eixos (X,Y), el Z es calculat en temps d'execució
-ja que depen de quina peça s'estigui tractant, ja que son apliades a l'eix Z.
+Un cop acabada la funció calcul de punts tots els vectors de punts estan apunt
+per ser recorreguts per part del braç robot en els eixos (X,Y), el Z es
+calculat en temps d'execució ja que depen de quina peça s'estigui tractant,
+ja que son apliades a l'eix Z.
 Aquests vectors emprats de interfície són:
 
 \begin{description}
- \item [\texttt{Pila}] Cada component indica la posició (X,Y) de cada una de les piles d'on s'agafen
+ \item [\texttt{Pila}] Cada component indica la posició (X,Y) de cada una de
+les piles d'on s'agafen
 inicialment les peces, en l'execució per defecte seran dues.
- \item [\texttt{Pale}] Cada component correspon a la posició on anirà co\lgem ocat cada tipus de
-peça al palé.
- \item [\texttt{PalI}] Posició inicial on es co\lgem coca el braç per iniciar el descens sobre el pal.
- \item [\texttt{PalF}] Punt final de descens del braç, on es considera que la peça ja hi ha entrat
-i pot ser amollada.
+ \item [\texttt{Pale}] Cada component correspon a la posició on anirà
+co\lgem ocat cada tipus de peça al palé.
+ \item [\texttt{PalI}] Posició inicial on es co\lgem coca el braç per iniciar
+el descens sobre el pal.
+ \item [\texttt{PalF}] Punt final de descens del braç, on es considera que la
+peça ja hi ha entrat i pot ser amollada.
 \end{description}
 
-\begin{minted}[frame=lines, fontsize=\small]{vbnet}\label{casosrot}
+\label{casosrot}
+\begin{minted}[frame=lines, fontsize=\small]{vbnet}
 1130 *CALCPTS
 1140    for pil = 1 to PILES
 1150        Pila(pil) = Pila0
@@ -237,9 +270,9 @@ i pot ser amollada.
 \end{minted}
 
 \subsubsection{Munta palé}
-Tal i com indicia el títol en aquesta funció es munta el palé, aquesta tasca consisteix en iterar
-per cada una de les peces existents en cada una de les piles per agafar-les i depositar-les al seu lloc
-del palé virtual.
+Tal i com indicia el títol en aquesta funció es munta el palé, aquesta tasca
+consisteix en iterar per cada una de les peces existents en cada una de les
+piles per agafar-les i depositar-les al seu lloc del palé virtual.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2170 *MNTPALE

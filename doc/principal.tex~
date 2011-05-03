@@ -14,6 +14,8 @@
 \usepackage{url}
 \usepackage{minted} %wget http://minted.googlecode.com/hg/minted.sty
 
+\graphicspath{{diagrames/}}
+
 % Estil de seccions
 \titleformat{\section}{\large\sectfont}{\thesection}{1em}{}
 \titleformat{\subsection}{\bfseries\sectfont}{\thesubsection}{1em}{}
@@ -31,7 +33,6 @@
 \title{Robòtica: \\ Raiden Project}
 \author{ Bartomeu Miró Mateu \thanks{bmiro a members punt fsf punt org} \\
 	 Lluis Cortès Rullan \thanks{lluisbinet a gmail punt com} }
-
 
 \begin{document}
 
