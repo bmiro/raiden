@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{scrartcl}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage[catalan]{babel}
 \usepackage{titlesec}
@@ -12,6 +12,7 @@
 \usepackage{multirow}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{multirow}
 \usepackage{minted} %wget http://minted.googlecode.com/hg/minted.sty
 
 \graphicspath{{diagrames/}}

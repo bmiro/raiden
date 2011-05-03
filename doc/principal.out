@@ -2,7 +2,7 @@
 \BOOKMARK [1][-]{section.2}{Moviment del robot}{}
 \BOOKMARK [1][-]{section.3}{C\340lculs}{}
 \BOOKMARK [2][-]{subsection.3.1}{Transformaci\363 de sistemes de coordenades}{section.3}
-\BOOKMARK [2][-]{subsection.3.2}{Calcul de piles, pals \(X,Y\) i altura de peces \(Z\)}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{C\340lcul de piles, pals \(X,Y\) i altura de peces \(Z\)}{section.3}
 \BOOKMARK [1][-]{section.4}{Estructura del programa}{}
 \BOOKMARK [2][-]{subsection.4.1}{Macros, par\340metres}{section.4}
 \BOOKMARK [2][-]{subsection.4.2}{Estructura del codi}{section.4}
