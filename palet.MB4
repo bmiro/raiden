@@ -21,10 +21,10 @@
 190 oPy = 0.0
 200 'angle de rotació del palé respecte la camera
 210 def FLOAT angle
-220 angle = 180.0
+220 angle = 240.0
 230 'coordenades x i y de l’origen del sistema de la camera
 240 def FLOAT cPx, cPy
-250 cPx = 450.0
+250 cPx = 550.0
 260 cPy = 0.0
 
 270 ''''''''''''''''''''''''     Macros pròpies     ''''''''''''''''''''''''
@@ -110,7 +110,7 @@
 
 900 def INTE i, pil, pal, munt, peca, pecapila, tipus 'iteradors
 
-910 def INTE ang
+910 def FLOAT angleR
 920 
 930 def FLOAT ppx, ppy 'punt pale  ' emprats com a paramentres per el pals de 
 940 def FLOAT prx, pry 'punt robot ' coorenades del pale al robot
@@ -170,138 +170,140 @@
 1450        ordre(4) = 1
 1460		return
 1470 	endif
-1480    if ((45.0 < angle) and (angle < 90.0)) then 
+1480  if ((45.0 < angle) and (angle < 90.0)) then 
 1490        ordre(1) = 3
 1500        ordre(2) = 4
 1510        ordre(3) = 2
 1520        ordre(4) = 1
 1530 		return
 1540 	endif
-1550    if ((90.0 < angle) and (angle < 135.0)) then
+1550  if ((90.0 < angle) and (angle < 135.0)) then
 1560        ordre(1) = 4
 1570        ordre(2) = 3
 1580        ordre(3) = 1
 1590        ordre(4) = 2
 1600 		return
 1610 	endif
-1620    if ((135.0 <= angle) and (angle < 180.0)) then
+1620  if ((135.0 <= angle) and (angle < 180.0)) then
 1630        ordre(1) = 4
 1640        ordre(2) = 1
 1650        ordre(3) = 3
 1660        ordre(4) = 2
 1670 		return
 1680 	endif
-1690    if ((180.0 <= angle) and (angle < 225.0)) then 
+1690  if ((180.0 <= angle) and (angle < 225.0)) then 
 1700        ordre(1) = 1
 1710        ordre(2) = 4
 1720        ordre(3) = 2
 1730        ordre(4) = 3
 1740 		return
 1750 	endif
-1760    if ((225.0 <= angle) and (angle < 270.0)) then
+1760  if ((225.0 <= angle) and (angle < 270.0)) then
 1770        ordre(1) = 1
 1780        ordre(2) = 2
 1790        ordre(3) = 4
 1800        ordre(4) = 3
 1810 		return
 1820 	endif
-1830    if ((270.0 <= angle) and (angle < 315.0)) then 
+1830  if ((270.0 <= angle) and (angle < 315.0)) then 
 1840        ordre(1) = 2
 1850        ordre(2) = 1
 1860        ordre(3) = 4
 1870        ordre(4) = 3
-1880 	endif
-1890    ' 315.0 > angle < 360.0
-1900    ordre(1) = 2
-1910    ordre(2) = 3
-1920    ordre(3) = 1
-1930    ordre(4) = 4
-1940    return
+1880 		return
+1890 	endif
+1900  ' 315.0 > angle < 360.0
+1910  ordre(1) = 2
+1920  ordre(2) = 3
+1930  ordre(3) = 1
+1940  ordre(4) = 4
+1950  return
 
-1950 *ACABA
-1960    mov Paralisi
-1970    hopen PINCA
-1980    servo OFF
-1990    return
+1960 *ACABA
+1970    mov Paralisi
+1980    hopen PINCA
+1990    servo OFF
+2000    return
 
-2000 *CAM2ROB
-2010    prx = ppx*sin(angle) + ppy*cos(angle) + oPy + cPx
-2020    pry = ppx*cos(angle) - ppy*sin(angle) + oPx + cPy
-2030    return
+2010 *CAM2ROB
+2020 	angleR =(angle*M_PI) / 180.0
+2030    prx = ppx*sin(angleR) + ppy*cos(angleR) + oPy + cPx
+2040    pry = ppx*cos(angleR) - ppy*sin(angleR) + oPx + cPy
+2050    return
     
-2050 *OPINCA
-2060    dly DOPINCAI
-2070    hopen PINCA
-2080    dly DOPINCAF
-2090    return
+2070 *OPINCA
+2080    dly DOPINCAI
+2090    hopen PINCA
+2100    dly DOPINCAF
+2110    return
 
-2100 *TPINCA
-2110    dly DTPINCAI
-2120    hclose PINCA
-2130    dly DTPINCAF
-2140    return
+2120 *TPINCA
+2130    dly DTPINCAI
+2140    hclose PINCA
+2150    dly DTPINCAF
+2160    return
 
-2150 *MNTPALE
-2160    peca = 1
-2170    for pil = 1 to PILES 
-2180        for pecapila = 1 to npcspila(pil)
-2190            gosub *AGAFPILA
-2200            gosub *POSAPALE
-2210            peca = peca + 1
-2220        next
-2230    next
-2240    return
+2170 *MNTPALE
+2180    peca = 1
+2190    for pil = 1 to PILES 
+2200        for pecapila = 1 to npcspila(pil)
+2210            gosub *AGAFPILA
+2220            gosub *POSAPALE
+2230            peca = peca + 1
+2240        next
+2250    next
+2260    return
     
-2260 *DESPALE
-2270    for tipus = 1 to TP
-2280        munt = ordre(tipus)
-2290        while alloc(munt) > 0
-2300            gosub *AGAFPALE
-2310            gosub *POSADEST
-2320        wend
-2330    next
-2340    return
+2280 *DESPALE
+2290    for tipus = 1 to TP
+2300        munt = ordre(tipus)
+2310        while alloc(munt) > 0
+2320            gosub *AGAFPALE
+2330            gosub *POSADEST
+2340        wend
+2350    next
+2360    return
 
-2350 *AGAFPILA
-2360    mov Pila(pil)
-2370    Prvsnl = Pila(pil)
-2380    Prvsnl.z = Prvsnl.z - ZTPR + (npcspila!(pil) - pecapila) * HDISC
-2390    ovrd VLENT
-2400    mvs Prvsnl
-2410    gosub *TPINCA
-2420    mvs Pila(pil)
-2430    ovrd VNORMAL
-2440    return
+2370 *AGAFPILA
+2380    mov Pila(pil)
+2390    Prvsnl = Pila(pil)
+2400    Prvsnl.z = Prvsnl.z - ZTPR + (npcspila!(pil) - pecapila) * HDISC
+2410    ovrd VLENT
+2420    mvs Prvsnl
+2430    gosub *TPINCA
+2440    mvs Pila(pil)
+2450    ovrd VNORMAL
+2460    return
 
-2450 *POSAPALE
-2460    mov Pale(tipusP(peca))
-2470    Prvsnl = Pale(tipusP(peca))
-2480    Prvsnl.z = Prvsnl.z - ZTPR + alloc(tipusP(peca)) * HDISC
-2490    ovrd VLENT
-2500    mvs Prvsnl
-2510    gosub *OPINCA
-2520    mvs Pale(tipusP(peca))
-2530    ovrd VNORMAL
-2540    alloc(tipusP(peca)) = alloc(tipusP(peca)) + 1
-2550    return
+2470 *POSAPALE
+2480    mov Pale(tipusP(peca))
+2490    Prvsnl = Pale(tipusP(peca))
+2500    Prvsnl.z = Prvsnl.z - ZTPR + alloc(tipusP(peca)) * HDISC
+2510    ovrd VLENT
+2520    mvs Prvsnl
+2530    gosub *OPINCA
+2540    mvs Pale(tipusP(peca))
+2550    ovrd VNORMAL
+2560    alloc(tipusP(peca)) = alloc(tipusP(peca)) + 1
+2570    return
 
-2560 *AGAFPALE
-2570    mov PaleOut(munt)
-2580    Prvsnl = PaleOut(munt)
-2590    Prvsnl.z = Prvsnl.z - ZTPT + (alloc(munt) - 1) * HDISC
-2600    ovrd VLENT
-2610    mvs Prvsnl
-2620    gosub *TPINCA
-2630    mvs PaleOut(munt)
-2640    ovrd VNORMAL
-2650    alloc(munt) = alloc(munt) - 1
-2660    return
+2580 *AGAFPALE
+2590    mov PaleOut(munt)
+2600    Prvsnl = PaleOut(munt)
+2610    Prvsnl.z = Prvsnl.z - ZTPT + (alloc(munt) - 1) * HDISC
+2620    ovrd VLENT
+2630    mvs Prvsnl
+2640    gosub *TPINCA
+2650    mvs PaleOut(munt)
+2660    ovrd VNORMAL
+2670    alloc(munt) = alloc(munt) - 1
+2680    return
 
-2670 *POSADEST
-2680    mov PalI(munt)
-2690    ovrd VLENT
-2700    mvs PalF(munt)
-2710    gosub *OPINCA
-2720    mvs PalI(munt)
-2730    ovrd VNORMAL
-2740 	return
+2690 *POSADEST
+2700    mov PalI(munt)
+2710    ovrd VLENT
+2720    mvs PalF(munt)
+2730    gosub *OPINCA
+2740    mvs PalI(munt)
+2750    ovrd VNORMAL
+2760 	return
