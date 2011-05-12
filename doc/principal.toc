@@ -1,7 +1,7 @@
 \select@language {catalan}
 \contentsline {section}{\numberline {1}Interpretaci\IeC {\'o} de l'enunciat i modelat de l'escenari}{3}{section.1}
 \contentsline {section}{\numberline {2}Moviment del robot}{4}{section.2}
-\contentsline {section}{\numberline {3}C\IeC {\`a}lculs}{6}{section.3}
+\contentsline {section}{\numberline {3}C\IeC {\`a}lculs}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Transformaci\IeC {\'o} de sistemes de coordenades}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}C\IeC {\`a}lcul de piles, pals (X,Y) i altura de peces (Z)}{7}{subsection.3.2}
 \contentsline {section}{\numberline {4}Estructura del programa}{7}{section.4}

@@ -71,10 +71,10 @@ En aquest punt descrivim el moviment del braç robot i el perquè de l'ordre o
 orientacions del mateix.
 
 Totes les aproximacions a les peces es fan desde adalt. El braç robot es posiciona
-a XY sobre la peça en qüestió i despés efectua un descens. Un cop agafada
+a XY sobre la peça en qüestió i despés efectua un descens en Z. Un cop agafada
 efectua el moviment invers, ascens a Z i després el desplaçament corresponent
 al pla XY on es conisderen segurs els moviments. Aquest pla de seguretat
-en la practiva ve donat per la variable \texttt{ZS} fixada per defecte
+en la pràctica ve donat per la variable \texttt{ZS} fixada per defecte
 a 280.0.
 
 En primer lloc el robot agafa les peces del les piles inicials.
@@ -93,7 +93,7 @@ cap a l'esquerra\footnote{Com que els pals estan a la dreta del robot convé
 tombar la pinça a la esquerra per simplificar els moviemnts i evitar haver
 de fer un gir del braç}, desde el punt de vista del robot, s'han de recollir
 les peces d'esquerra a dreta per tal de evitar que el braç co\lgem isioni
-\ref{figcolisio} amb algun dels munts del palé encara existents.
+(fig. \ref{figcolisio}) amb algun dels munts del palé encara existents.
 
 \begin{figure}[H]
 \begin{center}
