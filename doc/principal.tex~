@@ -15,6 +15,8 @@
 \usepackage{multirow}
 \usepackage{minted} %wget http://minted.googlecode.com/hg/minted.sty
 
+\usepackage{newcent} %font mes wapa
+
 \graphicspath{{diagrames/}}
 
 % Estil de seccions
@@ -24,7 +26,7 @@
 %\def\thesubsection{\alph{subsection})}
 
 \title{Robòtica: \\ Raiden Project}
-\author{ Bartomeu Miró Mateu \thanks{bmiro a members punt fsf punt org} \\
+\author{ Bartomeu Miró Mateu \thanks{bartomeumiro a gmail punt com} \\
 	 Lluis Cortès Rullan \thanks{lluisbinet a gmail punt com} }
 
 \begin{document}
