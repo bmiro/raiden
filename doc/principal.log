@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.5.9)  12 MAY 2011 17:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.5.9)  20 MAY 2011 19:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -460,25 +460,25 @@ runsystem(rm principal.aex)...executed.
  (./principal.aux)
 \openout1 = `principal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
  (/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \l on input line 38.
-LaTeX Info: Redefining \L on input line 38.
+LaTeX Info: Redefining \l on input line 30.
+LaTeX Info: Redefining \L on input line 30.
 
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -493,7 +493,7 @@ LaTeX Info: Redefining \L on input line 38.
 \MPnumerator=\count130
 \everyMPtoPDFconversion=\toks31
 )
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 30.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -502,8 +502,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
  (./principal.out)
 (./principal.out)
 \@outlinefile=\write5
@@ -561,38 +561,46 @@ runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
 
- [3 <./diagrames/escenari.png>] <diagrames/colisio.png, id=114, 343.5234pt x 23
-4.6366pt>
+ [3 <./diagrames/escenari.png>]
+
+LaTeX Warning: Reference `palmog' on page 4 undefined on input line 72.
+
+<diagrames/palsMoguts.jpg, id=112, 192.72pt x 128.3997pt>
+File: diagrames/palsMoguts.jpg Graphic file (type jpg)
+
+<use diagrames/palsMoguts.jpg> [4 <./diagrames/palsMoguts.jpg>]
+<diagrames/colisio.png, id=120, 343.5234pt x 234.6366pt>
 File: diagrames/colisio.png Graphic file (type png)
 
-<use diagrames/colisio.png> [4]
-
-LaTeX Warning: Reference `fig:recpec' on page 5 undefined on input line 105.
-
-<diagrames/ordreRotacions.png, id=123, 618.31pt x 319.594pt>
+<use diagrames/colisio.png> [5]
+<diagrames/ordreRotacions.png, id=130, 618.31pt x 319.594pt>
 File: diagrames/ordreRotacions.png Graphic file (type png)
 
-<use diagrames/ordreRotacions.png>) (./calculs.tex [5 <./diagrames/colisio.png>
+<use diagrames/ordreRotacions.png>) (./calculs.tex [6 <./diagrames/colisio.png>
  <./diagrames/ordreRotacions.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 20.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
- [6]
-Overfull \hbox (9.4803pt too wide) detected at line 99
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
+ [7]
+Overfull \hbox (9.4803pt too wide) detected at line 105
 [] \OMS/cmsy/m/n/10.95 ^^B [] \OT1/cmr/m/n/10.95 = []
  []
 
 ) (./estructuraPrograma.tex
-Overfull \hbox (4.94757pt too wide) in paragraph at lines 5--7
-[]\OT1/cmr/m/n/10.95 Interficie de macros re-queri-da per l'e-nun-ci-at on hi h
-a par^^Rametres
+Overfull \hbox (6.32062pt too wide) in paragraph at lines 5--7
+[]\OT1/cmr/m/n/10.95 Interf^^S^^Pcie de \OT1/cmr/m/it/10.95 macros \OT1/cmr/m/n
+/10.95 re-queri-da per l'e-nun-ci-at on hi ha par^^Rametres
  []
 
-[7] [8]
+[8]
+
+LaTeX Warning: Reference `incmaros' on page 9 undefined on input line 26.
+
+[9]
 \openout3 = `principal.pyg'.
 
 runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
@@ -624,8 +632,7 @@ runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg
-[9])
+ (./principal.out.pyg [10])
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
@@ -636,7 +643,8 @@ runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg)
+
+(./principal.out.pyg)
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
@@ -653,50 +661,15 @@ runsystem(rm principal.out.pyg)...executed.
 runsystem(rm principal.pyg)...executed.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 174.
- [10]
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 191.
+ [11]
 \openout3 = `principal.pyg'.
 
 runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg
-[11])
-runsystem(rm principal.out.pyg)...executed.
-
-runsystem(rm principal.pyg)...executed.
-
- [12]
-\openout3 = `principal.pyg'.
-
-runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
-s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
-d.
-
- (./principal.out.pyg)
-runsystem(rm principal.out.pyg)...executed.
-
-runsystem(rm principal.pyg)...executed.
-
-\openout3 = `principal.pyg'.
-
-runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
-s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
-d.
-
- (./principal.out.pyg)
-runsystem(rm principal.out.pyg)...executed.
-
-runsystem(rm principal.pyg)...executed.
-
-\openout3 = `principal.pyg'.
-
-runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
-s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
-d.
-
- (./principal.out.pyg)
+ (./principal.out.pyg [12])
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
@@ -736,36 +709,85 @@ runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
 
-)
-(./incidents.tex [14]) (./jocProves.tex) [15] (./principal.aux)
+ [14]
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+
+(./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+ (./principal.out.pyg)
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+\openout3 = `principal.pyg'.
+
+runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
+s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
+d.
+
+
+(./principal.out.pyg [15])
+runsystem(rm principal.out.pyg)...executed.
+
+runsystem(rm principal.pyg)...executed.
+
+) (./incidents.tex [16]) (./jocProves.tex) [17]
+(./principal.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8372 strings out of 495061
- 120980 string characters out of 1182622
- 229352 words of memory out of 3000000
- 11297 multiletter control sequences out of 15000+50000
- 12731 words of font info for 47 fonts, out of 3000000 for 9000
+ 8391 strings out of 495061
+ 121239 string characters out of 1182622
+ 230352 words of memory out of 3000000
+ 11306 multiletter control sequences out of 15000+50000
+ 13384 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  43i,14n,43p,336b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on principal.pdf (15 pages, 313615 bytes).
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on principal.pdf (17 pages, 368524 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 46 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

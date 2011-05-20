@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,11pt]{scrartcl}
 \usepackage[utf8x]{inputenc}
 \usepackage[catalan]{babel}
 \usepackage{titlesec}
@@ -22,14 +22,6 @@
 \titleformat{\subsection}{\bfseries\sectfont}{\thesubsection}{1em}{}
 % Estil numeracio subseccions http://help-csli.stanford.edu/tex/latex-sections.shtml#number
 %\def\thesubsection{\alph{subsection})}
-
-\graphicspath{{diagrames/}}
-
-% Estil de seccions
-\titleformat{\section}{\large\sectfont}{\thesection}{1em}{}
-\titleformat{\subsection}{\bfseries\sectfont}{\thesubsection}{1em}{}
-% Estil numeracio subseccions http://help-csli.stanford.edu/tex/latex-sections.shtml#number
-% \def\thesubsection{\alph{subsection})}
 
 \title{Robòtica: \\ Raiden Project}
 \author{ Bartomeu Miró Mateu \thanks{bmiro a members punt fsf punt org} \\

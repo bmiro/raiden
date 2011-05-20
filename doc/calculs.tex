@@ -1,27 +1,32 @@
 \section{Càlculs}
-L'apartat de càlculs inclou, per una banda, els requerits per l'enunciat a l'haver de transformar
-el punt P del sistema de coordenades de la càmera al del braç robot. En aquest punt es mostra
-el procés de obtenció de les equacions per fer tal transformació i en l'apartat de codi
-es veu la seva implementació en el programa.
+L'apartat de càlculs inclou, per una banda, els requerits per l'enunciat a
+l'haver de transformar el punt P del sistema de coordenades de la càmera al del
+braç robot. En aquest punt es mostra el procés de obtenció de les equacions per
+fer tal transformació i en l'apartat de codi es veu la seva implementació en el
+programa.
 
-Per altra banda es mostra el càlcul dels punts emprats de la situació dels objectes en l'entorn
-a partir dels seus homòlegs. Com s'ha mencionat la posició dels pals es relativa a un punt,
-concretament tots els pals on es deixen les peces venen en funció de la posició del primer.
-De la mateixa manera la posició de cada pila on inicialment es recullen les peces
-ve en funció de la posició de la primera pila, el nombre de piles i la distància entre elles.
-Finalment també es descriu el càlcul de punts en Z on s'agafen les peces en funció del pla
-de terra, l'altura de les peces i la quantitat de les mateixes.
+Per altra banda es mostra el càlcul dels punts emprats de la situació dels
+objectes en l'entorn a partir dels seus homòlegs. Com s'ha mencionat la posició
+dels pals es relativa a un punt, concretament tots els pals on es deixen les
+peces venen en funció de la posició del primer.
+De la mateixa manera la posició de cada pila on inicialment es recullen les
+peces ve en funció de la posició de la primera pila, el nombre de piles i la
+distància entre elles.
+
+Finalment també es descriu el càlcul de punts en Z on s'agafen les peces en
+funció del pla de terra, l'altura de les peces i la quantitat de les mateixes.
 
 \subsection{Transformació de sistemes de coordenades}
 Amb l'enunciat tenim la posició de la càmera \{C\} respecte el robot \{R\} i
-la posició del punt P, que es el centre de sistema de coordenades del palé \{P\},
-respecte la càmera. El que volem es posar el punt P en el sistemes de coordenades del robot.
+la posició del punt P, que es el centre de sistema de coordenades del palé
+\{P\}, respecte la càmera. El que volem es posar el punt P en el sistemes de
+coordenades del robot.
 
 Així doncs definim:
 
 \begin{description}
 \item[$^RT_C$] La matriu de transformació de un punt del robot a la camera
-\item[$^CT_P$] La matriu de transformació de un punt de la camera al palé
+\item[$^CT_P$] La matriu de transformació de un punt de la càmera al palé
 \item[$^PP$] Punt en el sistema de coordenades del palé
 \item[$^RP$] Punt en el sistema de coordenades del robot
 \end{description}
@@ -59,7 +64,8 @@ cos \phi & -sin \phi &  0 & oPx + cPy\\
 0 & 0 &  0 & 1
 \end{array} \right)$$
 
-Així doncs per passar d'un punt del sistema de coordenades $^PP$ a $^RP$ ho feim així:
+Així doncs per passar d'un punt del sistema de coordenades $^PP$ a $^RP$ ho
+feim així:
 
 $$^RT \times \,^PP = \,^RP$$
 
@@ -106,16 +112,19 @@ $$^RP_Y = x\times cos \phi - y \times sin \phi + oPx + cPy$$
 $$^RP_Z = -z$$
 
 \subsection{Càlcul de piles, pals (X,Y) i altura de peces (Z)} \label{calcpts}
-A banda de la transformació de punts entre sistemes de coordenades hi ha altres punts a calcular.
-El primer són les piles d'on s'agafen les peces. Dins del llistat de punts tenim el punt de la primera
-pila, les següents es troben situades a un desplaçament en X. Així doncs en el nostre escenari
-senzillament s'ha de incrementar en X el valor de la distància entre piles. Succeeix exactament
+A banda de la transformació de punts entre sistemes de coordenades hi ha altres
+punts a calcular.
+El primer són les piles d'on s'agafen les peces. Dins del llistat de punts
+tenim el punt de la primera pila, les següents es troben situades a un
+desplaçament en X. Així doncs en el nostre escenari senzillament s'ha de
+incrementar en X el valor de la distància entre piles. Succeeix exactament
 el mateix amb els pals on es deixen les peces.
 
-Els detalls de implementació i valors de les constants de separació es poden veure en l'apartat
-especific \ref{codcalcpts} on s'explica el codi font. Cal remarcar que al codi també figura un
-desplaçament en Y, per si es volguessin posar les piles o pals fent una diagonal, però per
-defecte la \emph{macro} esta inicialitzada a 0.
+Els detalls de implementació i valors de les constants de separació es poden
+veure en l'apartat especific \ref{codcalcpts} on s'explica el codi font. Cal
+remarcar que al codi també figura un desplaçament en Y, per si es volguessin
+posar les piles o pals fent una diagonal, però per defecte la \emph{macro}
+està inicialitzada a 0.
 
 
 
