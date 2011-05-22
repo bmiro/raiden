@@ -68,7 +68,7 @@ a data de \today.
 
 \begin{figure}[H]
 \begin{center}\label{fig:palmog}
- \includegraphics[width=0.7\textwidth,angle=90]{ubicacioPiles.jpg}
+ \includegraphics[width=0.4\textwidth,angle=90]{ubicacioPiles.jpg}
  % ordreRotacions.png: 1286x768 pixel, 150dpi, 21.77x13.00 cm, bb=0 0 617 369
 \end{center}
   \caption{Posicionat de les piles a l'entorn}
@@ -95,7 +95,7 @@ com indica la figura \ref{figpalmog}.
 
 \begin{figure}[H]
 \begin{center}\label{figpalmog}
- \includegraphics[width=0.7\textwidth]{palsMoguts.jpg}
+ \includegraphics[width=0.4\textwidth]{palsMoguts.jpg}
  % ordreRotacions.png: 1286x768 pixel, 150dpi, 21.77x13.00 cm, bb=0 0 617 369
 \end{center}
   \caption{Pals moguts, correcció després de l'esgotament de les bateries}
@@ -105,70 +105,3 @@ Aquest fet es deu molt possiblement a lleugeres modificacions de l'orientació d
 que s'han hagut de re-calcular. La inversió de temps que suposa el re-ajustament, que ja va
 fer-se al seu moment abans de l'incident, s'ha considerat escesiva i duplicada podent arreglar
 la situació amb un simple moviment de la base dels pals.
-
-\section{Moviment del robot}
-En aquest punt descrivim el moviment del braç robot i el perquè de l'ordre o
-orientacions del mateix.
-
-Totes les aproximacions a les peces es fan des de dalt. El braç robot es
-posiciona a \emph{XY} sobre la peça en qüestió i després efectua un descens en \emph{Z}. Un
-cop agafada efectua el moviment invers, ascens a Z i després el desplaçament
-corresponent al pla \emph{XY} on es consideren segurs els moviments. Aquest pla de
-seguretat en la pràctica ve donat per la variable \texttt{ZS} fixada per
-defecte a 280.0.
-
-Els desplaçaments al pla de seguretat es realitzen a una major velocitat que els descensos
-que conformen les aproximacions. A l'apartat de \emph{Macros pròpies} \ref{macprop}
-estan descrites les variables que ho controlen.
-
-En primer lloc el robot agafa les peces del les piles inicials.
-Aquestes són co\lgem ocades a la zona de paletització. Ambdues
-accions és duen a terme amb la pinça perpendicular al pla \emph{XY} (figura \ref{figperp}),
-ja que es la posició més segura i còmode de programar per l'agafada
-de peces.
-
-\begin{figure}[H]
-\begin{center}\label{figperp}
- \includegraphics[height=0.2\textheight]{perpendicular.png}
-\end{center}
-  \caption{Aproximació amb la pinça perpendicular al pla \emph{XY}}
-\end{figure}
-
-
-Cal remarcar que la pinça esta mirant cap al vidre protector i la paret,
-de tal manera que l'operari veu el metall.  Si no s'agafés bé la peça i
-aquesta sortís disparada ho faria en direcció a la paret o el vidre protector,
-no cap a l'operari.
-
-Un cop acabat el muntatge del palé és desmunta amb la pinça tombada,
-s'agafen les peces començant per les que es
-troben més a l'esquerra del braç robot, per co\lgem ocar-les als pals.
-
-El fet de tombar la pinça és per incrementar l'abast del braç robot. Amb la
-pinça perpendicular al pla \emph{XY}, com s'havia efectuat el muntatge del palé, no
-és possible arribar als pals 3 i 4. Com que s'ha decidit tombar la pinça
-cap a l'esquerra\footnote{Els pals estan a la dreta del robot, per tant convé
-tombar la pinça a la esquerra per simplificar els moviments i evitar haver
-de fer un gir del braç}, des de el punt de vista del robot, s'han de recollir
-les peces d'esquerra a dreta per tal de evitar que el braç co\lgem isioni
-(fig. \ref{figcolisio}) amb algun dels munts del palé encara existents.
-
-\begin{figure}[H]
-\begin{center}\label{figcolisio}
- \includegraphics[width=0.6\textwidth]{colisio.png}
-\end{center}
-  \caption{Co\lgem isió amb el munt de peces grogues intentant agafar l'última peça blava}
-\end{figure}
-
-Així doncs l'ordre de des-paletització depèn de l'angle i no del tipus de peça.
-Com és pot veure a la figura \ref{figrecpec} existeixen vuit possibles casos que es veuen
-reflectits en l'explicació del codi font corresponent, secció \ref{casosrot}.
-
-\begin{figure}[H]
-\begin{center}\label{figrecpec}
- \includegraphics[width=0.8\textwidth]{ordreRotacions.png}
- % ordreRotacions.png: 1286x768 pixel, 150dpi, 21.77x13.00 cm, bb=0 0 617 369
-\end{center}
-  \caption{Ordre de recollida de les peces segons l'angle $\alpha$}
-\end{figure}
-
