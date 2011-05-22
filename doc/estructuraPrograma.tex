@@ -2,58 +2,76 @@
 El programa es divideix en cinc seccions.
 
 \begin{description}
-\item [Capçalera de l'enunciat] Interficie de macros requerida per l'enunciat
-on hi ha paràmetres com l'angle $\alpha$.
-\item [Macros pròpies] Reassingació de valors per les \emph{features} extra que
-s'han implementat com ara emprar
-piles amb nombre de peces diferets, si es vol fer una execució amb l'enunciat
-original sols fa falta
-assignar els valors de les variables de la secció anterior.
-\item [Declaracions pròpies] Aqui es declaren les variables globals propies
-del programa, en principi sols les 
-ha de tocar el programador.
+\item [Capçalera de l'enunciat] Interfície de \emph{macros} requerida
+per l'enunciat on hi ha paràmetres com l'angle $\alpha$.
+
+\item [Macros pròpies] Re-assignació de valors per les funcionalitats extra que
+s'han implementat com ara emprar piles amb nombre de peces diferents, si es vol
+fer una execució amb l'enunciat original sols fa falta assignar els valors de
+les variables de la secció anterior.
+
+\item [Declaracions pròpies] Aquí es declaren les variables globals pròpies
+del programa, en principi sols les ha de tocar el programador.
+
 \item [Rutines] Codi de les rutines on es desenvolupa tota la pràctica.
+
 \item [Main] Simple crida ordenada a les rutines per desencadenar l'execució.
 \end{description}
 
 \subsection{Macros, paràmetres}
-Les \emph{macros} de la \emph{capçalera de l'enunciat} ja estan explicades al
-propi enunciat, aquí s'expiquen les
-altres \emph{macros} introduïdes per les \emph{features} propies, corresponents
-a l'apartat de \emph{Macros pròpies}.
-
-Cal mencionar aquests valors no són realment macros sinó variables, una macro
-es resol en temps de preprocessador no en temps de compilació o execució,
-aquest fet prota alguns problemes mencionats a l'apartat de incidents TODOLABEL.
+Les \emph{macros}\footnote{Cal mencionar que aquests valors no són realment
+\emph{macros} sinó variables, una \emph{macro} es resol en temps de
+pre-processador no en temps de compilació o execució, el fet de que el
+llenguatge no disposi de \emph{macros} porta alguns problemes mencionats
+a l'apartat de incidents\ref{incmaros}.} de la \emph{capçalera de l'enunciat} 
+ja estan explicades al propi enunciat, aquí s'expliquen les altres
+\emph{macros} introduïdes per les funcionalitats pròpies, corresponents a
+l'apartat de \emph{Macros pròpies}.
 
 \begin{description}\label{macprop}
 \item [PINCA] Valor de la pinça emprada, en el nostre cas el robot només en té
-una i es la 1.
-\item [DPALE] Retard de 4 segons requerit a l'enunciat un cop s'ha muntat el
-palé.
-\item [D\#PINCA\%] Retards aplicats despres de O\#brir o T\#ancar la pinça en
-funció de si es I\%nicial o F\%inal,
-abans o despres d'agafar la peça.
-\item [VLENT] V\_elocitat a la qual es duen a terme les aproximacions
+una i és la 1.
+
+\item [DPALE] Retard (\emph{D}elay) de 4 segons requerit a l'enunciat un cop
+s'ha muntat el palé.
+
+\item [D\#PINCA\%] Retards aplicats després de \emph{O\#}brir o
+\emph{T\#}ancar la pinça en funció de si es \emph{I\%}nicial o \emph{F\%}inal,
+abans o després d'agafar la peça.
+
+\item [VLENT] \emph{V}elocitat a la qual es duen a terme les aproximacions
 delicades, com l'agafada de peces.
-\item [VNORMAL] V\_elocitat a la que es desplaça normalment el braç en els
+
+\item [VNORMAL] \emph{V}elocitat a la que es desplaça normalment el braç en els
 trajectes segurs.
-\item [ZS] Pla Z on es consideren segurs els moviments del braç robot i on
+
+\item [ZS] Pla \emph{Z} on es consideren segurs els moviments del braç robot i on
 es duen a terme els desplaçaments llargs.
-\item [ZTPT] Pla de T\_erra (Z = 0) amb la P\_inça T\_ombada (angle inferor
-a 45 amb el pla XY)
-\item [ZTPR] Pla de terra amb la pinça perpendicular al pla XY                                                                                                           
-\item [TP] T\_ipus de P\_eça diferents que tenim, es igual el numero de munts
-del palé i de pals de destí.
+
+\item [ZTPT] Pla de \emph{T}erra ($Z = 0$) amb la \emph{P}inça \emph{T}ombada
+(angle inferor a 45 amb el pla \emph{XY})
+
+\item [ZTPR] Pla de terra amb la pinça perpendicular al pla \emph{XY}  
+                                                                                                         
+\item [TP] \emph{T}ipus de \emph{P}eça diferents que tenim, es igual el
+número de munts del palé i de pals de destí.
+
 \item [PILES] Número de piles d'on es fa la recollida inicial de peces.
+
 \item [PALS] Número de pals de destí on es deixen les peces.
-\item [DT] Retard per l'obetura i tancament de la pinça.
+
+\item [DT] Retard per l'obertura i tancament de la pinça.
+
 \item [HDISC] Altura de les peces (discs)
-\item [D\#PILES] Distància en X i Y entre les piles
-\item [D\#PALS] Distància en X i Y entre els pals
-\item [DZPAL] Distància Z a baixar per introduïr la peça dins el pal.
-\item [RELPALE(T,E)] Distància relativa de la peça tipus T al punt P, en funció
-de l'eix E (1 per X, 2 per Y)
+
+\item [D\#PILES] Distància en \emph{X} i \emph{Y} entre les piles
+
+\item [D\#PALS] Distància en \emph{X} i \emph{Y} entre els pals
+
+\item [DZPAL] Distància \emph{Z} a baixar per introduir la peça dins el pal.
+
+\item [RELPALE(T,E)] Distància relativa de la peça tipus \emph{T} al punt
+\emph{P}, en funció de l'eix \emph{E} (1 per \emph{X}, 2 per \emph{Y})
 \end{description}
 
 \subsection{Estructura del codi}
@@ -61,7 +79,6 @@ En el codi s'ha fet una funció per cada acció i alguna d'auxiliar transversal.
 La intenció es dedicar tota la feina a les rutines i que la lectura del
 programa es pugui llegir de manera natural en els nivells més alts entrant en
 detalls a mesura que es va aprofundint en les funcions.
-
 
 \begin{center}
 \begin{tabular}{|l|l|l|l|}
@@ -77,82 +94,82 @@ Agafa pila & Posa palé & Agafa Palé & Posa pal\\
 
 
 Cal fer especial menció a dos vectors de control de l'estat del programa,
-aquests son \texttt{npcspila} i \texttt{alloc}.
+aquests són \texttt{npcspila} i \texttt{alloc}.
 
-\texttt{npcspila(p)} conté el nombre de peces que resten a la pila inicial de
+\texttt{npcspila(p)} conté el nombre de peces que resten a la pila inicial d'
 on s'agafen les peces.
 
 \texttt{alloc(m)} indica quantes peces ja estan a lloc, situades al munt
 \texttt{p} del palé, recordem que cada munt correspon a un tipus de peça.
 
-Ambdues variables serveixen per controlar l'altura en Z d'on agafar les
+Ambdues variables serveixen per controlar l'altura en \emph{Z} d'on agafar les
 peces, i per sabre quan ja no en queden més.
 
-Amb aquest principi ens queda un cos principal tan lleguer com aquest.
+Amb aquest principi ens queda un cos principal tan lleuger com aquest.
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-960 gosub *INIT
-970 gosub *CALCPTS
-980 gosub *MNTPALE
-990 dly DPALE
-1000 gosub *DESPALE
-1010 gosub *ACABA
-1020 end
+970 gosub *INIT
+980 gosub *CALCPTS
+990 gosub *MNTPALE
+1000 dly DPALE
+1010 gosub *DESPALE
+1020 gosub *ACABA
+1030 end
 \end{minted}
 
 \subsubsection{Auxiliars}
 \paragraph{Canvi sistemes de coordenades}\label{cam2rob}
-En la funcio \texttt{CAM2ROB} funció es troba implementat el canvi de sistemes
-de coordenades del la camera al robot.
-Com a interfície llegeix els punts ppx i ppy que son els que es desitgen
-tranformar, així com les macros del programa \texttt{oPx}, \texttt{oPy},
+En la funció \texttt{CAM2ROB} es troba implementat el canvi de sistemes
+de coordenades del la càmera al robot.
+Com a interfície llegeix els punts \texttt{ppx} i \texttt{ppy} que són els que es desitgen
+transformar, així com les \emph{macros} del programa \texttt{oPx}, \texttt{oPy},
 \texttt{cPx}, \texttt{cPy} i l'\texttt{angle}. Deixa els valors de
 \texttt{ppx} i \texttt{ppy} en funció del sistema de coordenades del braç
 robot en les variables \texttt{prx} i \texttt{pry}.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2010 *CAM2ROB
-2020 	angleR =(angle*M_PI) / 180.0
-2030    prx = ppx*sin(angleR) + ppy*cos(angleR) + oPy + cPx
-2040    pry = ppx*cos(angleR) - ppy*sin(angleR) + oPx + cPy
-2050    return
+2020 *CAM2ROB
+2030 	angleR =(angle*M_PI) / 180.0
+2040    prx = ppx*sin(angleR) + ppy*cos(angleR) + oPy + cPx
+2050    pry = ppx*cos(angleR) - ppy*sin(angleR) + oPx + cPy
+2060    return
 \end{minted}
 
 \paragraph{Obertura-Tancament de pinça}
 Per tal de facilitar la llegibilitat del codi i no afegir constantment
-els retards per la obertuda i tancament de pinça s'han definit les funcions
+els retards per la obertura i tancament de pinça s'han definit les funcions
 \texttt{OPINCA} i \texttt{TPINCA} que encapsulen aquest comportament.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2070 *OPINCA
-2080    dly DOPINCAI
-2090    hopen PINCA
-2100    dly DOPINCAF
-2110    return
+2080 *OPINCA
+2090    dly DOPINCAI
+2100    hopen PINCA
+2110    dly DOPINCAF
+2120    return
 \end{minted}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2120 *TPINCA
-2130    dly DTPINCAI
-2140    hclose PINCA
-2150    dly DTPINCAF
-2160    return
+2130 *TPINCA
+2140    dly DTPINCAI
+2150    hclose PINCA
+2160    dly DTPINCAF
+2170    return
 \end{minted}
 
 \subsubsection{Inicialitzacions}
 En aquesta rutina es duu a terme l'operació de \emph{homing} i demés
-inicialitzacions físiques del braç robot com l'obertuda de la pinça
+inicialitzacions físiques del braç robot com l'obertura de la pinça
 o de les variables que controlen l'entorn del robot, com el 
-contador de peces que s'han posat a cada palé.
+comptador de peces que s'han posat a cada palé.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-1040 *INIT
-1050    servo ON
-1060    ovrd VNORMAL
-1070    mov Paralisi
-1080    gosub *OPINCA
-1090    for i = 1 to TP
-1100        alloc(i) = 0
-1110    next
-1120    return
+1050 *INIT
+1060    servo ON
+1070    ovrd VNORMAL
+1080    mov Paralisi
+1090    gosub *OPINCA
+1100    for i = 1 to TP
+1110        alloc(i) = 0
+1120    next
+1130    return
 \end{minted}
 
 \subsubsection{Càlcul de punts}\label{codcalcpts}
@@ -161,13 +178,13 @@ punts en funció d'uns pocs, per això en la funció de càlcul de punts s'omple
 els vectors que contenen els punts homòlegs calculats a partir de les
 \emph{macros} que descriuen l'entorn físic. En aquest punt també es calcula
 l'ordre de recollida de les peces en funció de l'angle\ref{figrecpec}. Per limitacions del
-llenguatge comentades a l'apartat de incidents TODO LABEL el codi no has
+llenguatge comentades a l'apartat de incidents \ref{incidents} el codi no has
 sortir gaire elegant.
 
 Un cop acabada la funció càlcul de punts tots els vectors de punts estan apunt
 per ser recorreguts per part del braç robot en els eixos (X,Y), el Z és
 calculat en temps d'execució ja que depèn de quina peça s'estigui tractant,
-ja que son apliades a l'eix Z.
+ja que son apilades a l'eix Z.
 Aquests vectors emprats de interfície són:
 
 \begin{description}
@@ -184,170 +201,181 @@ peça ja hi ha entrat i pot ser amollada.
 
 \label{casosrot}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-1130 *CALCPTS
-1140    for pil = 1 to PILES
-1150        Pila(pil) = Pila0
-1160        Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
-1170        Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
-1180    next
-
-1200    for tipus = 1 to TP
-1210        ppx = RELPALE(tipus, 1) 'paramentres de entrada de CAM2ROB
-1220        ppy = RELPALE(tipus, 2)
-1230        gosub *CAM2ROB           'prx i pry son parametres de sortida
-1240        Pale(tipus) = Pale0    'Escriu altres components i orientacions
-1250        Pale(tipus).x = prx
-1260        Pale(tipus).y = pry
-1270        PaleOut(tipus) = PaleOut0
-1280        PaleOut(tipus).x = prx + 5.0
-1290        PaleOut(tipus).y = pry -20.0
-1300    next
-
-1320    for pal = 1 to PALS
-1330        PalI(pal) = Pal0
-1340        PalI(pal).x = PalI(pal).x + DXPALS * (pal - 1)
-1350        PalI(pal).y = PalI(pal).y + DYPALS * (pal - 1)
-1360        PalF(pal) = PalI(pal)
-1370        PalF(pal).z = PalF(pal).z - DZPAL
-1380    next
-1390 	
-1400    angle = angle mod 360
-1410 	if ((0.0 < angle) and (angle < 45.0)) then
-1420        ordre(1) = 3
-1430        ordre(2) = 2
-1440        ordre(3) = 4
-1450        ordre(4) = 1
-1460        return
-1470  endif
-1480  if ((45.0 < angle) and (angle < 90.0)) then 
-1490        ordre(1) = 3
-1500        ordre(2) = 4
-1510        ordre(3) = 2
-1520        ordre(4) = 1
-1530        return
-1540  endif
-1550  if ((90.0 < angle) and (angle < 135.0)) then
-1560        ordre(1) = 4
-1570        ordre(2) = 3
-1580        ordre(3) = 1
-1590        ordre(4) = 2
-1600        return
-1610  endif
-1620  if ((135.0 <= angle) and (angle < 180.0)) then
-1630        ordre(1) = 4
-1640        ordre(2) = 1
-1650        ordre(3) = 3
-1660        ordre(4) = 2
-1670 		return
-1680 	endif
-1690  if ((180.0 <= angle) and (angle < 225.0)) then 
-1700        ordre(1) = 1
-1710        ordre(2) = 4
-1720        ordre(3) = 2
-1730        ordre(4) = 3
-1740        return
-1750  endif
-1760  if ((225.0 <= angle) and (angle < 270.0)) then
-1770        ordre(1) = 1
-1780        ordre(2) = 2
-1790        ordre(3) = 4
-1800        ordre(4) = 3
-1810        return
-1820  endif
-1830  if ((270.0 <= angle) and (angle < 315.0)) then 
-1840        ordre(1) = 2
-1850        ordre(2) = 1
-1860        ordre(3) = 4
-1870        ordre(4) = 3
-1880 	return
-1890  endif
-1900  ' 315.0 > angle < 360.0
-1910  ordre(1) = 2
-1920  ordre(2) = 3
-1930  ordre(3) = 1
-1940  ordre(4) = 4
-1950  return
+1140 *CALCPTS
+1150    for pil = 1 to PILES
+1160        Pila(pil) = Pila0
+1170        Pila(pil).x = Pila(1).x + DXPILES * (pil - 1)
+1180        Pila(pil).y = Pila(1).y + DYPILES * (pil - 1) 'es 0
+1190    next
+    
+1210    for tipus = 1 to TP
+1220        ppx = RELPALE(tipus, 1) 'paramentres de entrada de CAM2ROB
+1230        ppy = RELPALE(tipus, 2)
+1240        gosub *CAM2ROB           'prx i pry son parametres de sortida
+1250        Pale(tipus) = Pale0    'Escriu altres components i orientacions
+1260        Pale(tipus).x = prx
+1270        Pale(tipus).y = pry
+1280        PaleOut(tipus) = PaleOut0
+1290        PaleOut(tipus).x = prx '- 7.0
+1300        PaleOut(tipus).y = pry - 15.0
+1310    next
+ 
+1330    for pal = 1 to PALS
+1340        PalI(pal) = Pal0
+1350        PalI(pal).x = PalI(pal).x + DXPALS * (pal - 1)
+1360        PalI(pal).y = PalI(pal).y + DYPALS * (pal - 1)
+1370        PalF(pal) = PalI(pal)
+1380        PalF(pal).z = PalF(pal).z - DZPAL
+1390    next
+1400 	
+1410    angle = angle mod 360
+1420    if ((0.0 < angle) and (angle < 45.0)) then
+1430        ordre(1) = 3
+1440        ordre(2) = 2
+1450        ordre(3) = 4
+1460        ordre(4) = 1
+1470        return
+1480     endif
+1490    if ((45.0 < angle) and (angle < 90.0)) then 
+1500        ordre(1) = 3
+1510        ordre(2) = 4
+1520        ordre(3) = 2
+1530        ordre(4) = 1
+1540        return
+1550    endif
+1560    if ((90.0 < angle) and (angle < 135.0)) then
+1570        ordre(1) = 4
+1580        ordre(2) = 3
+1590        ordre(3) = 1
+1600        ordre(4) = 2
+1610        return
+1620    endif
+1630    if ((135.0 <= angle) and (angle < 180.0)) then
+1640        ordre(1) = 4
+1650        ordre(2) = 1
+1660        ordre(3) = 3
+1670        ordre(4) = 2
+1680        return
+1690    endif
+1700    if ((180.0 <= angle) and (angle < 225.0)) then 
+1710        ordre(1) = 1
+1720        ordre(2) = 4
+1730        ordre(3) = 2
+1740        ordre(4) = 3
+1750        return
+1760    endif
+1770    if ((225.0 <= angle) and (angle < 270.0)) then
+1780        ordre(1) = 1
+1790        ordre(2) = 2
+1800        ordre(3) = 4
+1810        ordre(4) = 3
+1820        return
+1830    endif
+1840    if ((270.0 <= angle) and (angle < 315.0)) then 
+1850        ordre(1) = 2
+1860        ordre(2) = 1
+1870        ordre(3) = 4
+1880        ordre(4) = 3
+1890        return
+1900    endif
+1910    ' 315.0 > angle < 360.0
+1920    ordre(1) = 2
+1930    ordre(2) = 3
+1940    ordre(3) = 1
+1950    ordre(4) = 4
+1960    return
 \end{minted}
 
 \subsubsection{Munta palé}
 Tal i com indica el títol en aquesta funció es munta el palé, aquesta tasca
 consisteix en iterar per cada una de les peces existents en cada una de les
-piles per agafar-les i depositar-les al lloc corresponent del palé.
+piles per agafar-les i dipositar-les al lloc corresponent del palé.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2170 *MNTPALE
-2180    peca = 1
-2190    for pil = 1 to PILES 
-2200        for pecapila = 1 to npcspila(pil)
-2210            gosub *AGAFPILA
-2220            gosub *POSAPALE
-2230            peca = peca + 1
-2240        next
-2250    next
-2260    return
+2180 *MNTPALE
+2190    peca = 1
+2200    for pil = 1 to PILES 
+2210        for pecapila = 1 to npcspila(pil)
+2220            gosub *AGAFPILA
+2230            gosub *POSAPALE
+2240            peca = peca + 1
+2250        next
+2260    next
+2270    return
 \end{minted}
 
 \paragraph{Agafa de la pila}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2370 *AGAFPILA
-2380    mov Pila(pil)
-2390    Prvsnl = Pila(pil)
-2400    Prvsnl.z = Prvsnl.z - ZTPR + (npcspila!(pil) - pecapila) * HDISC
-2410    ovrd VLENT
-2420    mvs Prvsnl
-2430    gosub *TPINCA
-2440    mvs Pila(pil)
-2450    ovrd VNORMAL
-2460    return
+2380 *AGAFPILA
+2390    mov Pila(pil)
+2400    Prvsnl = Pila(pil)
+2410    Prvsnl.z = Prvsnl.z - ZTPR + (npcspila!(pil) - pecapila) * HDISC
+2420    ovrd VLENT
+2430    mvs Prvsnl
+2440    gosub *TPINCA
+2450    mvs Pila(pil)
+2460    ovrd VNORMAL
+2470    return
 \end{minted}
 
 \paragraph{Posa al Palé}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2470 *POSAPALE
-2480    mov Pale(tipusP(peca))
-2490    Prvsnl = Pale(tipusP(peca))
-2500    Prvsnl.z = Prvsnl.z - ZTPR + alloc(tipusP(peca)) * HDISC
-2510    ovrd VLENT
-2520    mvs Prvsnl
-2530    gosub *OPINCA
-2540    mvs Pale(tipusP(peca))
-2550    ovrd VNORMAL
-2560    alloc(tipusP(peca)) = alloc(tipusP(peca)) + 1
-2570    return
+2480 *POSAPALE
+2490    mov Pale(tipusP(peca))
+2500    Prvsnl = Pale(tipusP(peca))
+2510    Prvsnl.z = Prvsnl.z - ZTPR + alloc(tipusP(peca)) * HDISC
+2520    ovrd VLENT
+2530    mvs Prvsnl
+2540    gosub *OPINCA
+2550    mvs Pale(tipusP(peca))
+2560    ovrd VNORMAL
+2570    alloc(tipusP(peca)) = alloc(tipusP(peca)) + 1
+2580    return
 \end{minted}
 
 \subsubsection{Desmunta palé}
 En aquest punt del programa el braç va munt a munt del palé agafant les peces
 i deixant-les als pals, no passa al següent munt mentre a l'actual quedin peces.
-L'ordre d'agafada dels munts ha estat calculat en \emph{calcul de punts} com ja s'ha
+L'ordre d'agafada dels munts ha estat calculat en \emph{càlcul de punts} com ja s'ha
 esmentat\ref{codcalcpts}.
+
+\begin{minted}[frame=lines, fontsize=\small]{vbnet}
+2290 *DESPALE
+2300    for tipus = 1 to TP
+2310        munt = ordre(tipus)
+2320        while alloc(munt) > 0
+2330            gosub *AGAFPALE
+2340            gosub *POSADEST
+2350        wend
+2360    next
+2370    return
+\end{minted}
 
 \paragraph{Agafa del palé}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2580 *AGAFPALE
-2590    mov PaleOut(munt)
-2600    Prvsnl = PaleOut(munt)
-2610    Prvsnl.z = Prvsnl.z - ZTPT + (alloc(munt) - 1) * HDISC
-2620    ovrd VLENT
-2630    mvs Prvsnl
-2640    gosub *TPINCA
-2650    mvs PaleOut(munt)
-2660    ovrd VNORMAL
-2670    alloc(munt) = alloc(munt) - 1
-2680    return
+2590 *AGAFPALE
+2600    mov PaleOut(munt)
+2610    Prvsnl = PaleOut(munt)
+2620    Prvsnl.z = Prvsnl.z - ZTPT + (alloc(munt) - 1) * HDISC
+2630    ovrd VLENT
+2640    mvs Prvsnl
+2650    gosub *TPINCA
+2660    mvs PaleOut(munt)
+2670    ovrd VNORMAL
+2680    alloc(munt) = alloc(munt) - 1
+2690    return
 \end{minted}
-
 
 \paragraph{Posa pal}
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-2690 *POSADEST
-2700    mov PalI(munt)
-2710    ovrd VLENT
-2720    mvs PalF(munt)
-2730    gosub *OPINCA
-2740    mvs PalI(munt)
-2750    ovrd VNORMAL
-2760 	return
+2700 *POSADEST
+2710    mov PalI(munt)
+2720    ovrd VLENT
+2730    mvs PalF(munt)
+2740    gosub *OPINCA
+2750    mvs PalI(munt)
+2760    ovrd VNORMAL
+2770    return
 \end{minted}
 
 \subsubsection{Acaba}
@@ -355,10 +383,10 @@ De manera similar a l'inicialitza, acaba s'encarrega del posicionament
 físic del robot en una posició de repòs i la desconnexió dels servomotors.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
-1960 *ACABA
-1970    mov Paralisi
-1980    hopen PINCA
-1990    servo OFF
-2000    return
+1970 *ACABA
+1980    mov Paralisi
+1990    hopen PINCA
+2000    servo OFF
+2010    return
 \end{minted}
 

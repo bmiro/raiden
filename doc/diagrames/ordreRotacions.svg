@@ -14,7 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="ordreRotacions.svg">
+   sodipodi:docname="ordreRotacions.svg"
+   inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/ordreRotacions.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <marker
@@ -58,9 +61,9 @@
      inkscape:current-layer="capa1"
      showgrid="false"
      inkscape:window-width="1024"
-     inkscape:window-height="746"
+     inkscape:window-height="721"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -751,50 +754,73 @@
          sodipodi:type="arc" />
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="M 36.365492,174.53962 66.670068,122.01169 87.883271,205.85435 117.1777,151.30611"
        id="path3367"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 235.36554,164.4381 29.29443,50.50762 23.23351,-81.82235 28.28427,52.52793"
        id="path3369"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 434.36559,183.63099 29.29443,-48.48732 22.22335,80.81221 30.30458,-53.53809"
        id="path3371"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 634.3758,156.35687 30.30457,52.52794 19.1929,-81.82236 29.29443,52.52793"
        id="path3373"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 39.395949,365.45845 17.172594,-58.58885 39.395949,73.74114 16.162438,-59.599"
        id="path3375"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 234.35539,344.24525 31.31473,52.52793 22.22336,-82.83251 28.28427,51.51778"
        id="path3377"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 434.36559,374.54982 29.29443,-51.51778 23.23351,82.83251 30.30457,-52.52793"
        id="path3379"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
+       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 634.3758,341.21479 31.31473,52.52793 20.20305,-81.82235 30.30457,54.54823"
        id="path3381"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/bmiro/uib/2010-11/robotica/raiden/doc/diagrames/path3375.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 12.769668,495.51735 7.499896,-41.04348 26.577384,-4.49147 18.880945,-28.22359 4.66545,-61.45074 -26.31007,51.05643 -27.705663,6.44826 -13.5068593,-28.12532 17.7053013,-48.58158 -38.648428,40.49844 -4.347759,41.99725 16.8916925,22.25495 -26.6589635,39.9044 60.471677,72.63669 30.304577,-26.26397 z"
+       d="m 12.769668,495.51735 7.499896,-41.04348 26.577384,-4.49147 18.880945,-28.22359 4.66545,-61.45074 -26.31007,51.05643 -27.705663,6.44826 -13.5068593,-28.12532 17.7053013,-48.58158 -38.648428,40.49844 -4.347759,41.99725 16.8916925,22.25495 c -14.6572865,31.68644 -14.9988145,42.82914 -21.2254485,44.76831 -16.206471,5.04722 23.3921423,3.36379 39.523559,4.89254 z"
        id="path4963"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccc" />
+       sodipodi:nodetypes="ccccccccccccsc" />
   </g>
 </svg>

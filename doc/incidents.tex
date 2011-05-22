@@ -1,14 +1,66 @@
-\section{Incidents i problemàtica al desenvolupament}
+\section{Incidents i problemàtica al desenvolupament}\label{incidents}
 
-tombar pinça etc.
+Durant el desenvolupament com es habitual hom es troba amb problemes a resolde,
+alguns d'ells fruit de l'aprenentatge però d'altres deguts a limitacions
+de l'entorn ja sigui físic com virtual.
 
-Queixes del llenguatge i entorn
-case i float
+El primer problema a afrontar era fer arribar les peces als pas 3 i 4 com s'ha
+comentat. S'entén que aquest fet es intencionat per complicar una mica
+més la pràctica.
 
-falta de macros, sobretot per declaració de vectors
+En el nostre cas això ha estat resolt tombant la pinça com ja s'ha exposat en
+les seccions anteriors. El fet de tombar la pinça porta una sèrie complicacions 
+addicionals. L'una és que el sistema de coordenades de la pinça no està
+ubicat perfectament a la zona de contacte on s'agafen les peces, això fa que
+s'hagi de fer una petita correcció en \emph{XY} respecte
+a la posició quan està perpendicular. Aquesta correcció és veu al codi com una
+suma de 5.0 a \emph{X} i 20.0 a \emph{Y}, no definits com a \emph{macro}
+per resignació.
 
-brutor dels gosub i variables globlas com a parametre
+La so\lgem ució no es gaire elegant però si efectiva, tal vegada si el 
+treball a realitzar fos més complexe consideraríem intentar moure el sistema
+de coordenades al punt correcte, ja sigui amb la funció \texttt{tool}
+com fent un càlcul propi a mà i tenint una funció similar a la \texttt{CAM2ROB}.
 
-offset amb la pinça tombada
+En l'entorn físic també ens hem trobat amb el problema que les peces
+tenen restes de cola i vegades s'aferren entre elles movent dues peces a la
+vegada, cosa que desbarata totalment l'execució i requereix un reseteig manual
+de l'entorn.
 
-les peces s'aferren entre elles per pressio i restes de cola o a la cinta de la pinça quan aquesta esta desgastada.
+S'entén que tots aquests problemes físics són fruit de viure en un món
+material amb certes complicacions que, al cap i a la fi, fan la vida un poc més
+interessant. Per altra banda si entram en l'apartat de problemes o incidents
+en el programari ens trobam amb coses menys justificables.
+
+El llenguatge de programació del robot es un autèntic desastre, incòmode i
+poc pràctic. Un dels principals problemes de la robòtica 
+industrial és el temps que és té el robot aturat per programar-lo i 
+d'aquí que s'inverteixi molt de temps en simuladors, que no poden simular
+els problemes físic esmentats anteriorment. Així doncs seria molt més
+eficaç tenir millors llenguatges que no indueixin a l'error i facilitin
+un desenvolupament més ràpid que no pas dedicar-se a simuladors.
+
+Concretament al llenguatge li sobren coses com el numerat de línia,
+sobretot que l'entorn no ho faci de manera completament automàtica.
+Requerir numerat només fa que s'hagi de pitjar el botó de re-enumeració
+cada cop i esperar que es faci el procés, que incomprensiblement tarda
+uns 2 o 3 segons.
+
+Al llenguatge també són necessaris més elements, el primordial són
+variables locals i crides de funcions amb un fàcil pas de paràmetres,
+les variables globals i el \texttt{gosub} indueixen freqüentment a l'error.
+
+Falta de \emph{macros}, en tot programa, i més els que tracten entorns físics,
+són necessaris números màgics, aquests poden ser resolts amb una variable
+però si són necessaris per la declaració d'un vector tenim un problema,
+i més si el llenguatge no permet que aquests siguin dinàmics. És
+trist haver de posar números màgics per tot amb un comentari el costat
+on aparegui algun identificador per poder-los trobar al llarg del codi
+quan s'ha de realitzar algun canvi.
+
+Tampoc estaria de més el suport de la funció de \texttt{case} amb \text{floats},
+es cert que això requereix mes complexitat, però com a mínim l'entorn podria
+aixecar un advertiment en ser usat, dient que no funciona.
+
+Finalment comentar que el sistema de mostrat d'errors pobre a més de sovint
+practicament inexistent.
