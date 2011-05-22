@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.29)  3 MAY 2011 16:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.23)  3 MAY 2011 20:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -518,19 +518,35 @@ File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./principal.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./principal.toc
+Class scrartcl Info: You've told me to use the font selection of the element
+(scrartcl)           `sectioning' that is an alias of element `disposition'
+(scrartcl)            on input line 2.
+Class scrartcl Info: You've told me to use the font selection of the element
+(scrartcl)           `sectioning' that is an alias of element `disposition'
+(scrartcl)            on input line 3.
+Class scrartcl Info: You've told me to use the font selection of the element
+(scrartcl)           `sectioning' that is an alias of element `disposition'
+(scrartcl)            on input line 4.
+Class scrartcl Info: You've told me to use the font selection of the element
+(scrartcl)           `sectioning' that is an alias of element `disposition'
+(scrartcl)            on input line 7.
+Class scrartcl Info: You've told me to use the font selection of the element
+(scrartcl)           `sectioning' that is an alias of element `disposition'
+(scrartcl)            on input line 22.
+Class scrartcl Info: You've told me to use the font selection of the element
+(scrartcl)           `sectioning' that is an alias of element `disposition'
+(scrartcl)            on input line 23.
+)
 \tf@toc=\write6
 \openout6 = `principal.toc'.
 
  [2]
 (./interpretacioEnunciat.tex
 
-LaTeX Warning: Reference `macprop' on page 3 undefined on input line 14.
-
-
 LaTeX Warning: Reference `escenari' on page 3 undefined on input line 16.
 
-<diagrames/escenari.png, id=26, 504.4446pt x 268.8444pt>
+<diagrames/escenari.png, id=99, 504.4446pt x 268.8444pt>
 File: diagrames/escenari.png Graphic file (type png)
 
 <use diagrames/escenari.png>
@@ -545,27 +561,21 @@ runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
 
-
-
-LaTeX Warning: Reference `calcpts' on page 3 undefined on input line 38.
-
-[3 <./diagrames/escenari.png>]
-<diagrames/colisio.png, id=40, 343.5234pt x 234.6366pt>
+ [3 <./diagrames/escenari.png>] <diagrames/colisio.png, id=114, 343.5234pt x 23
+4.6366pt>
 File: diagrames/colisio.png Graphic file (type png)
 
 <use diagrames/colisio.png> [4]
 
-LaTeX Warning: Reference `fig:recpec' on page 5 undefined on input line 106.
+LaTeX Warning: Reference `fig:recpec' on page 5 undefined on input line 105.
 
-<diagrames/ordreRotacions.png, id=49, 619.5948pt x 370.0224pt>
+<diagrames/ordreRotacions.png, id=123, 619.5948pt x 370.0224pt>
 File: diagrames/ordreRotacions.png Graphic file (type png)
 
-<use diagrames/ordreRotacions.png>
-
-LaTeX Warning: Reference `casosrot' on page 5 undefined on input line 120.
-
-) (./calculs.tex [5 <./diagrames/colisio.png> <./diagrames/ordreRotacions.png>]
+<use diagrames/ordreRotacions.png>) (./calculs.tex [5 <./diagrames/colisio.png>
+ <./diagrames/ordreRotacions.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -575,18 +585,6 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Overfull \hbox (9.4803pt too wide) detected at line 99
 [] \OMS/cmsy/m/n/10.95 ^^B [] \OT1/cmr/m/n/10.95 = []
  []
-
-
-LaTeX Warning: Reference `cam2rob' on page 7 undefined on input line 102.
-
-
-Overfull \hbox (17.22025pt too wide) in paragraph at lines 101--103
-[]\OT1/cmr/m/n/10.95 De on ex-treim les seg^^?uents equa-cions que ser-an im-pl
-e-men-tades dins del nos-tre programa[]. 
- []
-
-
-LaTeX Warning: Reference `codcalcpts' on page 7 undefined on input line 116.
 
 ) (./estructuraPrograma.tex
 Overfull \hbox (4.94757pt too wide) in paragraph at lines 5--7
@@ -620,14 +618,14 @@ runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
 
+ [9]
 \openout3 = `principal.pyg'.
 
 runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg
-[9])
+ (./principal.out.pyg)
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
@@ -638,7 +636,8 @@ runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg)
+
+(./principal.out.pyg)
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
@@ -663,13 +662,13 @@ runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg
-[11])
+ (./principal.out.pyg [11])
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
 
- [12]
+
+[12]
 \openout3 = `principal.pyg'.
 
 runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
@@ -703,18 +702,15 @@ runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
 
-
-
-LaTeX Warning: Reference `codcalcpts' on page 13 undefined on input line 323.
-
-[13]
+ [13]
 \openout3 = `principal.pyg'.
 
 runsystem(pygmentize -l vbnet -f latex -F tokenmerge             -P "verboption
 s= ,frame=lines,fontsize=\small " -o principal.out.pyg principal.pyg)...execute
 d.
 
- (./principal.out.pyg)
+
+(./principal.out.pyg)
 runsystem(rm principal.out.pyg)...executed.
 
 runsystem(rm principal.pyg)...executed.
@@ -746,15 +742,12 @@ runsystem(rm principal.pyg)...executed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 8357 strings out of 495061
- 120728 string characters out of 1182621
+ 8368 strings out of 495061
+ 120960 string characters out of 1182621
  229352 words of memory out of 3000000
- 11282 multiletter control sequences out of 15000+50000
+ 11293 multiletter control sequences out of 15000+50000
  12731 words of font info for 47 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  43i,14n,43p,336b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -771,9 +764,9 @@ e/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1
 msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
 cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 /usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on principal.pdf (15 pages, 339667 bytes).
+Output written on principal.pdf (15 pages, 348068 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
+ 246 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
- 32 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
