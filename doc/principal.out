@@ -1,4 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Interpretaci\363 de l'enunciat i modelat de l'escenari}{}
+\BOOKMARK [2][-]{subsection.1.1}{Interpretaci\363 de l'enunciat}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{Modelat de l'entorn}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{Consideracions de l'entorn}{section.1}
 \BOOKMARK [1][-]{section.2}{Moviment del robot}{}
 \BOOKMARK [1][-]{section.3}{C\340lculs}{}
 \BOOKMARK [2][-]{subsection.3.1}{Transformaci\363 de sistemes de coordenades}{section.3}
@@ -12,5 +15,5 @@
 \BOOKMARK [3][-]{subsubsection.4.2.4}{Munta pal\351}{subsection.4.2}
 \BOOKMARK [3][-]{subsubsection.4.2.5}{Desmunta pal\351}{subsection.4.2}
 \BOOKMARK [3][-]{subsubsection.4.2.6}{Acaba}{subsection.4.2}
-\BOOKMARK [1][-]{section.5}{Incidents i problem\340tica al desenvolupament}{}
-\BOOKMARK [1][-]{section.6}{Joc de proves}{}
+\BOOKMARK [1][-]{section.5}{Joc de proves}{}
+\BOOKMARK [1][-]{section.6}{Incidents i problem\340tica al desenvolupament}{}

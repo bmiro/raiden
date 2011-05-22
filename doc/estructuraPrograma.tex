@@ -23,7 +23,7 @@ Les \emph{macros}\footnote{Cal mencionar que aquests valors no són realment
 \emph{macros} sinó variables, una \emph{macro} es resol en temps de
 pre-processador no en temps de compilació o execució, el fet de que el
 llenguatge no disposi de \emph{macros} porta alguns problemes mencionats
-a l'apartat de incidents\ref{incmaros}.} de la \emph{capçalera de l'enunciat} 
+a l'apartat de incidents \ref{incidents}.} de la \emph{capçalera de l'enunciat} 
 ja estan explicades al propi enunciat, aquí s'expliquen les altres
 \emph{macros} introduïdes per les funcionalitats pròpies, corresponents a
 l'apartat de \emph{Macros pròpies}.
@@ -49,7 +49,6 @@ trajectes segurs.
 es duen a terme els desplaçaments llargs.
 
 \item [ZTPT] Pla de \emph{T}erra ($Z = 0$) amb la \emph{P}inça \emph{T}ombada
-(angle inferor a 45 amb el pla \emph{XY})
 
 \item [ZTPR] Pla de terra amb la pinça perpendicular al pla \emph{XY}  
                                                                                                          
@@ -77,8 +76,10 @@ número de munts del palé i de pals de destí.
 \subsection{Estructura del codi}
 En el codi s'ha fet una funció per cada acció i alguna d'auxiliar transversal.
 La intenció es dedicar tota la feina a les rutines i que la lectura del
-programa es pugui llegir de manera natural en els nivells més alts entrant en
+programa sigui el més natural possible. En els nivells més alts entrant en
 detalls a mesura que es va aprofundint en les funcions.
+
+Així doncs tenim aquesta jerarquia:
 
 \begin{center}
 \begin{tabular}{|l|l|l|l|}
@@ -97,9 +98,9 @@ Cal fer especial menció a dos vectors de control de l'estat del programa,
 aquests són \texttt{npcspila} i \texttt{alloc}.
 
 \texttt{npcspila(p)} conté el nombre de peces que resten a la pila inicial d'
-on s'agafen les peces.
+on s'agafen.
 
-\texttt{alloc(m)} indica quantes peces ja estan a lloc, situades al munt
+\texttt{alloc(m)} indica quantes peces ja estan \emph{a lloc}, situades al munt
 \texttt{p} del palé, recordem que cada munt correspon a un tipus de peça.
 
 Ambdues variables serveixen per controlar l'altura en \emph{Z} d'on agafar les
@@ -128,7 +129,7 @@ robot en les variables \texttt{prx} i \texttt{pry}.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2020 *CAM2ROB
-2030 	angleR =(angle*M_PI) / 180.0
+2030    angleR =(angle*M_PI) / 180.0
 2040    prx = ppx*sin(angleR) + ppy*cos(angleR) + oPy + cPx
 2050    pry = ppx*cos(angleR) - ppy*sin(angleR) + oPx + cPy
 2060    return
@@ -177,11 +178,12 @@ Com ja s'ha comentat en la pràctica s'ha fet el màxim esforç per posar tots e
 punts en funció d'uns pocs, per això en la funció de càlcul de punts s'omplen
 els vectors que contenen els punts homòlegs calculats a partir de les
 \emph{macros} que descriuen l'entorn físic. En aquest punt també es calcula
-l'ordre de recollida de les peces en funció de l'angle\ref{figrecpec}. Per limitacions del
-llenguatge comentades a l'apartat de incidents \ref{incidents} el codi no has
+l'ordre de recollida de les peces en funció de l'angle (figura \ref{figrecpec}).
+Per limitacions del
+llenguatge comentades a l'apartat \ref{incidents} d'incidents el codi no has
 sortir gaire elegant.
 
-Un cop acabada la funció càlcul de punts tots els vectors de punts estan apunt
+Un cop acabada la funció \emph{càlcul de punts} tots els vectors de punts estan apunt
 per ser recorreguts per part del braç robot en els eixos (X,Y), el Z és
 calculat en temps d'execució ja que depèn de quina peça s'estigui tractant,
 ja que son apilades a l'eix Z.
@@ -195,7 +197,7 @@ inicialment les peces, en l'execució per defecte seran dues.
 co\lgem ocat cada tipus de peça al palé.
  \item [\texttt{PalI}] Posició inicial on es co\lgem coca el braç per iniciar
 el descens sobre el pal.
- \item [\texttt{PalF}] Punt final de descens del braç, on es considera que la
+ \item [\texttt{PalF}] Punt final de descens del braç on es considera que la
 peça ja hi ha entrat i pot ser amollada.
 \end{description}
 
@@ -337,7 +339,7 @@ piles per agafar-les i dipositar-les al lloc corresponent del palé.
 En aquest punt del programa el braç va munt a munt del palé agafant les peces
 i deixant-les als pals, no passa al següent munt mentre a l'actual quedin peces.
 L'ordre d'agafada dels munts ha estat calculat en \emph{càlcul de punts} com ja s'ha
-esmentat\ref{codcalcpts}.
+esmentat (secció \ref{codcalcpts}).
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}
 2290 *DESPALE
@@ -379,7 +381,7 @@ esmentat\ref{codcalcpts}.
 \end{minted}
 
 \subsubsection{Acaba}
-De manera similar a l'inicialitza, acaba s'encarrega del posicionament
+De manera complementària a l'inicialitza, \emph{acaba} s'encarrega del posicionament
 físic del robot en una posició de repòs i la desconnexió dels servomotors.
 
 \begin{minted}[frame=lines, fontsize=\small]{vbnet}

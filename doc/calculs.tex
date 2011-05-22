@@ -1,9 +1,8 @@
 \section{Càlculs}
-L'apartat de càlculs inclou, per una banda, els requerits per l'enunciat a
+L'apartat de càlculs inclou els requerits per l'enunciat a
 l'haver de transformar el punt P del sistema de coordenades de la càmera al del
 braç robot. En aquest punt es mostra el procés de obtenció de les equacions per
-fer tal transformació i en l'apartat de codi es veu la seva implementació en el
-programa.
+fer tal transformació que seran implementades al programa.
 
 Per altra banda es mostra el càlcul dels punts emprats de la situació dels
 objectes en l'entorn a partir dels seus homòlegs. Com s'ha mencionat la posició
@@ -25,8 +24,8 @@ coordenades del robot.
 Així doncs definim:
 
 \begin{description}
-\item[$^RT_C$] La matriu de transformació de un punt del robot a la càmera
-\item[$^CT_P$] La matriu de transformació de un punt de la càmera al palé
+\item[$^RT_C$] La matriu de transformació d'un punt del robot a la càmera
+\item[$^CT_P$] La matriu de transformació d'un punt de la càmera al palé
 \item[$^PP$] Punt en el sistema de coordenades del palé
 \item[$^RP$] Punt en el sistema de coordenades del robot
 \end{description}
@@ -119,6 +118,12 @@ tenim el punt de la primera pila, les següents es troben situades a un
 desplaçament en \emph{X}. Així doncs en el nostre escenari senzillament s'ha de
 incrementar en \emph{X} el valor de la distància entre piles. Succeeix exactament
 el mateix amb els pals on es deixen les peces.
+
+
+$$ Pila_{i}.X = Pila_{0}.X + i \times  \bigtriangleup X_{pila} $$
+$$ Pila_{i}.Y = Pila_{0}.Y + i \times \bigtriangleup Y_{pila} $$
+$$ Pal_{i}.X = Pal_{0}.X + i \times \bigtriangleup X_{pal} $$
+$$ Pal_{i}.Y = Pal_{0}.Y + i \times \bigtriangleup Y_{pal} $$
 
 Els detalls de implementació i valors de les constants de separació es poden
 veure en l'apartat especific \ref{codcalcpts} on s'explica el codi font. Cal
